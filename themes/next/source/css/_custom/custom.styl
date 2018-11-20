@@ -1,0 +1,93 @@
+// Custom styles.
+
+.posts-expand .post-meta {
+  margin: 0px 0 25px 0;
+}
+
+.post-button {
+  margin-top: 35px;
+}
+
+.posts-expand {
+  .post-eof {
+    display: block;
+    margin: 55px auto 55px;
+    width: 0%;
+    height: 1px;
+    background: $grey-light;
+    text-align: center;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-button {
+  display: none;
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-button:start:increment,::-webkit-scrollbar-button:end:decrement {
+  display: none;
+}
+::-webkit-scrollbar-corner {
+  display: none;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: rgba(0,0,0,0);
+}
+::-webkit-scrollbar-thumb:hover {
+  border-radius: 8px;
+  background-color: rgba(0,0,0,.5);
+}
+::-webkit-scrollbar-track,::-webkit-scrollbar-thumb {
+  border-right: 1px solid transparent;
+  border-left: 1px solid transparent;
+}
+/* ::-webkit-scrollbar-track:hover {
+  background-color: rgba(0,0,0,.15);
+}
+::-webkit-scrollbar-button:start {
+  width: 10px;
+  height: 10px;
+  background: url(../images/scrollbar_arrow.png) no-repeat 0 0;
+}
+::-webkit-scrollbar-button:start:hover {
+  background: url(../images/scrollbar_arrow.png) no-repeat -15px 0;
+}
+::-webkit-scrollbar-button:start:active {
+  background: url(../images/scrollbar_arrow.png) no-repeat -30px 0;
+}
+::-webkit-scrollbar-button:end {
+  width: 10px;
+  height: 10px;
+  background: url(../images/scrollbar_arrow.png) no-repeat 0 -18px;
+}
+::-webkit-scrollbar-button:end:hover {
+  background: url(../images/scrollbar_arrow.png) no-repeat -15px -18px;
+}
+::-webkit-scrollbar-button:end:active {
+  background: url(../images/scrollbar_arrow.png) no-repeat -30px -18px;
+} */
+
+
+/* Fold */
+
+.hider_title{
+    cursor: pointer;
+    padding: 0 15px;
+    color: #666;
+    border-left: 3px solid #428bca;
+}
+.close:after{
+    content: " \f063";
+    font-family: FontAwesome;
+    font-size: 80%;
+}
+.open:after{
+    content: " \f062";
+    font-family: FontAwesome;
+    font-size: 80%;
+}

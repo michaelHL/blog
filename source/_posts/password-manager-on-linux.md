@@ -1,0 +1,36 @@
+---
+title: Linux 中的密码管理器 -- pass
+date: 2018-01-05 18:33:43
+tags:
+    - Linux
+    - Pass
+categories: Handy Utilities
+---
+
+Linux 中很方便的密码管理小工具 -- pass {% fa key fw %}.
+
+<!-- more -->
+
+一般源都包含 `pass`，直接 `apt` / `yum` / `pacman` 安装即可。
+
+1. 首先创建 `gpg` 密钥对：`gpg --gen-key`
+1. 依次选择 `(1) RSA and RSA (default)`，`0 = key does not expire`，自定义 `Real name`，`Email address` 即可
+1. 初始化密码仓库：`pass init <gpg-id>`，其中的 `<gpg-id>` 便为上面的 `Real name`
+
+## 使用方法
+
+- `pass insert <password-name> [-m]`：（是否细致化）增加密码项，其中 `<password-name>` 可以通过 `/` 来建立层级，放映在目录上就是父子目录
+- `pass`：查看所有密码
+- `pass <password-name>`：取回密码信息
+- `pass generate <password-name> n`：生成 10 个字符的密码
+- `pass rm <password-name>`：删除密码项
+
+## 其它
+
+- `gpg` 列出密钥：`gpg --list-keys`。第一行是公钥文件路径，第二行是公钥信息，第三行是用户 ID，第四行是私钥信息
+
+## 参考
+
+- [pass - the standard unix password manager](https://www.passwordstore.org)
+- [如何在Linux上使用命令行管理密码](https://linux.cn/article-3155-1.html)
+- [GPG入门](http://www.jianshu.com/p/1257dbf3ed8e)
