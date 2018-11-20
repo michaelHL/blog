@@ -287,6 +287,7 @@ forever start hexo-server.js
   npm install hexo-renderer-pandoc --save
   {% endcodeblock %}
 - 2018-07-17 {% fa plane fw %} 添加脚注插件 `hexo-footnotes`
+- 2018-11-20 {% fa plane fw %} 将博客回归至 Github，并以 [Netlify][netlify] 作为持续集成
 
 [hexo-deployer-git]: https://github.com/hexojs/hexo-deployer-git
 [hexo-deployment]: https://hexo.io/zh-cn/docs/deployment.html
@@ -298,3 +299,4 @@ forever start hexo-server.js
 [mathjax]: https://www.mathjax.org
 [csdn-50123231]: http://blog.csdn.net/Emptyset110/article/details/50123231
 [gitee]: https://gitee.com
+[netlify]: https://www.netlify.com
