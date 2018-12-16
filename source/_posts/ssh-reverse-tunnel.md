@@ -80,7 +80,7 @@ categories: Operation and Maintenance
 
 - 报错：
   {% codeblock lang:bash %}
-  /usr/bin/ssh-copy-id: ERROR: failed to open ID file '/home/ismail/.pub': No such file 
+  /usr/bin/ssh-copy-id: ERROR: failed to open ID file '/home/ismail/.pub': No such file
   {% endcodeblock %}
   解决方案：不带参数地生成秘钥 `ssh-keygen`
 - 防止超时断开：
