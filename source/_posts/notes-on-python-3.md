@@ -52,3 +52,4 @@ Python 3.x 笔记。
           * summation(t[i] ** (-alpha), (i, 0, n0 - 1))).replace(t, ts)       #
    {% endcodeblock %}
 1. Python 时光机 --- [Python-Future](http://python-future.org/compatible_idioms.html)
+1. 利用 `json` 库将 Python 对象转为 Json 对象时，所有键都会被转化为字符串，所以可能出现 `x != loads(dump(x))` 的情形
