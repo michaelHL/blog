@@ -174,3 +174,4 @@ categories: Tips and Tricks
    HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts
    {% endcodeblock %}
 1. Microsoft Word 中设置边框时要记得重新应用边框，否则应用无效
+1. 往 Microsoft Word 里面插入矢量图时建议使用 `.wmf` 类型文件，`.emf` 文件在另存为 PDF 文件时图片可能严重失真
