@@ -175,4 +175,4 @@ categories: Tips and Tricks
    {% endcodeblock %}
 1. Microsoft Word 中设置边框时要记得重新应用边框，否则应用无效
 1. 往 Microsoft Word 里面插入矢量图时建议使用 `.wmf` 类型文件，`.emf` 文件在另存为 PDF 文件时可能导致图片严重失真
-1. Windows 下给快捷方式指派的快捷键盘有明显延迟解决方案：[slow windows desktop keyboard shortcuts](https://superuser.com/questions/426947/slow-windows-desktop-keyboard-shortcuts)
+1. Windows 下给快捷方式指派的快捷键有明显延迟解决方案：[slow windows desktop keyboard shortcuts](https://superuser.com/questions/426947/slow-windows-desktop-keyboard-shortcuts)
