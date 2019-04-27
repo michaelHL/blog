@@ -176,3 +176,13 @@ categories: Tips and Tricks
 1. Microsoft Word 中设置边框时要记得重新应用边框，否则应用无效
 1. 往 Microsoft Word 里面插入矢量图时建议使用 `.wmf` 类型文件，`.emf` 文件在另存为 PDF 文件时可能导致图片严重失真
 1. Windows 下给快捷方式指派的快捷键有明显延迟解决方案：[slow windows desktop keyboard shortcuts](https://superuser.com/questions/426947/slow-windows-desktop-keyboard-shortcuts)
+1. 修改 Windows 用户名：
+   1. 以其它管理员用户 B 身份登录系统，并注销需要改名的用户 A（如果这个用户已经登录的话）。如仅有一个用户，可考虑新建管理员账户，或开启默认被禁止的 Administrator 账户（计算机管理 - 系统工具 - 本地用户和组 - 用户 - Administrator - 取消勾选账户已禁用）
+   1. 直接修改用户 A 的用户目录名（「运行」输入 `..`，将文件夹 A 改名为 C）
+   1. 找到注册表项
+      ```
+      HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList\<User SID>\
+      ```
+      并将其改为 `C:\Users\C`。  
+      「注」如何定位到 `<User SID>`：每个 `<User SID>` 的子键 `ProfileImagePath` 即为此用户的 `Profile` 目录，找到用户目录为 A 的键即可
+   1. 「运行」中键入 `netplwiz`，双击用户 A 将用户名修改为 C，重启
