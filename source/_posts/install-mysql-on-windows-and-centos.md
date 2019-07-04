@@ -94,23 +94,19 @@ categories: Development and Deployment
 ### 配置文件
 
 ```ini /etc/my.cnf
-# For advice on how to change settings please see
-# http://dev.mysql.com/doc/refman/5.7/en/server-configuration-defaults.html
-
-[mysql]
-default-character-set = utf8
-
 [mysqld]
-# join_buffer_size = 128M
-# sort_buffer_size = 2M
-# read_rnd_buffer_size = 2M
-port = 33333
-datadir = /var/lib/mysql
-socket = /var/lib/mysql/mysql.sock
-character-set-server = utf8
-symbolic-links = 0
-log-error = /var/log/mysqld.log
-pid-file = /var/run/mysqld/mysqld.pid
+port = 3677
+basedir = "D:\\MySQL"
+datadir = "D:\\MySQL\\data"
+
+max_connections = 200
+character-set-server = UTF8MB4
+default-storage-engine = INNODB
+explicit_defaults_for_timestamp = true
+
+[mysqladmin]
+user = "root"
+port = 3677
 ```
 
 ### 问题
