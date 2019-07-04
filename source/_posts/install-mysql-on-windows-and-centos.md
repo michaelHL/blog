@@ -42,7 +42,7 @@ categories: Development and Deployment
    {% endcodeblock %}
 1. 此时已有无密码账户 `root`，更改密码：
    {% codeblock lang:dos %}
-   "D:\MySQL\bin\mysqld.exe" --defaults-file="D:\\MySQL\\my.ini" --console --skip-grant-tables
+   "D:\MySQL\bin\mysqld.exe" --defaults-file="D:\\MySQL\\my.ini" --console
    {% endcodeblock %}
 1. 另开终端，输入 `mysql -uroot -P 3677 -p` 直接回车，
    并键入（`<password>` 为密码）：
@@ -50,6 +50,10 @@ categories: Development and Deployment
    update mysql.user set authentication_string=password('<password>') where user='root';
    flush privileges;
    quit;
+   {% endcodeblock %}
+   在 MySQL 8 版本中更加便捷：
+   {% codeblock lang:sql %}
+   ALTER USER 'root'@'localhost' IDENTIFIED BY 'MyNewPass';
    {% endcodeblock %}
 1. 安装 MySQL 服务。在 **`D:\MySQL\bin`** 目录下以管理员身份键入 `mysqld --install`
 
