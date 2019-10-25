@@ -120,5 +120,6 @@ deploy:
   keep_hidden_file: true
 
 include:
+  - "src/**/*"
   - "src/**/.*"
   - "src/**/_*"
