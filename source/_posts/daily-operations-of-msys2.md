@@ -583,8 +583,8 @@ pacman -S ncurses-devel libcrypt-devel
 [youcompleteme]: https://github.com/Valloric/YouCompleteMe
 [mintty]: https://mintty.github.io
 [conemu]: https://conemu.github.io
-[vimrc-config]: /src/.vimrc
-[bashrc-config]: /src/.bashrc
+[vimrc-config]: /src/vimrc
+[bashrc-config]: /src/bashrc
 [conemu-config]: /src/conemu.xml
 [connector]: https://github.com/Maximus5/cygwin-connector
 [ncurses-20170708]: https://mirrors.tuna.tsinghua.edu.cn/msys2/msys/x86_64/ncurses-6.0.20170708-2-x86_64.pkg.tar.xz

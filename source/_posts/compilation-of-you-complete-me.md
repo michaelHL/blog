@@ -183,7 +183,7 @@ cmake -G "Visual Studio 15 Win64" ^
 [valloric-person]: https://github.com/Valloric
 [ycm-repo]: https://github.com/Valloric/YouCompleteMe
 [ycm-official-installation]: https://github.com/Valloric/YouCompleteMe#installation
-[ycm_extra_conf]: /src/.ycm_extra_conf.py
+[ycm_extra_conf]: /src/ycm_extra_conf.py
 [clang-windows]: http://releases.llvm.org/4.0.1/LLVM-4.0.1-win64.exe
 [python]: https://www.python.org/download
 [cmake]: https://cmake.org/download

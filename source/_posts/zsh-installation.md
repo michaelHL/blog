@@ -73,4 +73,4 @@ sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/to
 [oh-my-zsh-external-themes]: https://github.com/robbyrussell/oh-my-zsh/wiki/External-themes
 [powerlevel9k-repo]: https://github.com/bhilburn/powerlevel9k
 [nerdfonts-repo]: https://github.com/buzzkillhardball/nerdfonts
-[zshrc]: /src/.zshrc
+[zshrc]: /src/zshrc
