@@ -36,7 +36,7 @@
         }
       });
     </script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <!-- <script type="text/javascript" src="{{ theme.mathjax.cdn }}"></script> -->
   {% endif %}
 {% endif %}

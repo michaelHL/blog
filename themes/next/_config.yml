@@ -308,7 +308,7 @@ font:
 mathjax:
   enable: true
   per_page: true
-  cdn: cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js
+  cdn: cdn.bootcss.com/mathjax/2.7.6/MathJax.js
 
 # Han Support docs: https://hanzi.pro/
 han: false
