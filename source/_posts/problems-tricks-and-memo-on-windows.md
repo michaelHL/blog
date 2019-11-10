@@ -186,3 +186,8 @@ categories: Tips and Tricks
       并将其改为 `C:\Users\C`。  
       「注」如何定位到 `<User SID>`：每个 `<User SID>` 的子键 `ProfileImagePath` 即为此用户的 `Profile` 目录，找到用户目录为 A 的键即可
    1. 「运行」中键入 `netplwiz`，双击用户 A 将用户名修改为 C，重启
+1. NVIDIA 显卡搭载部分显示器屏幕发白 / 虚，可通过自定义 NVIDIA 色彩设定：
+   - Desktop Color Depth: `Highest (32-bit)`
+   - Output Color Depth: `8 bpc`
+   - Output Color format: `YCbCr444`
+   - Output dynamic range: `Limited`
