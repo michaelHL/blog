@@ -241,7 +241,7 @@ forever start hexo-server.js
     - RSS插件 `hexo-generator-feed`
     - 本地搜索服务 `hexo-generator-searchdb`
     - SEO优化 `hexo-generator-sitemap`，`hexo-generator-baidu-sitemap`
-- 2017-07-18 {% fa plane fw %} 发现外网访问服务器速度实在过慢，老实投靠 Github, Coding 进行双线部署，并更新博客为二级域名，在解析上下了点功夫。加之 Coding 可以强制 https 访问，遂抛弃 Github 部署
+- 2017-07-18 {% fa plane fw %} 发现外网访问服务器速度实在过慢，老实投靠 Github，Coding 进行双线部署，并更新博客为二级域名，在解析上下了点功夫。加之 Coding 可以强制 https 访问，遂抛弃 Github 部署
 - 2017-12-03 {% fa magic fw %} 增加 [$Mathjax$][mathjax] 支持。参考: [搭建一个支持LaTEX的hexo博客][csdn-50123231]。然而这里出现了一些意外状况，比如公式的分式的中横线显示偏低，这是不能接受的，首先将主题配置文件中 `mathjax` 设置为：
   {% codeblock lang:yaml %}
   mathjax:

@@ -7,7 +7,7 @@ tags:
 categories: Handy Utilities
 ---
 
-Linux 中很方便的密码管理小工具 -- pass {% fa key fw %}.
+Linux 中很方便的密码管理小工具 -- pass {% fa key fw %}。
 
 <!-- more -->
 

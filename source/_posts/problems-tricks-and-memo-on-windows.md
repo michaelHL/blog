@@ -108,7 +108,7 @@ categories: Tips and Tricks
    sumatrapdf.exe -inverse-search "\"C:\Program Files\Sublime Text 3\sublime_text.exe\" \"%f:%l\""
    {% endcodeblock %}
    关于公式不能预览的问题：手动从 [Ghostscript 官网](https://ghostscript.com)
-   安装, 并将环境路径添加至 `TexLive` 路径前面; 添加 ImageMagick 的环境路径
+   安装，并将环境路径添加至 `TexLive` 路径前面; 添加 ImageMagick 的环境路径
 1. Mathtype 的官方安装包名为 `InstallMTW6.9b.exe`
 1. Avast 杀毒软件的安装需要取消勾选 `Real Site`（中文名可能为 `DNS` 相关），否则网速奇慢！顺便，防火墙也别装了，简直神坑！
 1. Avast 添加排除目录（添加信任）：`Settings` - `Components` - `File Shield` && `Behavior Shield` - `Customize` - `Exclusions`，否则某些程序会无端卡死（比如赖以生存的 `ConEmu`）
@@ -157,7 +157,7 @@ categories: Tips and Tricks
 1. Clion 中遇到输入时结果显现两次处理方案：`C-S-a`，输入 `registry`，取消勾选 `run.processes.with.pty`
    （参考 [User input appears twice in output window in CLion under MinGW](https://youtrack.jetbrains.com/issue/CPP-2580)）
 1. Windows 10 彻底禁用自动更新方案：
-   1. `services.msc` 中设置 `Windows Update` 服务为禁用, 并在 `Recovery` 中设置为不恢复
+   1. `services.msc` 中设置 `Windows Update` 服务为禁用，并在 `Recovery` 中设置为不恢复
    1. `gpedit.msc` 中: `Computer Configuration` - `Administrative Templates` -
       `Windows Components` - `Windows Update` - `Specify intranet ...`，启用此策略，并将 3 个服务器地址设为 `127.0.0.1`
 1. 解决 Microsoft Word 打开时自动切换输入法问题: 选项 - 高级 - 编辑选项 -

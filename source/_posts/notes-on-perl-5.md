@@ -15,7 +15,7 @@ Perl 5 笔记.
 1. 整数直接量可以用 `_` 分隔以提高阅读体验，比如 `0x50_65_72_7c`
 1. 字符串用点号 `.` 拼接
 1. 字符串重复操作符 `x` 可以让左边的操作数重复右边的操作数进行连接
-1. 语句末尾的 `;` 除了在块中末尾行, 都是必须的
+1. 语句末尾的 `;` 除了在块中末尾行，都是必须的
 1. 单引号内能转义的字符仅有 `'` 及 `\`
 1. 双引号内字符串的转义字符有(特殊):
    - `\e` -- Esc (ASCII 编码的转义字符)
@@ -61,8 +61,7 @@ Perl 5 笔记.
 1. Windows 下 `Strawberry Perl` 的 `portable` 版本中， `\Strawberry\perl\vendor\lib\Portable` 会覆盖掉模块 `File::Homedir`，导致结果可能与预期不同，应改用 `File::HomeDir::Windows`
 1. **更新** 上述的问题可能与 `File::HomeDir` 的版本过低有关，重新通过 `cpan` 安装貌似可以解决
 1. 在标量上下文中，`each` 仅返回 `hash` 的键，或者列表的索引
-1. 从源码编译 Perl：[http://www.cpan.org/src](http://www.cpan.org/src).
-   文章：[How to build perl from source on Linux](https://perlmaven.com/how-to-build-perl-from-source-code).
+1. 从源码编译 Perl：[http://www.cpan.org/src](http://www.cpan.org/src)。文章：[How to build perl from source on Linux](https://perlmaven.com/how-to-build-perl-from-source-code).
    示例：
    {% codeblock lang:bash%}
    wget http://www.cpan.org/src/5.0/perl-5.26.1.tar.gz

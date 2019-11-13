@@ -21,8 +21,7 @@ categories: Tips and Tricks
    HISTCONTROL=erasedups
    HISTIGNORE="ls:pwd:cd:clear:vim:fg:bg:jobs:top"
    {% endcodeblock %}
-   将 `HISTCONTROL` 设成 `ignoredups` 仅忽略连续的重复命令,
-   而 `erasedups` 清除整个历史中重复条目.
+   将 `HISTCONTROL` 设成 `ignoredups` 仅忽略连续的重复命令，而 `erasedups` 清除整个历史中重复条目
 1. 常用终端快捷键
 
    | 快捷键   | 用途               | 快捷键   | 用途                   |

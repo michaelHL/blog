@@ -36,7 +36,7 @@ cd Python-2.7.13
 make && make install
 ```
 
-Python 3 的编译安装同理, 将网址改为
+Python 3 的编译安装同理，将网址改为
 [`https://www.python.org/ftp/python/3.6.2/Python-3.6.2.tgz`](https://www.python.org/ftp/python/3.6.2/Python-3.6.2.tgz) 即可。
 
 这时会发现 `yum` 不能用了，需要将 `/usr/bin/yum`，`/usr/libexec/urlgrabber-ext-down` 的 `shebang` 改为 `/usr/bin/python2.7`，也就是原来的低版本 (2.7.5)。

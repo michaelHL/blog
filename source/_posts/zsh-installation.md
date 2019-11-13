@@ -8,8 +8,7 @@ tags:
 categories: Operation and Maintenance
 ---
 
- {% fa warning fw %} 试验场所有 CentOS(本地 + 远程)，Ubuntu 14.04+，~~MSYS2~~（比较卡,
-应该是 mintty 的原因, 不打算继续折腾）。
+ {% fa warning fw %} 试验场所有 CentOS（本地 + 远程），Ubuntu 14.04+，~~MSYS2~~（比较卡，应该是 mintty 的原因，不打算继续折腾）。
 
 ### 安装 Zsh
 
