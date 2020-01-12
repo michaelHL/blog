@@ -191,3 +191,8 @@ categories: Tips and Tricks
    - Output Color Depth: `8 bpc`
    - Output Color format: `YCbCr444`
    - Output dynamic range: `Limited`
+1. 更改右键菜单相对于鼠标点击处的位置：运行中键入
+   ```
+   shell:::{80F3F1D5-FECA-45F3-BC32-752C152E456E}
+   ```
+   在弹出对话框 `Tablet PC Settings` 中切换用手习惯 `Handedness`
