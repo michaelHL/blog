@@ -76,8 +76,7 @@ b = tf.constant(32)
 print(sess.run(a + b))
 ```
 
-看着熟悉的简称，竟教人忆起了前女友...  
-那么就运行下...
+运行结果如下：
 
 ```bash
 python test.py
