@@ -196,3 +196,15 @@ categories: Tips and Tricks
    shell:::{80F3F1D5-FECA-45F3-BC32-752C152E456E}
    ```
    在弹出对话框 `Tablet PC Settings` 中切换用手习惯 `Handedness`
+1. Chrome 浏览器默认支持 Flash 需更改注册表项：
+   {% codeblock chrome_flash.reg %}
+   Windows Registry Editor Version 5.00
+   [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome]
+   "AllowOutdatedPlugins"=dword:00000001
+   "RunAllFlashInAllowMode"=dword:00000001
+   "DefaultPluginsSetting"=dword:00000001
+   "HardwareAccelerationModeEnabled"=dword:00000001
+   [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\PluginsAllowedForUrls]
+   "1"="https://*"
+   "2"="http://*"
+   {% endcodeblock %}
