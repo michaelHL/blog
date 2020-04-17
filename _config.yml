@@ -113,7 +113,7 @@ deploy:
   type: git
   repo:
     # coding: git@git.coding.net:shinemic/blog.git
-    # oschina: git@gitee.com:shinemic/shinemic.git
+    gitee: git@gitee.com:shinemic/shinemic.git
     github: git@github.com:michaelHL/blog.git
   branch: master
   ignore_hidden: false
