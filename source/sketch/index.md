@@ -13,3 +13,4 @@ comments: false
 - 发现一枚不错的 [Matlab For Linux 网址](https://liengsarinbt.blogspot.com/2017/11/mathworks-matlab-r2017b.html)
 - Matlab 2016 安装完毕后会自动给**系统级** `PATH` 添加三条路径：
   `E:\Matlab\runtime\win64`，`E:\Matlab\bin`，`E:\Matlab\polyspace\bin`
+- 一个在线修复问题 PDF 文件网站：[ilovepdf](https://www.ilovepdf.com/repair-pdf)
