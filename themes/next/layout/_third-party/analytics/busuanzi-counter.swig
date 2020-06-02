@@ -1,7 +1,7 @@
 {% if theme.busuanzi_count.enable %}
 <div class="theme-info">
   <div class="powered-by"></div>
-  <script async src="https://cdn.busuanzi.ibruce.info/cdn/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   {% if theme.busuanzi_count.site_uv %}
     <span class="site-uv">
