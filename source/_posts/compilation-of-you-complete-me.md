@@ -15,7 +15,7 @@ categories: Operation and Maintenance
 
 ### 更新 GCC
 
-CentOS 7.3 自带的 GCC 版本只有 4.8.5，Ubuntu 16.04 的 GCC 版本已经到了 5.4.0。所以如果是 CentOS 系统，第一步一定要更新 GCC 版本，否则后续过程寸步难行。具体过程从略。
+CentOS 7.3 自带的 GCC 版本仅为 4.8.5，Ubuntu 16.04 的 GCC 版本已经到了 5.4.0。所以如果是 CentOS 系统，第一步一定要更新 GCC 版本，否则后续过程寸步难行。具体过程从略。
 
 ### 编译 YCM
 
