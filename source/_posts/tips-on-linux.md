@@ -159,3 +159,23 @@ categories: Tips and Tricks
 1. SSH 登录出现错误提示 `WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!`，一般是因为认证密钥过期，解决方案：
    - 根据提示删除 `~/.ssh/known_hosts` 中相应的行
    - `ssh-keygen -R "you server hostname or ip"`
+1. HEREDOC 作为参数调用方法（以 `perl -e ` 为例）：
+   {% codeblock lang:bash %}
+   echo -e "\n"; set +H; perl -E "$(cat <<'EOP'
+   foreach (1..10) {
+       our $num = $_;
+       say "Iteration number $_.\n";
+       print "Please choose: last, next, redo, or none of the above? ";
+       chomp(my $choice = <STDIN>);
+       say;
+       last if $choice =~ m'last'i;
+       next if $choice =~ m`next`i;
+       redo if $choice =~ /redo/i;
+       say "That wasn't any of the choices ... onward!\n";
+   }
+   say "That's all folks!";
+   say "And the last number is $num";
+   EOP
+   )"; set -H
+   {% endcodeblock %}
+   其中，为避免叹号 `!`（Exclamation Mark）引用历史命令使用 `set +H`
