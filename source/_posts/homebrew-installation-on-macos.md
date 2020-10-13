@@ -7,9 +7,13 @@ tags:
 catagories: Research
 ---
 
-> The Missing Package Manager for macOS (or Linux) — Homebrew
+{% centerquote %}
+The Missing Package Manager for macOS (or Linux) — Homebrew
+{% endcenterquote %}
 
 作为一名业余的 Mac User，怎能不会熟练使用 Homebrew？但国内访问官方 Homebrew 速度过慢，需通过更改 Homebrew 安装源为国内源解决，以下操作主要借鉴[成功解决macos 安装homebrew速度慢][jianshu-c7c7aa34e579]。
+
+<!-- more -->
 
 ## 下载 Homebrew 安装脚本
 
