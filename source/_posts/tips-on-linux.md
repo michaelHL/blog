@@ -30,7 +30,7 @@ categories: Tips and Tricks
    | `Ctrl-E` | 移动到行末         | `Ctrl-K` | 删除到行末             |
    | `Ctrl-B` | 移动到前面一个字母 | `Ctrl-U` | 删除到行首             |
    | `Ctrl-F` | 移动到后面一个字母 | `Ctrl-T` | 交换光标位置前两个字符 |
-   | `Ctrl-B` | 移动到前面一个单词 | `Esc-T`  | 交换光标位置前两个单词 |
+   | `Esc-B`  | 移动到前面一个单词 | `Esc-T`  | 交换光标位置前两个单词 |
 1. SSH 登录服务器缓慢解决方案：
    - 关闭 DNS 反向解析：`vim /etc/ssh/sshd_config`，设定其中 `UseDNS=no`，重启服务 `service sshd restart`
    - 服务端禁用 `GSSAPIAuthentication`：同样在 `/etc/ssh/sshd_config` 中设定 `GSSAPIAuthentication no`
