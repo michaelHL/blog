@@ -71,7 +71,7 @@ yum install -y curlftpfs
 
 # 挂载 FTP 目录
 mkdir -p $MOUNTPOINT
-curlftpfs $IP:$PORT $MOUNTPOINT -o user=$USERNAME:$PASSWORD,utf8
+curlftpfs $IP:$PORT $MOUNTPOINT -o user=$USERNAME:$PASSWORD,codepage=utf8
 # 取消挂载
 fusermount -u $MOUNTPOINT
 ```
