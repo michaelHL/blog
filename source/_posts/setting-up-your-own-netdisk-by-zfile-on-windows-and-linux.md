@@ -1,8 +1,8 @@
 ---
-title: 使用 Zfile 搭建自己的文件分享站（Linux & Windows）
+title: 使用 ZFile 搭建自己的文件分享站（Linux & Windows）
 date: 2021-02-28 11:21:10
 tags:
-    - Zfile
+    - ZFile
     - FTP
     - Fuse
     - NetDisk
