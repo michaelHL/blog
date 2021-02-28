@@ -179,3 +179,4 @@ categories: Tips and Tricks
    )"; set -H
    {% endcodeblock %}
    其中，为避免叹号 `!`（Exclamation Mark）引用历史命令使用 `set +H`
+1. yum 安装包时不清楚程序所在程序包名如何查询：`yum provides */<program>`
