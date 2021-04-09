@@ -96,8 +96,6 @@ categories: Development and Deployment
 ```ini /etc/my.cnf
 [mysqld]
 port = 3677
-basedir = "D:\\MySQL"
-datadir = "D:\\MySQL\\data"
 
 max_connections = 200
 character-set-server = UTF8MB4
