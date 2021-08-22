@@ -1,0 +1,1047 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/problems-tricks-and-memo-on-windows/</loc>
+    <lastmod>2021-08-22T10:05:10.588Z</lastmod>
+    <data>
+        <display>
+        <title>Windows 问题与技巧</title>
+        <pubTime>2018-01-24T12:39:34.000Z</pubTime>
+        
+        <tag>Windows</tag>
+         
+         
+           
+             
+              <breadCrumb title="Tips and Tricks" url="http://notes.shinemic.cn/categories/Tips-and-Tricks/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/install-mysql-on-windows-and-centos/</loc>
+    <lastmod>2021-07-29T13:44:35.526Z</lastmod>
+    <data>
+        <display>
+        <title>Windows 以及 CentOS 下的 MySQL 安装</title>
+        <pubTime>2018-01-21T03:22:03.000Z</pubTime>
+        
+        <tag>SQL</tag>
+         
+        <tag>MySQL</tag>
+         
+         
+           
+             
+              <breadCrumb title="Development and Deployment" url="http://notes.shinemic.cn/categories/Development-and-Deployment/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/setting-up-your-own-netdisk-by-zfile-on-windows-and-linux/</loc>
+    <lastmod>2021-02-28T10:52:28.615Z</lastmod>
+    <data>
+        <display>
+        <title>使用 ZFile 搭建自己的文件分享站（Linux & Windows）</title>
+        <pubTime>2021-02-28T03:21:10.000Z</pubTime>
+        
+        <tag>ZFile</tag>
+         
+        <tag>FTP</tag>
+         
+        <tag>Fuse</tag>
+         
+        <tag>NetDisk</tag>
+         
+        <tag>FileZilla</tag>
+         
+         
+           
+             
+              <breadCrumb title="Handy Utilities" url="http://notes.shinemic.cn/categories/Handy-Utilities/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/tips-on-linux/</loc>
+    <lastmod>2021-02-28T04:49:48.367Z</lastmod>
+    <data>
+        <display>
+        <title>Linux 技巧拾零</title>
+        <pubTime>2017-10-12T04:43:04.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="Tips and Tricks" url="http://notes.shinemic.cn/categories/Tips-and-Tricks/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/essentials-of-matlab-foundation-of-programming/</loc>
+    <lastmod>2021-02-28T03:15:24.256Z</lastmod>
+    <data>
+        <display>
+        <title>Matlab 程序设计之编程基础</title>
+        <pubTime>2018-07-05T17:10:39.000Z</pubTime>
+        
+        <tag>Matlab</tag>
+         
+         
+           
+             
+              <breadCrumb title="Memos" url="http://notes.shinemic.cn/categories/Memos/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/homebrew-installation-on-macos/</loc>
+    <lastmod>2020-10-13T07:08:37.572Z</lastmod>
+    <data>
+        <display>
+        <title>MacOS 安装 Homebrew</title>
+        <pubTime>2020-09-01T13:50:29.000Z</pubTime>
+        
+        <tag>MacOS</tag>
+         
+        <tag>Homebrew</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/settings-of-multi-nic-and-routing-table-on-windows/</loc>
+    <lastmod>2020-10-11T02:56:07.080Z</lastmod>
+    <data>
+        <display>
+        <title>Windows 下多网卡路由表设置</title>
+        <pubTime>2020-10-11T00:53:00.000Z</pubTime>
+        
+        <tag>Windows</tag>
+         
+        <tag>Routing</tag>
+         
+        <tag>NetMask</tag>
+         
+         
+           
+             
+              <breadCrumb title="Research" url="http://notes.shinemic.cn/categories/Research/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/notes-on-python-3/</loc>
+    <lastmod>2020-06-08T10:14:08.380Z</lastmod>
+    <data>
+        <display>
+        <title>Python 3 拾零</title>
+        <pubTime>2018-01-23T03:29:14.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+         
+           
+             
+              <breadCrumb title="Memos" url="http://notes.shinemic.cn/categories/Memos/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/compilation-of-you-complete-me/</loc>
+    <lastmod>2020-06-06T02:51:50.860Z</lastmod>
+    <data>
+        <display>
+        <title>编译 YouCompleteMe</title>
+        <pubTime>2018-01-29T08:46:34.000Z</pubTime>
+        
+        <tag>Vim</tag>
+         
+        <tag>YCM</tag>
+         
+         
+           
+             
+              <breadCrumb title="Operation and Maintenance" url="http://notes.shinemic.cn/categories/Operation-and-Maintenance/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://notes.shinemic.cn/setting-up-local-jupyter-notebook-server-environment/</loc>
+    <lastmod>2020-03-18T08:07:13.494Z</lastmod>
+    <data>
+        <display>
+        <title>单用户 Jupyter Notebook 服务器环境搭建</title>
+        <pubTime>2017-08-06T03:42:41.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+        <tag>Server</tag>
+         
+        <tag>Anaconda</tag>
+         
+        <tag>Jupyter</tag>
+         
+        <tag>TensorFlow</tag>
+         
+         
+           
+             
+              <breadCrumb title="Development and Deployment" url="http://notes.shinemic.cn/categories/Development-and-Deployment/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/hexo-deployment-on-server/</loc>
+    <lastmod>2019-11-13T03:02:09.959Z</lastmod>
+    <data>
+        <display>
+        <title>CentOS 服务器部署 Hexo 博客并利用 Webhook 自动更新</title>
+        <pubTime>2017-07-16T15:01:23.000Z</pubTime>
+        
+        <tag>Server</tag>
+         
+        <tag>Hexo</tag>
+         
+        <tag>Nginx</tag>
+         
+        <tag>Webhook</tag>
+         
+         
+           
+             
+              <breadCrumb title="Development and Deployment" url="http://notes.shinemic.cn/categories/Development-and-Deployment/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/how-to-behave-like-master-for-advanced-coder/</loc>
+    <lastmod>2019-11-13T03:01:52.248Z</lastmod>
+    <data>
+        <display>
+        <title>「转」高级程序员装逼指南</title>
+        <pubTime>2018-01-15T02:55:10.000Z</pubTime>
+        
+        <tag>Programmer</tag>
+         
+         
+           
+             
+              <breadCrumb title="Memos" url="http://notes.shinemic.cn/categories/Memos/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/linux-date-format/</loc>
+    <lastmod>2019-11-13T03:01:02.075Z</lastmod>
+    <data>
+        <display>
+        <title>Linux 中日期 date 命令格式控制符</title>
+        <pubTime>2018-01-08T03:14:46.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+        <tag>Date</tag>
+         
+         
+           
+             
+              <breadCrumb title="Operation and Maintenance" url="http://notes.shinemic.cn/categories/Operation-and-Maintenance/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/notes-on-conda/</loc>
+    <lastmod>2019-11-13T03:00:54.780Z</lastmod>
+    <data>
+        <display>
+        <title>Conda 使用小结</title>
+        <pubTime>2017-12-24T02:59:19.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+        <tag>Conda</tag>
+         
+        <tag>Anaconda</tag>
+         
+         
+           
+             
+              <breadCrumb title="Development and Deployment" url="http://notes.shinemic.cn/categories/Development-and-Deployment/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/notes-on-perl-5/</loc>
+    <lastmod>2019-11-13T03:00:50.734Z</lastmod>
+    <data>
+        <display>
+        <title>Perl 5 拾零</title>
+        <pubTime>2018-01-10T03:25:35.000Z</pubTime>
+        
+        <tag>Perl</tag>
+         
+         
+           
+             
+              <breadCrumb title="Memos" url="http://notes.shinemic.cn/categories/Memos/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/password-manager-on-linux/</loc>
+    <lastmod>2019-11-13T03:00:09.490Z</lastmod>
+    <data>
+        <display>
+        <title>Linux 中的密码管理器 -- pass</title>
+        <pubTime>2018-01-05T10:33:43.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+        <tag>Pass</tag>
+         
+         
+           
+             
+              <breadCrumb title="Handy Utilities" url="http://notes.shinemic.cn/categories/Handy-Utilities/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/ssr-on-server/</loc>
+    <lastmod>2019-11-13T02:58:31.071Z</lastmod>
+    <data>
+        <display>
+        <title>SSR 服务器搭建</title>
+        <pubTime>2018-06-21T12:48:01.000Z</pubTime>
+        
+        <tag>SSR</tag>
+         
+         
+           
+             
+              <breadCrumb title="Development and Deployment" url="http://notes.shinemic.cn/categories/Development-and-Deployment/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/user-defined-zip-and-map/</loc>
+    <lastmod>2019-11-13T02:56:57.703Z</lastmod>
+    <data>
+        <display>
+        <title>「摘」自定义 zip 和 map 函数</title>
+        <pubTime>2017-12-14T03:31:47.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+        <tag>Iterator</tag>
+         
+         
+           
+             
+              <breadCrumb title="Development and Deployment" url="http://notes.shinemic.cn/categories/Development-and-Deployment/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/zsh-installation/</loc>
+    <lastmod>2019-11-13T02:56:47.222Z</lastmod>
+    <data>
+        <display>
+        <title>安装 Zsh</title>
+        <pubTime>2017-08-17T03:02:03.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+        <tag>Shell</tag>
+         
+        <tag>Zsh</tag>
+         
+         
+           
+             
+              <breadCrumb title="Operation and Maintenance" url="http://notes.shinemic.cn/categories/Operation-and-Maintenance/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/compile-python-on-centos/</loc>
+    <lastmod>2019-11-13T02:56:13.424Z</lastmod>
+    <data>
+        <display>
+        <title>CentOS 下编译 Python</title>
+        <pubTime>2017-10-16T03:23:25.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+        <tag>CentOS</tag>
+         
+         
+           
+             
+              <breadCrumb title="Operation and Maintenance" url="http://notes.shinemic.cn/categories/Operation-and-Maintenance/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://notes.shinemic.cn/daily-operations-of-msys2/</loc>
+    <lastmod>2019-10-25T05:43:02.397Z</lastmod>
+    <data>
+        <display>
+        <title>MSYS2 的日常操作</title>
+        <pubTime>2017-11-07T10:48:36.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+        <tag>MSYS2</tag>
+         
+        <tag>Windows</tag>
+         
+        <tag>ConEmu</tag>
+         
+         
+           
+             
+              <breadCrumb title="Handy Utilities" url="http://notes.shinemic.cn/categories/Handy-Utilities/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/building-vim-from-source/</loc>
+    <lastmod>2019-10-25T05:42:03.365Z</lastmod>
+    <data>
+        <display>
+        <title>从源码编译 Vim 8</title>
+        <pubTime>2018-01-20T06:58:13.000Z</pubTime>
+        
+        <tag>Vim</tag>
+         
+        <tag>Linux</tag>
+         
+        <tag>MSYS2</tag>
+         
+         
+           
+             
+              <breadCrumb title="Operation and Maintenance" url="http://notes.shinemic.cn/categories/Operation-and-Maintenance/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+    
+  <url>
+    <loc>http://notes.shinemic.cn/the-top-10-tricks-of-perl-one-liners/</loc>
+    <lastmod>2019-04-22T01:50:40.749Z</lastmod>
+    <data>
+        <display>
+        <title>「转」The top 10 tricks of Perl one-liners</title>
+        <pubTime>2018-01-17T03:56:25.000Z</pubTime>
+        
+        <tag>Perl</tag>
+         
+         
+           
+             
+              <breadCrumb title="Tips and Tricks" url="http://notes.shinemic.cn/categories/Tips-and-Tricks/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/ssh-reverse-tunnel/</loc>
+    <lastmod>2019-04-22T01:50:40.748Z</lastmod>
+    <data>
+        <display>
+        <title>ssh / autossh / Xshell 端口转发及内网穿透</title>
+        <pubTime>2017-11-01T09:23:48.000Z</pubTime>
+        
+        <tag>SSH</tag>
+         
+        <tag>Server</tag>
+         
+        <tag>Autossh</tag>
+         
+        <tag>Xshell</tag>
+         
+         
+           
+             
+              <breadCrumb title="Operation and Maintenance" url="http://notes.shinemic.cn/categories/Operation-and-Maintenance/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/simple-example-of-stack-in-java/</loc>
+    <lastmod>2019-04-22T01:50:40.747Z</lastmod>
+    <data>
+        <display>
+        <title>Java 关于栈的简单应用</title>
+        <pubTime>2018-07-08T14:59:46.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+        <tag>Stack</tag>
+         
+         
+           
+             
+              <breadCrumb title="Algorithms" url="http://notes.shinemic.cn/categories/Algorithms/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/shortcuts-of-anaconda-on-windows/</loc>
+    <lastmod>2019-04-22T01:50:40.746Z</lastmod>
+    <data>
+        <display>
+        <title>Windows 下安装 Anaconda3 产生的快捷方式</title>
+        <pubTime>2017-09-03T04:59:11.000Z</pubTime>
+        
+        <tag>Windows</tag>
+         
+        <tag>Anaconda</tag>
+         
+         
+           
+             
+              <breadCrumb title="Memos" url="http://notes.shinemic.cn/categories/Memos/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/shell-colors-colorizing-shell-scripts/</loc>
+    <lastmod>2019-04-22T01:50:40.745Z</lastmod>
+    <data>
+        <display>
+        <title>「转」Shell 脚本中的颜色</title>
+        <pubTime>2017-08-24T02:47:03.000Z</pubTime>
+        
+        <tag>Shell</tag>
+         
+         
+           
+             
+              <breadCrumb title="Memos" url="http://notes.shinemic.cn/categories/Memos/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/setting-up-haskell-stack-development-environment/</loc>
+    <lastmod>2019-04-22T01:50:40.743Z</lastmod>
+    <data>
+        <display>
+        <title>Windows 下 Haskell-stack 开发环境搭建</title>
+        <pubTime>2018-08-11T08:59:52.000Z</pubTime>
+        
+        <tag>Windows</tag>
+         
+        <tag>Haskell</tag>
+         
+        <tag>Stack</tag>
+         
+         
+           
+             
+              <breadCrumb title="Development and Deployment" url="http://notes.shinemic.cn/categories/Development-and-Deployment/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/reading-list-of-perl/</loc>
+    <lastmod>2019-04-22T01:50:40.742Z</lastmod>
+    <data>
+        <display>
+        <title>「转」Perl 语言学习书籍</title>
+        <pubTime>2017-11-08T02:36:47.000Z</pubTime>
+        
+        <tag>Perl</tag>
+         
+         
+           
+             
+              <breadCrumb title="Book List" url="http://notes.shinemic.cn/categories/Book-List/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/nth-user/</loc>
+    <lastmod>2019-04-22T01:50:40.740Z</lastmod>
+    <data>
+        <display>
+        <title>第 n 名用户</title>
+        <pubTime>2018-07-08T14:56:14.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+        <tag>C-Sharp</tag>
+         
+         
+           
+             
+              <breadCrumb title="Algorithms" url="http://notes.shinemic.cn/categories/Algorithms/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/notes-on-statistical-learning-methods-01/</loc>
+    <lastmod>2019-04-22T01:50:40.739Z</lastmod>
+    <data>
+        <display>
+        <title>《统计学习方法》笔记一</title>
+        <pubTime>2018-06-29T03:58:58.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+        <tag>Linear Algebra</tag>
+         
+        <tag>Statistics</tag>
+         
+        <tag>Matrix</tag>
+         
+         
+           
+             
+              <breadCrumb title="Machine Learning" url="http://notes.shinemic.cn/categories/Machine-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/notes-on-learning-mathematical-modeling-based-on-variation/</loc>
+    <lastmod>2019-04-22T01:50:40.736Z</lastmod>
+    <data>
+        <display>
+        <title>数学建模笔记 —— 对变化进行建模</title>
+        <pubTime>2018-07-03T13:09:16.000Z</pubTime>
+        
+        <tag>Matlab</tag>
+         
+        <tag>Difference</tag>
+         
+         
+           
+             
+              <breadCrumb title="Mathematical Modeling" url="http://notes.shinemic.cn/categories/Mathematical-Modeling/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/mouting-linux-file-systems-on-windows/</loc>
+    <lastmod>2019-04-22T01:50:40.735Z</lastmod>
+    <data>
+        <display>
+        <title>Windows 挂载 Linux 文件系统</title>
+        <pubTime>2018-02-02T05:35:06.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+        <tag>Windows</tag>
+         
+        <tag>SSH</tag>
+         
+        <tag>FileSystem</tag>
+         
+         
+           
+             
+              <breadCrumb title="Handy Utilities" url="http://notes.shinemic.cn/categories/Handy-Utilities/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/learning-lingo-01/</loc>
+    <lastmod>2019-04-22T01:50:40.732Z</lastmod>
+    <data>
+        <display>
+        <title>Lingo 学习（一）</title>
+        <pubTime>2018-07-14T08:15:51.000Z</pubTime>
+        
+        <tag>Lingo</tag>
+         
+        <tag>Programming</tag>
+         
+        <tag>Linear Algebra</tag>
+         
+         
+           
+             
+              <breadCrumb title="Mathematical Modeling" url="http://notes.shinemic.cn/categories/Mathematical-Modeling/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/interactive-and-login-shells/</loc>
+    <lastmod>2019-04-22T01:50:40.731Z</lastmod>
+    <data>
+        <display>
+        <title>交互 Shells 和登录 Shells</title>
+        <pubTime>2017-10-29T03:09:12.000Z</pubTime>
+        
+        <tag>Shell</tag>
+         
+         
+           
+             
+              <breadCrumb title="Operation and Maintenance" url="http://notes.shinemic.cn/categories/Operation-and-Maintenance/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/installing-latest-clang-on-ubuntu/</loc>
+    <lastmod>2019-04-22T01:50:40.730Z</lastmod>
+    <data>
+        <display>
+        <title>Ubuntu 中安装最新版本 Clang</title>
+        <pubTime>2018-03-11T02:29:09.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+        <tag>Ubuntu</tag>
+         
+        <tag>Clang</tag>
+         
+         
+           
+             
+              <breadCrumb title="Operation and Maintenance" url="http://notes.shinemic.cn/categories/Operation-and-Maintenance/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/how-to-install-llvm-and-clang-on-centos-6/</loc>
+    <lastmod>2019-04-22T01:50:40.728Z</lastmod>
+    <data>
+        <display>
+        <title>「转」CentOS 系统安装 LLVM 以及 Clang</title>
+        <pubTime>2017-09-10T02:51:03.000Z</pubTime>
+        
+        <tag>CentOS</tag>
+         
+        <tag>Clang</tag>
+         
+        <tag>LLVM</tag>
+         
+         
+           
+             
+              <breadCrumb title="Operation and Maintenance" url="http://notes.shinemic.cn/categories/Operation-and-Maintenance/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/how-to-install-gcc-on-centos-6/</loc>
+    <lastmod>2019-04-22T01:50:40.726Z</lastmod>
+    <data>
+        <display>
+        <title>「转」CentOS 系统安装 GCC</title>
+        <pubTime>2017-10-05T02:52:44.000Z</pubTime>
+        
+        <tag>CentOS</tag>
+         
+        <tag>GCC</tag>
+         
+         
+           
+             
+              <breadCrumb title="Operation and Maintenance" url="http://notes.shinemic.cn/categories/Operation-and-Maintenance/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/function-interpolation-by-matlab/</loc>
+    <lastmod>2019-04-22T01:50:40.723Z</lastmod>
+    <data>
+        <display>
+        <title>Matlab 数值计算之函数插值</title>
+        <pubTime>2018-07-08T15:19:15.000Z</pubTime>
+        
+        <tag>Matlab</tag>
+         
+        <tag>Interpolation</tag>
+         
+         
+           
+             
+              <breadCrumb title="Applied Mathematics" url="http://notes.shinemic.cn/categories/Applied-Mathematics/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/essentials-of-matlab-skills/</loc>
+    <lastmod>2019-04-22T01:50:40.722Z</lastmod>
+    <data>
+        <display>
+        <title>Matlab 程序设计之编程技巧</title>
+        <pubTime>2018-07-07T06:37:06.000Z</pubTime>
+        
+        <tag>Matlab</tag>
+         
+         
+           
+             
+              <breadCrumb title="Tips and Tricks" url="http://notes.shinemic.cn/categories/Tips-and-Tricks/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/essentials-of-matlab-plotting/</loc>
+    <lastmod>2019-04-22T01:50:40.721Z</lastmod>
+    <data>
+        <display>
+        <title>Matlab 程序设计之作图</title>
+        <pubTime>2018-07-06T12:42:34.000Z</pubTime>
+        
+        <tag>Matlab</tag>
+         
+         
+           
+             
+              <breadCrumb title="Memos" url="http://notes.shinemic.cn/categories/Memos/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/essentials-of-matlab-examples/</loc>
+    <lastmod>2019-04-22T01:50:40.720Z</lastmod>
+    <data>
+        <display>
+        <title>Matlab 程序设计示例</title>
+        <pubTime>2018-07-07T06:38:59.000Z</pubTime>
+        
+        <tag>Matlab</tag>
+         
+         
+           
+             
+              <breadCrumb title="Development and Deployment" url="http://notes.shinemic.cn/categories/Development-and-Deployment/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/deployment-of-sshd-on-windows-via-msys/</loc>
+    <lastmod>2019-04-22T01:50:40.719Z</lastmod>
+    <data>
+        <display>
+        <title>Windows 下利用 MSYS2 搭建 sshd 服务器</title>
+        <pubTime>2017-11-30T07:10:41.000Z</pubTime>
+        
+        <tag>MSYS2</tag>
+         
+        <tag>Windows</tag>
+         
+        <tag>SSH</tag>
+         
+        <tag>Server</tag>
+         
+        <tag>Autossh</tag>
+         
+         
+           
+             
+              <breadCrumb title="Development and Deployment" url="http://notes.shinemic.cn/categories/Development-and-Deployment/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/deployment-of-rstudio-server/</loc>
+    <lastmod>2019-04-22T01:50:40.718Z</lastmod>
+    <data>
+        <display>
+        <title>部署 RStudio Server</title>
+        <pubTime>2018-02-03T13:18:51.000Z</pubTime>
+        
+        <tag>R</tag>
+         
+        <tag>RStudio</tag>
+         
+        <tag>Server</tag>
+         
+         
+           
+             
+              <breadCrumb title="Development and Deployment" url="http://notes.shinemic.cn/categories/Development-and-Deployment/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/configuration-of-cygwin-in-mobaxterm-and-issues-of-ssh-proxy/</loc>
+    <lastmod>2019-04-22T01:50:40.716Z</lastmod>
+    <data>
+        <display>
+        <title>Mobaxterm 折腾笔记</title>
+        <pubTime>2017-10-23T10:02:41.000Z</pubTime>
+        
+        <tag>Mobaxterm</tag>
+         
+        <tag>SSH</tag>
+         
+        <tag>Cygwin</tag>
+         
+         
+           
+             
+              <breadCrumb title="Handy Utilities" url="http://notes.shinemic.cn/categories/Handy-Utilities/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://notes.shinemic.cn/built-in-environment-variables-on-windows/</loc>
+    <lastmod>2019-04-22T01:50:40.713Z</lastmod>
+    <data>
+        <display>
+        <title>Windows 系统内置环境变量</title>
+        <pubTime>2017-11-11T16:11:12.000Z</pubTime>
+        
+        <tag>Windows</tag>
+         
+         
+           
+             
+              <breadCrumb title="Memos" url="http://notes.shinemic.cn/categories/Memos/"/>
+          
+        </display>
+    </data>
+    </url>
+
+</urlset>

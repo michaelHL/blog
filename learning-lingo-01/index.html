@@ -1,0 +1,2718 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Merriweather:300,300italic,400,400italic,700,700italic|Philosopher:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Lingo,Programming,Linear Algebra," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Heller 的博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="环境搭建  Lingo 17.0 (Windows 10 x64) Notepad++ 7.4.2 x86  NppExec Visimulator 语法高亮及代码补全">
+<meta name="keywords" content="Lingo,Programming,Linear Algebra">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lingo 学习（一）">
+<meta property="og:url" content="http://notes.shinemic.cn/learning-lingo-01/index.html">
+<meta property="og:site_name" content="Heller 的博客">
+<meta property="og:description" content="环境搭建  Lingo 17.0 (Windows 10 x64) Notepad++ 7.4.2 x86  NppExec Visimulator 语法高亮及代码补全">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://notes.shinemic.cn/img/task_priority.svg">
+<meta property="og:updated_time" content="2019-04-22T01:50:40.732Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Lingo 学习（一）">
+<meta name="twitter:description" content="环境搭建  Lingo 17.0 (Windows 10 x64) Notepad++ 7.4.2 x86  NppExec Visimulator 语法高亮及代码补全">
+<meta name="twitter:image" content="http://notes.shinemic.cn/img/task_priority.svg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://notes.shinemic.cn/learning-lingo-01/"/>
+
+
+
+
+
+  <title>Lingo 学习（一） | Heller 的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Heller 的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">世界不是非黑即白</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-series">
+          <a href="/series/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-envelope"></i> <br />
+            
+            系列
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sketch">
+          <a href="/sketch/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-leaf"></i> <br />
+            
+            札记
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://notes.shinemic.cn/learning-lingo-01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Heller">
+      <meta itemprop="description" content="多做正事少折腾">
+      <meta itemprop="image" content="/img/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Heller 的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Lingo 学习（一）</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-14T16:15:51+08:00">
+                <!-- 2018-07-14 -->
+                2018-07-14 16:15
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-04-22T09:50:40+08:00">
+                <!-- 2019-04-22 -->
+                2019-04-22 09:50
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Mathematical-Modeling/" itemprop="url" rel="index">
+                    <span itemprop="name">Mathematical Modeling</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/learning-lingo-01/" class="leancloud_visitors" data-flag-title="Lingo 学习（一）">
+               <span><br></span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  5,339
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  25
+                </span>
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="环境搭建">环境搭建</h2>
+<ul>
+<li>Lingo 17.0 (Windows 10 x64)</li>
+<li>Notepad++ 7.4.2 x86
+<ul>
+<li>NppExec</li>
+<li>Visimulator</li>
+<li><a href="http://bbs.pinggu.org/thread-3875796-1-1.html" target="_blank" rel="noopener">语法高亮及代码补全</a></li>
+</ul></li>
+</ul>
+<a id="more"></a>
+<h2 id="lingo-界面速览">Lingo 界面速览</h2>
+<h3 id="文件类型">文件类型</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">扩展名</th>
+<th style="text-align: left;">文件类型</th>
+<th style="text-align: center;">扩展名</th>
+<th style="text-align: left;">文件类型</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">.lg4</td>
+<td style="text-align: left;">Windows 下模型文件，支持字体、格式、OLE</td>
+<td style="text-align: center;">.lng</td>
+<td style="text-align: left;">纯文本格式模型文件</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">.ldt</td>
+<td style="text-align: left;">数据文件</td>
+<td style="text-align: center;">.ltf</td>
+<td style="text-align: left;">命令脚本文件</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">.ltx</td>
+<td style="text-align: left;">Lindo 语法的模型文件</td>
+<td style="text-align: center;">.lgr</td>
+<td style="text-align: left;">报告文件</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lingo-菜单">Lingo 菜单</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">中文</th>
+<th style="text-align: center;">英文</th>
+<th style="text-align: center;">中文</th>
+<th style="text-align: center;">英文</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">求解结果</td>
+<td style="text-align: center;">Solution</td>
+<td style="text-align: center;">灵敏性分析</td>
+<td style="text-align: center;">Range</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">生成模型展开形式</td>
+<td style="text-align: center;">Generate</td>
+<td style="text-align: center;">生成图形</td>
+<td style="text-align: center;">Picture</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">调试</td>
+<td style="text-align: center;">Debug</td>
+<td style="text-align: center;">模型统计资料</td>
+<td style="text-align: center;">Model Statistics</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">查看</td>
+<td style="text-align: center;">Look</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="求解器状态窗口信息">求解器状态窗口信息</h3>
+<ul>
+<li>变量数量 (Variables)</li>
+<li>约束变量 (Constraints)</li>
+<li>非零系数数量 (Nonzeroes)</li>
+<li>内存使用量 (Generator Memory Used)</li>
+<li>已运行时间 (Elapsed Runtime)</li>
+<li>求解器状态 (Solver Status)
+<ul>
+<li>模型类型 (Model Class)：线性规划 (LP)、二次规划 (QP)、整数线性规划 (ILP)、整数二次规划 (IQP)、纯整数线性规划 (PILP)、纯整数二次规划 (PIQP)、非线性规划 (NLP)、混合整数规划 (MIP)、整数非线性工 (INLP)、纯整数非线性规划 (PINLP)、混合整数非线性规划 (MINLP)</li>
+<li>当前解的状态 (State)：全局最优解 (Global Optimum)、局部最优解 (Local Optimum)、可行解 (Feasible)、不可行解 (Infeasible)、无界 (Unbounded)、中断 (Interrupted)、未确定 (Undetermined)</li>
+<li>当前解的目标函数值 (Objective)</li>
+<li>当前约束不满足的总量 (Infeasibility)</li>
+<li>迭代次数 (Iterations)</li>
+<li>扩展求解器状态 (Extended Solver Status)：特殊算法类型 (Solver Type)、可行解的最佳目标函数值 (Best Obj)、目标函数值的界限 (Obj Bound)、特殊求解程序运行步数 (Steps)、有效步数 (Active)</li>
+</ul></li>
+</ul>
+<h2 id="lingo-语言速览">Lingo 语言速览</h2>
+<h3 id="逻辑运算符">逻辑运算符</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">运算符</th>
+<th style="text-align: left;">作用</th>
+<th style="text-align: center;">运算符</th>
+<th style="text-align: left;">作用</th>
+<th style="text-align: center;">运算符</th>
+<th style="text-align: left;">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">#EQ#</td>
+<td style="text-align: left;">两操作数相等时为真</td>
+<td style="text-align: center;">#NE#</td>
+<td style="text-align: left;">两操作数不等时为真</td>
+<td style="text-align: center;">#GT#</td>
+<td style="text-align: left;">左边（严格）大于右边时为真</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">#GE#</td>
+<td style="text-align: left;">左边大于或等于右边时为真</td>
+<td style="text-align: center;">#LT#</td>
+<td style="text-align: left;">左边（严格）小于右边时为真</td>
+<td style="text-align: center;">#LE#</td>
+<td style="text-align: left;">左边小于或等于右边时为真</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">#NOT#</td>
+<td style="text-align: left;">取反</td>
+<td style="text-align: center;">#AND#</td>
+<td style="text-align: left;">逻辑与</td>
+<td style="text-align: center;">#OR#</td>
+<td style="text-align: left;">逻辑或</td>
+</tr>
+</tbody>
+</table>
+<p>注：#AND# 和 #OR# 优先级较低，但高于 &lt;=、=、&gt;=。</p>
+<h3 id="数学函数">数学函数</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">函数名</th>
+<th style="text-align: left;">解释</th>
+<th style="text-align: left;">函数名</th>
+<th style="text-align: left;">解释</th>
+<th style="text-align: left;">函数名</th>
+<th style="text-align: left;">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="abs">@abs</span>(x)</td>
+<td style="text-align: left;">绝对值</td>
+<td style="text-align: left;"><span class="citation" data-cites="acos">@acos</span>(x)</td>
+<td style="text-align: left;">反余弦</td>
+<td style="text-align: left;"><span class="citation" data-cites="acosh">@acosh</span>(x)</td>
+<td style="text-align: left;">反双曲余弦</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="asin">@asin</span>(x)</td>
+<td style="text-align: left;">反正弦</td>
+<td style="text-align: left;"><span class="citation" data-cites="asinh">@asinh</span>(x)</td>
+<td style="text-align: left;">反双曲正弦</td>
+<td style="text-align: left;"><span class="citation" data-cites="atan">@atan</span>(x)</td>
+<td style="text-align: left;">反正切</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="atan2">@atan2</span>(x, y)</td>
+<td style="text-align: left;"><span class="math inline">\(\arctan (y/x)\)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="atanh">@atanh</span>(x)</td>
+<td style="text-align: left;">反双曲正切</td>
+<td style="text-align: left;"><span class="citation" data-cites="cos">@cos</span>(x)</td>
+<td style="text-align: left;">余弦</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="cosh">@cosh</span>(x)</td>
+<td style="text-align: left;">双曲余弦</td>
+<td style="text-align: left;"><span class="citation" data-cites="exp">@exp</span>(x)</td>
+<td style="text-align: left;"><span class="math inline">\(e^x\)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="floor">@floor</span>(x)</td>
+<td style="text-align: left;">向 0 取整</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="int">@int</span>(x)</td>
+<td style="text-align: left;">向负无穷取整</td>
+<td style="text-align: left;"><span class="citation" data-cites="integral">@integral</span>(proc, x, xl, xu, y)</td>
+<td style="text-align: left;">辛普森数值积分</td>
+<td style="text-align: left;"><span class="citation" data-cites="lgm">@lgm</span>(x)</td>
+<td style="text-align: left;">Gamma 函数自然对数</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="log">@log</span>(x)</td>
+<td style="text-align: left;">自然对数</td>
+<td style="text-align: left;"><span class="citation" data-cites="log10">@log10</span>(x)</td>
+<td style="text-align: left;">10 为底对数</td>
+<td style="text-align: left;"><span class="citation" data-cites="logb">@logb</span>(x, b)</td>
+<td style="text-align: left;">b 为底对数</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="mod">@mod</span>(x, y)</td>
+<td style="text-align: left;">取模</td>
+<td style="text-align: left;"><span class="citation" data-cites="pi">@pi</span>()</td>
+<td style="text-align: left;">圆周率</td>
+<td style="text-align: left;"><span class="citation" data-cites="pow">@pow</span>(x, y)</td>
+<td style="text-align: left;"><span class="math inline">\(x^y\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="round">@round</span>(x, n)</td>
+<td style="text-align: left;">最近四舍五入</td>
+<td style="text-align: left;"><span class="citation" data-cites="rounddown">@rounddown</span>(x, n)</td>
+<td style="text-align: left;">向零四舍五入</td>
+<td style="text-align: left;"><span class="citation" data-cites="roundup">@roundup</span>(x, n)</td>
+<td style="text-align: left;">远离零四舍五入</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="sign">@sign</span>(x)</td>
+<td style="text-align: left;">符号函数</td>
+<td style="text-align: left;"><span class="citation" data-cites="sin">@sin</span>(x)</td>
+<td style="text-align: left;">正弦</td>
+<td style="text-align: left;"><span class="citation" data-cites="sinh">@sinh</span>(x)</td>
+<td style="text-align: left;">双曲正弦</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="smax">@smax</span>(x1, x2, …, xn)</td>
+<td style="text-align: left;">最大值</td>
+<td style="text-align: left;"><span class="citation" data-cites="smin">@smin</span>(x1, x2, …, xn)</td>
+<td style="text-align: left;">最小值</td>
+<td style="text-align: left;"><span class="citation" data-cites="sqr">@sqr</span>(x)</td>
+<td style="text-align: left;">平方</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="sqrt">@sqrt</span>(x)</td>
+<td style="text-align: left;">开方</td>
+<td style="text-align: left;"><span class="citation" data-cites="tan">@tan</span>(x)</td>
+<td style="text-align: left;">正切</td>
+<td style="text-align: left;"><span class="citation" data-cites="tanh">@tanh</span>(x)</td>
+<td style="text-align: left;">双曲正切</td>
+</tr>
+</tbody>
+</table>
+<h3 id="概率函数">概率函数</h3>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">函数名</th>
+<th style="text-align: left;">解释</th>
+<th style="text-align: left;">函数名</th>
+<th style="text-align: left;">解释</th>
+<th style="text-align: left;">函数名</th>
+<th style="text-align: left;">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="norminv">@norminv</span>(p, mu, sigma)</td>
+<td style="text-align: left;">正态分布下分位数</td>
+<td style="text-align: left;"><span class="citation" data-cites="normsinv">@normsinv</span>(p)</td>
+<td style="text-align: left;">标准正态分布分位数</td>
+<td style="text-align: left;"><span class="citation" data-cites="pbn">@pbn</span>(p, n, x)</td>
+<td style="text-align: left;">二项分布 CDF 值</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="pcx">@pcx</span>(n, x)</td>
+<td style="text-align: left;">卡方分布 CDF 值</td>
+<td style="text-align: left;"><span class="citation" data-cites="peb">@peb</span>(a, x)</td>
+<td style="text-align: left;">允许无穷排队的 Erlang 繁忙概率</td>
+<td style="text-align: left;"><span class="citation" data-cites="pel">@pel</span>(a, x)</td>
+<td style="text-align: left;">不允许无穷排队的 Erlang 繁忙概率</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="pfd">@pfd</span>(n, d, x)</td>
+<td style="text-align: left;">F 分布 CDF 值</td>
+<td style="text-align: left;"><span class="citation" data-cites="pfs">@pfs</span>(a, x, c)</td>
+<td style="text-align: left;">Poisson 服务系统期望值</td>
+<td style="text-align: left;"><span class="citation" data-cites="phg">@phg</span>(pop, g, n, x)</td>
+<td style="text-align: left;">超几何分布概率值</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="ppl">@ppl</span>(a, x)</td>
+<td style="text-align: left;">泊松分布线性损失函数</td>
+<td style="text-align: left;"><span class="citation" data-cites="pps">@pps</span>(a, x)</td>
+<td style="text-align: left;">泊松分布 CDF 值</td>
+<td style="text-align: left;"><span class="citation" data-cites="psl">@psl</span>(x)</td>
+<td style="text-align: left;">单位正态线性损失函数</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="psn">@psn</span>(x)</td>
+<td style="text-align: left;">标准正态分布 CDF 值</td>
+<td style="text-align: left;"><span class="citation" data-cites="ptd">@ptd</span>(n, x)</td>
+<td style="text-align: left;">t 分布 CDF 值</td>
+<td style="text-align: left;"><span class="citation" data-cites="qrand">@qrand</span>(seed)</td>
+<td style="text-align: left;">(0, 1) 间随机数</td>
+</tr>
+</tbody>
+</table>
+<h3 id="变量界定函数">变量界定函数</h3>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">函数名</th>
+<th style="text-align: left;">解释</th>
+<th style="text-align: left;">函数名</th>
+<th style="text-align: left;">解释</th>
+<th style="text-align: left;">函数名</th>
+<th style="text-align: left;">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="bin">@bin</span>(variable)</td>
+<td style="text-align: left;">限制变量取 0 或 1</td>
+<td style="text-align: left;"><span class="citation" data-cites="bnd">@bnd</span>(lower, variable, upper)</td>
+<td style="text-align: left;">限制 <span class="math inline">\(L\leqslant x \leqslant U\)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="free">@free</span>(variable)</td>
+<td style="text-align: left;">取消变量限制，可取任意实数</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="gin">@gin</span>(variable)</td>
+<td style="text-align: left;">限制为整数</td>
+<td style="text-align: left;"><span class="citation" data-cites="priority">@priority</span>(variable, priority)</td>
+<td style="text-align: left;">设置优先级</td>
+<td style="text-align: left;"><span class="citation" data-cites="semic">@semic</span>(lower, variable, upper)</td>
+<td style="text-align: left;">或者为 0，或者在区间 (lower, upper)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="集合操作函数">集合操作函数</h3>
+<ul>
+<li><span class="citation" data-cites="for">@for</span>(s: e)</li>
+<li><span class="citation" data-cites="max">@max</span>(s: e)</li>
+<li><span class="citation" data-cites="prod">@prod</span>(s: e)</li>
+<li><span class="citation" data-cites="size">@size</span>(s)</li>
+<li><span class="citation" data-cites="insert">@insert</span>(s, idx)</li>
+<li><span class="citation" data-cites="sum">@sum</span>(s: e)</li>
+<li><span class="citation" data-cites="min">@min</span>(s: e)</li>
+<li><span class="citation" data-cites="in">@in</span>(s, e)</li>
+<li><span class="citation" data-cites="index">@index</span>(s: e)</li>
+<li><span class="citation" data-cites="wrap">@wrap</span>(idx, limit)</li>
+</ul>
+<hr>
+<h2 id="一些经典问题">一些经典问题</h2>
+<h3 id="运输问题">运输问题</h3>
+<p>假设 Wireless Widget有 6 个供货仓库，货物分别发往 8 个供销商。每个仓库有一定的库存量，现要制定出最小化运输成本，使得运输方案达到每个供销商需求的运输方案。</p>
+<!-- more -->
+<p>已知信息如下：</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">仓库</th>
+<th style="text-align: center;">库存</th>
+<th style="text-align: center;">供销商</th>
+<th style="text-align: center;">需求</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">60</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">35</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">55</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">37</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">51</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">22</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">43</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">32</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">41</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">41</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">52</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">32</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">43</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">38</td>
+</tr>
+</tbody>
+</table>
+<p>每个仓库（WH1 ~ WH6）到每个供销商的单位运费表如下：</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">V1</th>
+<th style="text-align: center;">V2</th>
+<th style="text-align: center;">V3</th>
+<th style="text-align: center;">V4</th>
+<th style="text-align: center;">V5</th>
+<th style="text-align: center;">V6</th>
+<th style="text-align: center;">V7</th>
+<th style="text-align: center;">V8</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong>WH1</strong></td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">9</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>WH2</strong></td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>WH3</strong></td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>WH4</strong></td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>WH5</strong></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>WH6</strong></td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">3</td>
+</tr>
+</tbody>
+</table>
+<p>对问题建模，记 <span class="math inline">\(\text{volume}_{ij}\)</span> 为第 <span class="math inline">\(i\)</span> 个仓库到第 <span class="math inline">\(j\)</span> 个供销商的货运量，<span class="math inline">\(\text{cost}_{ij}\)</span> 表示第 <span class="math inline">\(i\)</span> 个仓库到第 <span class="math inline">\(j\)</span> 个供销商的单位货物运价，<span class="math inline">\(\text{capacity}_i\)</span> 表示第 <span class="math inline">\(i\)</span> 个仓库的最大供货量，<span class="math inline">\(\text{demand}_j\)</span> 表示第 <span class="math inline">\(j\)</span> 个供销商的订货量。</p>
+<p>目标函数是令总运输费用最少。约束条件：</p>
+<ul>
+<li>各仓库的出货量不超过其库存</li>
+<li>各供销商收到的货物总量等于订货数</li>
+<li>决策变量 <span class="math inline">\(\text{cost}_{ij}\)</span> 非负。</li>
+</ul>
+<p>数学表达为：</p>
+<p><span class="math display">\[
+\begin{array}{cl}
+    \min &amp; z = \sum\limits_{i=1}^6 \sum\limits_{j=1}^8 \text{cost}_{ij}\ \text{volume}_{ij} \\
+    \text{s.t.} &amp; \begin{cases}
+        \sum\limits_{j=1}^8 \text{volume}_{ij} \leqslant \text{capacity}_i, &amp; i = 1,2,\ldots,6 \\
+        \sum\limits_{i=1}^6 \text{volume}_{ij} = \text{demand}_j, &amp; j = 1,2,\ldots,8 \\
+        \text{volume}_{ij} \geqslant 0, &amp; i=1,2,\ldots,6, \ j=1,2,\ldots,8 \\
+    \end{cases}
+\end{array}
+\]</span></p>
+<p>相应的 Lingo 程序代码：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">model:</span><br><span class="line">    sets:</span><br><span class="line">        warehouses/wh1..wh6/:capacity;</span><br><span class="line">        vendors/vd1..vd8/:demand;</span><br><span class="line">        crosstab(warehouses, vendors): volume, cost;</span><br><span class="line">    endsets</span><br><span class="line"></span><br><span class="line">    data:</span><br><span class="line">       capacity = <span class="number">60</span> <span class="number">55</span> <span class="number">51</span> <span class="number">43</span> <span class="number">41</span> <span class="number">52</span>;</span><br><span class="line">       demand = <span class="number">35</span> <span class="number">37</span> <span class="number">22</span> <span class="number">32</span> <span class="number">41</span> <span class="number">32</span> <span class="number">43</span> <span class="number">38</span>;</span><br><span class="line">       cost = <span class="number">6</span> <span class="number">2</span> <span class="number">6</span> <span class="number">7</span> <span class="number">4</span> <span class="number">2</span> <span class="number">5</span> <span class="number">9</span></span><br><span class="line">              <span class="number">4</span> <span class="number">9</span> <span class="number">5</span> <span class="number">3</span> <span class="number">8</span> <span class="number">5</span> <span class="number">8</span> <span class="number">2</span></span><br><span class="line">              <span class="number">5</span> <span class="number">2</span> <span class="number">1</span> <span class="number">9</span> <span class="number">7</span> <span class="number">4</span> <span class="number">3</span> <span class="number">3</span></span><br><span class="line">              <span class="number">7</span> <span class="number">6</span> <span class="number">7</span> <span class="number">3</span> <span class="number">9</span> <span class="number">2</span> <span class="number">7</span> <span class="number">1</span></span><br><span class="line">              <span class="number">2</span> <span class="number">3</span> <span class="number">9</span> <span class="number">5</span> <span class="number">7</span> <span class="number">2</span> <span class="number">6</span> <span class="number">5</span></span><br><span class="line">              <span class="number">5</span> <span class="number">5</span> <span class="number">2</span> <span class="number">2</span> <span class="number">8</span> <span class="number">1</span> <span class="number">4</span> <span class="number">3</span>;</span><br><span class="line">    enddata</span><br><span class="line"></span><br><span class="line">    min = @sum(crosstab(<span class="built_in">i</span>, <span class="built_in">j</span>): volume(<span class="built_in">i</span>, <span class="built_in">j</span>) * cost(<span class="built_in">i</span>, <span class="built_in">j</span>));</span><br><span class="line">    @<span class="keyword">for</span>(warehouses(<span class="built_in">i</span>):</span><br><span class="line">        @sum(vendors(<span class="built_in">j</span>): volume(<span class="built_in">i</span>, <span class="built_in">j</span>)) &lt;= capacity(<span class="built_in">i</span>));</span><br><span class="line">    @<span class="keyword">for</span>(vendors(<span class="built_in">j</span>):</span><br><span class="line">        @sum(warehouses(<span class="built_in">i</span>): volume(<span class="built_in">i</span>, <span class="built_in">j</span>)) = demand(<span class="built_in">j</span>));</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>其中 <code>SET</code> 过程大大简化了程序代码，也提升了程序的可读性，否则对于每个变量都需要进行硬编码。其语法 为 <code>&lt;集合名称&gt;[集合元素][:&lt;集合属性&gt;]</code>。当然 <code>SET</code> 中的前两个关于库存和供销商的描述可以拆分为</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">sets:</span><br><span class="line">    warehouses:capacity;</span><br><span class="line">    vendors:demand;</span><br><span class="line">    ...</span><br><span class="line">endsets</span><br><span class="line"></span><br><span class="line">data:</span><br><span class="line">    warehouses = wh1..wh6;</span><br><span class="line">    demand = vd1..vd8;</span><br><span class="line">enddata</span><br></pre></td></tr></table></figure>
+<p>当然笔者更青睐紧凑的方式。<code>crosstab</code> 表示由 <code>warehouses</code> 和 <code>demand</code> 构成的派生集，即包含了 6 × 8 = 48 个变量。在目标函数及约束条件语句中，由于目标函数的操作数完全来自 <code>crosstab</code>，所以可省略部分语句：<code>min = @sum(crosstab: volume * cost);</code>。</p>
+<p>程序经过 17 次迭代后得出的目标函数值为 664.0000，最优运输方案如下表。</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">V1</th>
+<th style="text-align: center;">V2</th>
+<th style="text-align: center;">V3</th>
+<th style="text-align: center;">V4</th>
+<th style="text-align: center;">V5</th>
+<th style="text-align: center;">V6</th>
+<th style="text-align: center;">V7</th>
+<th style="text-align: center;">V8</th>
+<th style="text-align: center;">合计</th>
+<th style="text-align: center;">库存</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong>WH1</strong></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">19</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">41</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">60</td>
+<td style="text-align: center;">60</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>WH2</strong></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">32</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">33</td>
+<td style="text-align: center;">55</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>WH3</strong></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">51</td>
+<td style="text-align: center;">51</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>WH4</strong></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">38</td>
+<td style="text-align: center;">43</td>
+<td style="text-align: center;">43</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>WH5</strong></td>
+<td style="text-align: center;">34</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">41</td>
+<td style="text-align: center;">41</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>WH6</strong></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">22</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">27</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">52</td>
+<td style="text-align: center;">52</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>合计</strong></td>
+<td style="text-align: center;">35</td>
+<td style="text-align: center;">37</td>
+<td style="text-align: center;">22</td>
+<td style="text-align: center;">32</td>
+<td style="text-align: center;">41</td>
+<td style="text-align: center;">32</td>
+<td style="text-align: center;">43</td>
+<td style="text-align: center;">38</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>需求</strong></td>
+<td style="text-align: center;">35</td>
+<td style="text-align: center;">37</td>
+<td style="text-align: center;">22</td>
+<td style="text-align: center;">32</td>
+<td style="text-align: center;">41</td>
+<td style="text-align: center;">32</td>
+<td style="text-align: center;">43</td>
+<td style="text-align: center;">38</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="值班问题">值班问题</h3>
+<p>某项工作一周 7 天都需有人上班，周一至周日所需的最少人数分别为 20、16、13、16、19、14 和 12。要求员工一周连续工作 5 天接着休息 2 天。给出人员安排，使每周所需人数最少。</p>
+<p>若安排得当，记周一至周日分别安排 <span class="math inline">\(X(i)\)</span> 人上班。那么周一上班的人必然周五、周六休息，以此类推。令总上班人数为 <span class="math inline">\(Z\)</span>，那么上周周二、周三的人仍在休息中，所以有 <span class="math inline">\(X(1) = Z-X(1)-X(2)\)</span>，同样可以得到其他 6 个等式。概括之就是 <span class="math display">\[X(i) = Z-X(i+1)-X(i+2), \ i=1,2,\ldots, 7\]</span> 当然，<span class="math inline">\(X(8)\)</span> 相当于 <span class="math inline">\(X(1)\)</span>，<span class="math inline">\(X(9)\)</span> 相当于 <span class="math inline">\(X(2)\)</span>。所以需要特殊的函数对其进行转化，<code>wrap</code> 函数正合此意。除了此函数，由此 <a href="/essentials-of-matlab-examples#mjx-eqn-J">公式</a> 也可。代码如下：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">model:</span><br><span class="line">    sets:</span><br><span class="line">        days/mon..sun/: r, x;</span><br><span class="line">    endsets</span><br><span class="line"></span><br><span class="line">    data:</span><br><span class="line">        r = <span class="number">20</span> <span class="number">16</span> <span class="number">13</span> <span class="number">16</span> <span class="number">19</span> <span class="number">14</span> <span class="number">12</span>;</span><br><span class="line">    enddata</span><br><span class="line"></span><br><span class="line">    min = z;</span><br><span class="line">    z = @sum(days: x);</span><br><span class="line">    n = @<span class="built_in">size</span>(days);</span><br><span class="line">    @<span class="keyword">for</span>(days(<span class="built_in">i</span>): z-x(@wrap(<span class="built_in">i</span>+<span class="number">1</span>,n))-x(@wrap(<span class="built_in">i</span>+<span class="number">2</span>,n)) &gt;= r(<span class="built_in">i</span>));</span><br><span class="line">    ! @<span class="keyword">for</span>(days(<span class="built_in">i</span>): z-x(<span class="number">1</span>+@<span class="built_in">mod</span>(<span class="built_in">i</span>,n))-x(<span class="number">1</span>+@<span class="built_in">mod</span>(<span class="built_in">i</span>+<span class="number">1</span>,n)) &gt;= r(<span class="built_in">i</span>));</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>程序得出的最优解为：8、2、0、6、3、3、0。这说明每周最少需要 22 名员工，周一安排 8 人开始上班，或者说这 8 人休周六和周日，周一工作，其余类推。周二安排 2 人，等等。待轮休稳定后即可满足每天所需要的最少上班员工数。</p>
+<hr>
+<h3 id="投资的收益和风险">投资的收益和风险</h3>
+<p>市场上有 <span class="math inline">\(n\)</span> 种资产 <span class="math inline">\(S_i (i=1,2,\ldots,n)\)</span> 供投资者选择，某公司有数额为 <span class="math inline">\(M\)</span> 的一笔资金用于一个时期的投资。公司财务分析人员对这 <span class="math inline">\(n\)</span> 种资产进行了评估，估算出在这一时期内购买 <span class="math inline">\(S_i\)</span> 的平均收益率为 <span class="math inline">\(r_i\)</span>，并预测出购买 <span class="math inline">\(S_i\)</span> 的风险损失率为 <span class="math inline">\(q_i\)</span>。考虑到投资越分散，总的风险越小，公司决定当用这笔资金购买若干种资产时，总体风险可用所投资的 <span class="math inline">\(S_i\)</span> 中最大的一个风险来度量。购买 <span class="math inline">\(S_i\)</span> 要付交易费，费率为 <span class="math inline">\(p_i\)</span>，并且当购买额不超过给定值 <span class="math inline">\(u_i\)</span> 时，交易费按购买 <span class="math inline">\(u_i\)</span> 计算（不买当然无须付费）。另外，假定同期银行存款利率是 <span class="math inline">\(r_0\)</span>, 且既无交易费又无风险（<span class="math inline">\(r_0=5\%\)</span>）。</p>
+<div><div class="fold_hider"><div class="close hider_title">数据表</div></div><div class="fold">
+<table>
+  <tr>
+    <th style="text-align: center;">$E_i$</th>
+    <th style="text-align: center;">$r_i$(%)</th>
+    <th style="text-align: center;">$q_i$(%)</th>
+    <th style="text-align: center;">$p_i$(%)</th>
+    <th style="text-align: center;">$u_i$(元)</th>
+  </tr>
+  <tr>
+    <td style="text-align: center;"><strong>S1</strong></td>
+    <td style="text-align: center;">9.6</td>
+    <td style="text-align: center;">42.0</td>
+    <td style="text-align: center;">2.1</td>
+    <td style="text-align: center;">181</td>
+  </tr>
+  <tr>
+    <td style="text-align: center;"><strong>S2</strong></td>
+    <td style="text-align: center;">18.5</td>
+    <td style="text-align: center;">54.0</td>
+    <td style="text-align: center;">3.2</td>
+    <td style="text-align: center;">407</td>
+  </tr>
+  <tr>
+    <td style="text-align: center;"><strong>S3</strong></td>
+    <td style="text-align: center;">49.4</td>
+    <td style="text-align: center;">60.0</td>
+    <td style="text-align: center;">6.0</td>
+    <td style="text-align: center;">428</td>
+  </tr>
+  <tr>
+    <td style="text-align: center;"><strong>S4</strong></td>
+    <td style="text-align: center;">23.9</td>
+    <td style="text-align: center;">42.0</td>
+    <td style="text-align: center;">1.5</td>
+    <td style="text-align: center;">549</td>
+  </tr>
+  <tr>
+    <td style="text-align: center;"><strong>S5</strong></td>
+    <td style="text-align: center;">8.1</td>
+    <td style="text-align: center;">1.2</td>
+    <td style="text-align: center;">7.6</td>
+    <td style="text-align: center;">270</td>
+  </tr>
+  <tr>
+    <td style="text-align: center;"><strong>S6</strong></td>
+    <td style="text-align: center;">14.0</td>
+    <td style="text-align: center;">39.0</td>
+    <td style="text-align: center;">3.4</td>
+    <td style="text-align: center;">397</td>
+  </tr>
+  <tr>
+    <td style="text-align: center;"><strong>S7</strong></td>
+    <td style="text-align: center;">40.7</td>
+    <td style="text-align: center;">68.0</td>
+    <td style="text-align: center;">5.6</td>
+    <td style="text-align: center;">178</td>
+  </tr>
+  <tr>
+    <td style="text-align: center;"><strong>S8</strong></td>
+    <td style="text-align: center;">31.2</td>
+    <td style="text-align: center;">33.4</td>
+    <td style="text-align: center;">3.1</td>
+    <td style="text-align: center;">220</td>
+  </tr>
+  <tr>
+    <td style="text-align: center;"><strong>S9</strong></td>
+    <td style="text-align: center;">33.6</td>
+    <td style="text-align: center;">53.3</td>
+    <td style="text-align: center;">2.7</td>
+    <td style="text-align: center;">475</td>
+  </tr>
+  <tr>
+    <td style="text-align: center;"><strong>S10</strong></td>
+    <td style="text-align: center;">36.8</td>
+    <td style="text-align: center;">40.0</td>
+    <td style="text-align: center;">2.9</td>
+    <td style="text-align: center;">248</td>
+  </tr>
+  <tr>
+    <td style="text-align: center;"><strong>S11</strong></td>
+    <td style="text-align: center;">11.8</td>
+    <td style="text-align: center;">31.0</td>
+    <td style="text-align: center;">5.1</td>
+    <td style="text-align: center;">195</td>
+  </tr>
+  <tr>
+    <td style="text-align: center;"><strong>S12</strong></td>
+    <td style="text-align: center;">9.0</td>
+    <td style="text-align: center;">5.5</td>
+    <td style="text-align: center;">5.7</td>
+    <td style="text-align: center;">320</td>
+  </tr>
+  <tr>
+    <td style="text-align: center;"><strong>S13</strong></td>
+    <td style="text-align: center;">35.0</td>
+    <td style="text-align: center;">46.0</td>
+    <td style="text-align: center;">2.7</td>
+    <td style="text-align: center;">267</td>
+  </tr>
+  <tr>
+    <td style="text-align: center;"><strong>S14</strong></td>
+    <td style="text-align: center;">9.4</td>
+    <td style="text-align: center;">5.3</td>
+    <td style="text-align: center;">4.5</td>
+    <td style="text-align: center;">328</td>
+  </tr>
+  <tr>
+    <td style="text-align: center;"><strong>S15</strong></td>
+    <td style="text-align: center;">15.0</td>
+    <td style="text-align: center;">23.0</td>
+    <td style="text-align: center;">7.6</td>
+    <td style="text-align: center;">131</td>
+  </tr>
+</table>
+</div></div>
+<p>要使净收益尽可能大，总体风险尽可能小，这是一个多目标的规划模型：</p>
+<p><span class="math display">\[
+    \begin{gather*}
+        \max \ Q(x) = r_0 x_0 + \sum_{i=1}^n r_ix_i - \sum_{i=1}^n p_iy_i,
+            \ i=1,2,\ldots,n \\
+        \min \ F(x) = \max\limits_{1\leqslant i\leqslant n}\{q_ix_i\}
+    \end{gather*}
+\]</span></p>
+<p>这里仅考虑模型的一种简化情形：投资者承受风险的程度不同，故给定风险一个界限 <span class="math inline">\(a\)</span>，使得所有风险率均小于此值，即 <span class="math inline">\(q_ix_i \leqslant Ma (i=1,2,\ldots,n)\)</span>。所以目标函数中最小化风险的要求转化为其中一个约束条件。</p>
+<p>约束条件为：</p>
+<p><span class="math display">\[
+    \begin{cases}
+        \displaystyle \sum_{i=1}^nx_i + \sum_{i=1}^n p_iy_i = M, &amp; i=1,2,\cdots,n\\
+        \displaystyle x_i \geqslant 0, &amp; i=1,2,\cdots,n\\
+        \displaystyle y_i = \begin{cases}
+            x_i, &amp;x_i&gt;u_i\\
+            u_i, &amp;0&lt;x_i\leqslant u_i\\
+            0, &amp;x_i=0
+        \end{cases}, &amp; i=1,2,\cdots, n
+    \end{cases}
+\]</span></p>
+<p>由于约束条件中含有分段函数，这时可引入 0 - 1 变量将模型转化为混合整数线性规划模型，但也可以利用 Lingo 中的 <code>@if</code> 函数来构造条件，但模型为非线性规划模型。</p>
+<div><div class="fold_hider"><div class="close hider_title">混合整数线性规划模型 Lingo 程序</div></div><div class="fold">
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">model:</span><br><span class="line">    sets:</span><br><span class="line">        S/<span class="number">1.</span><span class="number">.15</span>/:x,y,r,p,q,u,z1,z2,z3,b1,b2,b3;</span><br><span class="line">    endsets</span><br><span class="line"></span><br><span class="line">    data:</span><br><span class="line">        M=<span class="number">4000</span>;</span><br><span class="line">        bili=<span class="number">0.05</span>;</span><br><span class="line">        r0=<span class="number">5</span>;</span><br><span class="line">        r=<span class="number">9.6</span> <span class="number">18.5</span> <span class="number">49.4</span> <span class="number">23.9</span> <span class="number">8.1</span> <span class="number">14</span> <span class="number">40.7</span> <span class="number">31.2</span> <span class="number">33.6</span> <span class="number">36.8</span> <span class="number">11.8</span> <span class="number">9</span> <span class="number">35</span> <span class="number">9.4</span> <span class="number">15</span>;</span><br><span class="line">        q=<span class="number">42</span> <span class="number">54</span> <span class="number">60</span> <span class="number">42</span> <span class="number">1.2</span> <span class="number">39</span> <span class="number">68</span> <span class="number">33.4</span> <span class="number">53.3</span> <span class="number">40</span> <span class="number">31</span> <span class="number">5.5</span> <span class="number">46</span> <span class="number">5.3</span> <span class="number">23</span>;</span><br><span class="line">        p=<span class="number">2.1</span> <span class="number">3.2</span> <span class="number">6</span> <span class="number">1.5</span> <span class="number">7.6</span> <span class="number">3.4</span> <span class="number">5.6</span> <span class="number">3.1</span> <span class="number">2.7</span> <span class="number">2.9</span> <span class="number">5.1</span> <span class="number">5.7</span> <span class="number">2.7</span> <span class="number">4.5</span> <span class="number">7.6</span>;</span><br><span class="line">        u=<span class="number">181</span> <span class="number">407</span> <span class="number">428</span> <span class="number">549</span> <span class="number">270</span> <span class="number">397</span> <span class="number">178</span> <span class="number">220</span> <span class="number">475</span> <span class="number">248</span> <span class="number">195</span> <span class="number">320</span> <span class="number">267</span> <span class="number">328</span> <span class="number">131</span>;</span><br><span class="line">    enddata</span><br><span class="line"></span><br><span class="line">    max=r0*x0/<span class="number">100</span>+@Sum(S:r*x/<span class="number">100</span>)-@Sum(S:p*y/<span class="number">100</span>);</span><br><span class="line">    @For(S:q*x/<span class="number">100</span>&lt;M*bili);</span><br><span class="line">    x0+@Sum(S:x)+@Sum(S:p*y/<span class="number">100</span>)=M;</span><br><span class="line"></span><br><span class="line">    @For(S:y=z1+z2+z3);</span><br><span class="line">    @For(S:b1+b2+b3=<span class="number">1</span>);</span><br><span class="line">    @For(S:u-x&lt;<span class="number">2</span>*M*(<span class="number">1</span>-b1)); @For(S:x-M&lt;<span class="number">2</span>*M*(<span class="number">1</span>-b1));</span><br><span class="line">    @For(S:-x&lt;<span class="number">2</span>*M*(<span class="number">1</span>-b2)); @For(S:x-u&lt;<span class="number">2</span>*M*(<span class="number">1</span>-b2));</span><br><span class="line">    @For(S:-x&lt;<span class="number">2</span>*M*(<span class="number">1</span>-b3)); @For(S:x&lt;<span class="number">2</span>*M*(<span class="number">1</span>-b3));</span><br><span class="line"></span><br><span class="line">    @For(S:<span class="number">-2</span>*M*b1&lt;z1); @For(S:z1&lt;<span class="number">2</span>*M*b1);</span><br><span class="line">    @For(S:x<span class="number">-2</span>*M*(<span class="number">1</span>-b1)&lt;z1); @For(S:z1&lt;x+<span class="number">2</span>*M*(<span class="number">1</span>-b1));</span><br><span class="line">    @For(S:<span class="number">-2</span>*M*b2&lt;z2); @For(S:z2&lt;<span class="number">2</span>*M*b2);</span><br><span class="line">    @For(S:u<span class="number">-2</span>*M*(<span class="number">1</span>-b2)&lt;z2); @For(S:z2&lt;u+<span class="number">2</span>*M*(<span class="number">1</span>-b2));</span><br><span class="line">    @For(S:z3=<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    @For(S:@Bin(b1));</span><br><span class="line">    @For(S:@Bin(b2));</span><br><span class="line">    @For(S:@Bin(b3));</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+</div></div>
+<div><div class="fold_hider"><div class="close hider_title">非线性规划模型 Lingo 程序</div></div><div class="fold">
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">model:</span><br><span class="line">    sets:</span><br><span class="line">        assets/<span class="number">1.</span><span class="number">.15</span>/: x, y, r, q, p, u;</span><br><span class="line">    endsets</span><br><span class="line">    data:</span><br><span class="line">        M = <span class="number">4000</span>;</span><br><span class="line">        r0 = <span class="number">5</span>;</span><br><span class="line">        a = <span class="number">0.05</span>;</span><br><span class="line">        r =  <span class="number">9.6</span> <span class="number">18.5</span> <span class="number">49.4</span> <span class="number">23.9</span>  <span class="number">8.1</span></span><br><span class="line">            <span class="number">14.0</span> <span class="number">40.7</span> <span class="number">31.2</span> <span class="number">33.6</span> <span class="number">36.8</span></span><br><span class="line">            <span class="number">11.8</span>  <span class="number">9.0</span> <span class="number">35.0</span>  <span class="number">9.4</span> <span class="number">15.0</span>;</span><br><span class="line">        q = <span class="number">42</span>  <span class="number">54</span>   <span class="number">60</span>   <span class="number">42</span> <span class="number">1.2</span></span><br><span class="line">            <span class="number">39</span>  <span class="number">68</span> <span class="number">33.4</span> <span class="number">53.3</span>  <span class="number">40</span></span><br><span class="line">            <span class="number">31</span> <span class="number">5.5</span>   <span class="number">46</span>  <span class="number">5.3</span>  <span class="number">23</span>;</span><br><span class="line">        p = <span class="number">2.1</span> <span class="number">3.2</span> <span class="number">6.0</span> <span class="number">1.5</span> <span class="number">7.6</span></span><br><span class="line">            <span class="number">3.4</span> <span class="number">5.6</span> <span class="number">3.1</span> <span class="number">2.7</span> <span class="number">2.9</span></span><br><span class="line">            <span class="number">5.1</span> <span class="number">5.7</span> <span class="number">2.7</span> <span class="number">4.5</span> <span class="number">7.6</span>;</span><br><span class="line">        u = <span class="number">181</span> <span class="number">407</span> <span class="number">428</span> <span class="number">549</span> <span class="number">270</span></span><br><span class="line">            <span class="number">397</span> <span class="number">178</span> <span class="number">220</span> <span class="number">475</span> <span class="number">248</span></span><br><span class="line">            <span class="number">195</span> <span class="number">320</span> <span class="number">267</span> <span class="number">328</span> <span class="number">131</span>;</span><br><span class="line">    enddata</span><br><span class="line"></span><br><span class="line">    max=(x0*r0+@sum(assets: r*x-p*y))/<span class="number">100</span>;</span><br><span class="line">    @for(assets: y=@if(x #le# u, @if(x #eq# 0, 0, u), x));</span><br><span class="line">    @<span class="keyword">for</span>(assets: q*x/<span class="number">100</span>&lt;=M*a);</span><br><span class="line">    x0+@sum(assets: x)+@sum(assets: p*y/<span class="number">100</span>)=M;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+</div></div>
+<p>程序输出结果如下：</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Variable</th>
+<th style="text-align: center;">Value</th>
+<th style="text-align: center;">Variable</th>
+<th style="text-align: center;">Value</th>
+<th style="text-align: center;">Variable</th>
+<th style="text-align: center;">Value</th>
+<th style="text-align: center;">Variable</th>
+<th style="text-align: center;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong>X0</strong></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"><strong>X4</strong></td>
+<td style="text-align: center;">476.1905</td>
+<td style="text-align: center;"><strong>X8</strong></td>
+<td style="text-align: center;">598.8024</td>
+<td style="text-align: center;"><strong>X12</strong></td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>S1</strong></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"><strong>X5</strong></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"><strong>X9</strong></td>
+<td style="text-align: center;">375.2345</td>
+<td style="text-align: center;"><strong>X13</strong></td>
+<td style="text-align: center;">434.7826</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>X2</strong></td>
+<td style="text-align: center;">370.3704</td>
+<td style="text-align: center;"><strong>X6</strong></td>
+<td style="text-align: center;">479.8182</td>
+<td style="text-align: center;"><strong>X10</strong></td>
+<td style="text-align: center;">500</td>
+<td style="text-align: center;"><strong>X14</strong></td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>X3</strong></td>
+<td style="text-align: center;">333.3333</td>
+<td style="text-align: center;"><strong>X7</strong></td>
+<td style="text-align: center;">294.1176</td>
+<td style="text-align: center;"><strong>X11</strong></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"><strong>X15</strong></td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+<p>在此种投资组合下，收益 1045.604 元。</p>
+<h4 id="分段函数处理方法">分段函数处理方法</h4>
+<p>上述关于混合整数线性规划模型的 Lingo 程序中引入不少中间决策变量，这里对其展开讨论，下面内容节选自余胜威《MATLAB 数学建模经典案例实战》。（部分改动）</p>
+<div class="note info">设有限区间的有界分段函数：
+
+$$
+    y = f(x) = \begin{cases}
+            \varphi_1(x), & x\in(a_1, b_1) & \\
+            \varphi_2(x), & x\in(a_2, b_2) & \\
+            \hfil \cdots \\
+            \varphi_n(x), & x\in(a_n, b_n) & \\
+        \end{cases}, \quad
+        a_1 < b_1 \leqslant a_2 < b_2 \leqslant \cdots \leqslant a_n < b_n
+$$
+
+等价为：
+
+$$
+    \begin{cases}
+        y = y_1 + y_2 + \cdots y_n \\
+        \delta_1 + \delta_2 + \cdots + \delta_n = 1, \delta_i \in \{0,1\} \\
+        x - a_i \geqslant -(1-\delta_i)L_x \\
+        x - b_i \leqslant (1-\delta_i)U_x \\
+        -\delta_i L_{y1} \leqslant y_i \leqslant \delta_i U_{y1} \\
+        -(1-\delta_i) L_{y2} \leqslant y_i-\varphi_i(x)
+        \leqslant (1-\delta_i) U_{y2}
+    \end{cases}
+$$</div>
+<p>其中 <span class="math inline">\(\delta_i\)</span> 表明 <span class="math inline">\(x\)</span> 所处区间，通过上述约束条件中的第 3、4 式保证。具体而言，给定 <span class="math inline">\(i\in\{1,\ldots,n\}\)</span>，若 <span class="math inline">\(x \in (a_i, b_i)\)</span>，必然有 <span class="math inline">\(x-a_i \geqslant 0\)</span> 以及 <span class="math inline">\(x-b_i \leqslant 0\)</span>；对其他区间而言，有 <span class="math inline">\(x-a_i \geqslant -L\)</span>，以及 <span class="math inline">\(x-b_i \leqslant U\)</span>，其中 <span class="math inline">\(U, L &gt; 0\)</span> 分别为 <span class="math inline">\(x\)</span> 支撑集的上限和下限的绝对值。引入 0 - 1 变量 <span class="math inline">\(\delta_i\)</span>（类似于概率论中示性函数），对于任何区间，整合上述不等式，即为 3、4 式。注意到给定的 <span class="math inline">\(x\)</span> 仅会落入一个区间，故 <span class="math inline">\(\sum \delta_i = 1\)</span>（2 式）。对于 <span class="math inline">\(y_i\)</span>，讨论类似。当然为简单起见，可将所有界限以它们的最大值代替。</p>
+<p>乍看求解模型被复杂化，但把可能为非线性规划的问题转为了混合整数线性规划问题，加快求解收敛速度。</p>
+<hr>
+<h3 id="计划排序模型">计划排序模型</h3>
+<p>完成某产品的装配过程需要 11 项任务（用 A ~ K 表示），每项任务所花费的时间如下：</p>
+<table>
+<tr>
+<td>
+<strong>任务</strong>
+</td>
+<td>
+<strong>A</strong>
+</td>
+<td>
+<strong>B</strong>
+</td>
+<td>
+<strong>C</strong>
+</td>
+<td>
+<strong>D</strong>
+</td>
+<td>
+<strong>E</strong>
+</td>
+<td>
+<strong>F</strong>
+</td>
+</tr>
+<tr>
+<td>
+<strong>时间</strong>
+</td>
+<td>
+45
+</td>
+<td>
+11
+</td>
+<td>
+9
+</td>
+<td>
+50
+</td>
+<td>
+15
+</td>
+<td>
+12
+</td>
+</tr>
+<tr>
+<td>
+<strong>任务</strong>
+</td>
+<td>
+<strong>G</strong>
+</td>
+<td>
+<strong>H</strong>
+</td>
+<td>
+<strong>I</strong>
+</td>
+<td>
+<strong>J</strong>
+</td>
+<td>
+<strong>K</strong>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<strong>时间</strong>
+</td>
+<td>
+12
+</td>
+<td>
+12
+</td>
+<td>
+12
+</td>
+<td>
+8
+</td>
+<td>
+9
+</td>
+<td>
+</td>
+</tr>
+</table>
+<p>各项任务之间存在先后顺序如下图所示。装配流水线有四个顺序工作站，对于有先后次序的任务，只能在流水线上向后传（如任务 B 和 C 的次序为先 B 后 C，如果安排 B 给第 3 站做，则 C 要么由 B 自己完成，要么传给第 4 站来做，而不能交往 1 或 2 号站），每项任务必须只能分配至一个工作站来做。合理分配生产计划，使整个装配周期最短。</p>
+<p><img src="/img/task_priority.svg" width="50%"></p>
+<p>记 <span class="math inline">\(x_{ik}\)</span> 表示将任务 <span class="math inline">\(i\ (i=A,B,\ldots,K)\)</span> 分配给工作站 <span class="math inline">\(k\ (k=1,2,3,4)\)</span> 的情况，1 表示分配，0 表示不分配，<span class="math inline">\(t_i\)</span> 表示完成各项任务所需时间。则目标函数为 <span class="math inline">\(\min\ T = \max\limits_{1\leqslant k \leqslant 4} \sum\limits_{i=1}^{11} t_ix_{ik}\)</span>。由每项任务只能分配给一个工作站来做，故对所有任务 <span class="math inline">\(i\)</span> 有：<span class="math inline">\(\sum\limits_{k=1}^4 x_{ik}=1\)</span>。对于任务间的优先级，考虑任务 <span class="math inline">\(i\)</span> 先于任务 <span class="math inline">\(j\)</span>，则可行的任务安排表 (11 × 4) 有：</p>
+<span class="math display">\[\begin{array}{ccccc}
+\begin{array}{ccccc}
+    \hline
+      &amp; 1 &amp; 2 &amp; 3 &amp; 4 \\
+    \hline
+    i &amp; 1 &amp;   &amp;   &amp;   \\
+    j &amp; 1 &amp;   &amp;   &amp;   \\
+    \Delta  &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+    \hline
+\end{array}
+&amp;
+\begin{array}{ccccc}
+    \hline
+      &amp; 1 &amp; 2 &amp; 3 &amp; 4 \\
+    \hline
+    i &amp; 1 &amp;   &amp;   &amp;   \\
+    j &amp;   &amp; 1 &amp;   &amp;   \\
+    \Delta  &amp; -1 &amp; 1 &amp; 0 &amp; 0 \\
+    \hline
+\end{array}
+&amp;
+\begin{array}{ccccc}
+    \hline
+      &amp; 1 &amp; 2 &amp; 3 &amp; 4 \\
+    \hline
+    i &amp; 1 &amp;   &amp;   &amp;   \\
+    j &amp;   &amp;   &amp; 1 &amp;   \\
+    \Delta  &amp; -1 &amp; 0 &amp; 1 &amp; 0 \\
+    \hline
+\end{array}
+&amp;
+\begin{array}{ccccc}
+    \hline
+      &amp; 1 &amp; 2 &amp; 3 &amp; 4 \\
+    \hline
+    i &amp; 1 &amp;   &amp;   &amp;   \\
+    j &amp;   &amp;   &amp;   &amp; 1 \\
+    \Delta  &amp; -1 &amp; 0 &amp; 0 &amp; 1 \\
+    \hline
+\end{array}
+&amp;
+\begin{array}{ccccc}
+    \hline
+      &amp; 1 &amp; 2 &amp; 3 &amp; 4 \\
+    \hline
+    i &amp;   &amp; 1 &amp;   &amp;   \\
+    j &amp;   &amp; 1 &amp;   &amp;   \\
+    \Delta  &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+    \hline
+\end{array} \\[15pt]
+\begin{array}{ccccc}
+    \hline
+      &amp; 1 &amp; 2 &amp; 3 &amp; 4 \\
+    \hline
+    i &amp;   &amp; 1 &amp;   &amp;   \\
+    j &amp;   &amp;   &amp; 1 &amp;   \\
+    \Delta  &amp; 0 &amp; -1 &amp; 1 &amp; 0 \\
+    \hline
+\end{array}
+&amp;
+\begin{array}{ccccc}
+    \hline
+      &amp; 1 &amp; 2 &amp; 3 &amp; 4 \\
+    \hline
+    i &amp;   &amp; 1 &amp;   &amp;   \\
+    j &amp;   &amp;   &amp;   &amp; 1 \\
+    \Delta  &amp; 0 &amp; -1 &amp; 0 &amp; 1 \\
+    \hline
+\end{array}
+&amp;
+\begin{array}{ccccc}
+    \hline
+      &amp; 1 &amp; 2 &amp; 3 &amp; 4 \\
+    \hline
+    i &amp;   &amp;   &amp; 1 &amp;   \\
+    j &amp;   &amp;   &amp; 1 &amp;   \\
+    \Delta  &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+    \hline
+\end{array}
+&amp;
+\begin{array}{ccccc}
+    \hline
+      &amp; 1 &amp; 2 &amp; 3 &amp; 4 \\
+    \hline
+    i &amp;   &amp;   &amp; 1 &amp;   \\
+    j &amp;   &amp;   &amp;   &amp; 1 \\
+    \Delta  &amp; 0 &amp; 0 &amp; -1 &amp; 1 \\
+    \hline
+\end{array}
+&amp;
+\begin{array}{ccccc}
+    \hline
+      &amp; 1 &amp; 2 &amp; 3 &amp; 4 \\
+    \hline
+    i &amp;   &amp;   &amp;   &amp; 1  \\
+    j &amp;   &amp;   &amp;   &amp; 1 \\
+    \Delta  &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+    \hline
+\end{array}
+\end{array}\]</span>
+<p>其中最后一行为任务 <span class="math inline">\(j\)</span> 的分配数与任务 <span class="math inline">\(i\)</span> 的分配数之差。对每个工作站引入权重 <span class="math inline">\(f_k = k\)</span>，可发现上述所有情况均满足 <span class="math inline">\(\sum\limits_{i=k}^4 f_k\Delta_k \geqslant 0\)</span>，通过进一步试验可归纳任何一种「任务 <span class="math inline">\(j\)</span> 优先于任务 <span class="math inline">\(i\)</span>」的分配方案均不满足上述等式。 于是对所有 <span class="math inline">\(i\)</span> 优先于 <span class="math inline">\(j\)</span>：<span class="math inline">\(\sum\limits_{k=1}^4 k(x_{jk}-x_{ik}) \geqslant 0\)</span>。</p>
+<p>至此，该模型是一个非线性规划，但可进一步转为线性规划。增加约束条件：<span class="math inline">\(\sum\limits_{i=1}^{11}t_ix_{ik} \leqslant Z\)</span>，目标函数变为 <span class="math inline">\(\min \ Z\)</span>。两种模型的迭代次数分别为 147 (MILP)、590 (PINLP)。</p>
+<div><div class="fold_hider"><div class="close hider_title">计划排序模型 Lingo 程序</div></div><div class="fold">
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">model:</span><br><span class="line">    sets:</span><br><span class="line">        task/A..K/:t;</span><br><span class="line">        prio(task, task)/A,B B,C C,F C,G D,E E,H E,I F,J G,J H,J I,J J,K/;</span><br><span class="line">        station/<span class="number">1.</span><span class="number">.4</span>/;</span><br><span class="line">        txs(task, station):x;</span><br><span class="line">    endsets</span><br><span class="line"></span><br><span class="line">    data:</span><br><span class="line">        t = <span class="number">45</span> <span class="number">11</span> <span class="number">9</span> <span class="number">50</span> <span class="number">15</span> <span class="number">12</span> <span class="number">12</span> <span class="number">12</span> <span class="number">12</span> <span class="number">8</span> <span class="number">9</span>;</span><br><span class="line">    enddata</span><br><span class="line"></span><br><span class="line">    ! 注释行为非线性规划方案;</span><br><span class="line">    ! min=@max(station(k): @sum(task(<span class="built_in">i</span>): t(<span class="built_in">i</span>)*x(<span class="built_in">i</span>, k))); ;</span><br><span class="line">    min=Z;</span><br><span class="line">    @<span class="keyword">for</span>(station(k): @sum(task(<span class="built_in">i</span>): t(<span class="built_in">i</span>)*x(<span class="built_in">i</span>, k))&lt;=Z);</span><br><span class="line">    @<span class="keyword">for</span>(task(<span class="built_in">i</span>): @sum(station(<span class="built_in">j</span>): x(<span class="built_in">i</span>, <span class="built_in">j</span>)) = <span class="number">1</span>);</span><br><span class="line">    @<span class="keyword">for</span>(prio(<span class="built_in">i</span>, <span class="built_in">j</span>): @sum(station(k): k*(x(<span class="built_in">j</span>, k)-x(<span class="built_in">i</span>, k)))&gt;=<span class="number">0</span>);</span><br><span class="line">    @<span class="keyword">for</span>(txs: @bin(x));</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+</div></div>
+<hr>
+<h3 id="配对模型">配对模型</h3>
+<p>将 8 个职员安排到 4 个办公室，每室两人。同事两两之间的相容程度如下（数字越小代表相容越好）</p>
+<p><span class="math display">\[
+\begin{array}{c|cccccccc}
+    \hline
+        &amp; S_1 &amp; S_2 &amp; S_3 &amp; S_4 &amp; S_5 &amp; S_6 &amp; S_7 &amp; S_8 \\
+    \hline
+    S_1 &amp; -   &amp; 9   &amp; 3   &amp; 4   &amp; 2   &amp; 1   &amp; 5   &amp; 6   \\
+    S_2 &amp; -   &amp; -   &amp; 1   &amp; 7   &amp; 3   &amp; 5   &amp; 2   &amp; 1   \\
+    S_3 &amp; -   &amp; -   &amp; -   &amp; 4   &amp; 4   &amp; 2   &amp; 9   &amp; 2   \\
+    S_4 &amp; -   &amp; -   &amp; -   &amp; -   &amp; 1   &amp; 5   &amp; 5   &amp; 2   \\
+    S_5 &amp; -   &amp; -   &amp; -   &amp; -   &amp; -   &amp; 8   &amp; 7   &amp; 6   \\
+    S_6 &amp; -   &amp; -   &amp; -   &amp; -   &amp; -   &amp; -   &amp; 2   &amp; 3   \\
+    S_7 &amp; -   &amp; -   &amp; -   &amp; -   &amp; -   &amp; -   &amp; -   &amp; 4   \\
+    S_8 &amp; -   &amp; -   &amp; -   &amp; -   &amp; -   &amp; -   &amp; -   &amp; -   \\
+    \hline
+\end{array}
+\]</span></p>
+<p>安排配对方案，使组合的总相容程度最好。</p>
+<p>引入决策矩阵 <span class="math inline">\(X\)</span>，元素 <span class="math inline">\(X_{ij} \in \{0, 1\}\)</span>，每人组合一次，说明对于每个职员 <span class="math inline">\(i\)</span>，必有 <span class="math inline">\(\sum\limits_{j=i \ \text{or}\ k=i}X_{jk} = 1\)</span>，所以模型为：</p>
+<p><span class="math display">\[
+    \begin{array}{cl}
+        \min &amp; \sum\limits_{i&lt;j} C_{ij} X_{ij} \\
+        \text{s.t.} &amp; \begin{cases}
+            \sum\limits_{j=i \ \text{or}\ k=i}X_{jk} = 1, &amp; i=1,2,\ldots,8 \\
+            X_{ij} = 0 \ \text{or} \ 1, &amp; i&lt;j
+        \end{cases}
+    \end{array}
+\]</span></p>
+<div><div class="fold_hider"><div class="close hider_title">配对模型 Lingo 程序</div></div><div class="fold">
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">model:</span><br><span class="line">    sets:</span><br><span class="line">        people/<span class="number">1.</span><span class="number">.8</span>/;</span><br><span class="line">        links(people, people) | &amp;2 #gt# &amp;1: tol, x;</span><br><span class="line">    endsets</span><br><span class="line"></span><br><span class="line">    data:</span><br><span class="line">        tol = <span class="number">9</span> <span class="number">3</span> <span class="number">4</span> <span class="number">2</span> <span class="number">1</span> <span class="number">5</span> <span class="number">6</span></span><br><span class="line">                <span class="number">1</span> <span class="number">7</span> <span class="number">3</span> <span class="number">5</span> <span class="number">2</span> <span class="number">1</span></span><br><span class="line">                  <span class="number">4</span> <span class="number">4</span> <span class="number">2</span> <span class="number">9</span> <span class="number">2</span></span><br><span class="line">                    <span class="number">1</span> <span class="number">5</span> <span class="number">5</span> <span class="number">2</span></span><br><span class="line">                      <span class="number">8</span> <span class="number">7</span> <span class="number">6</span></span><br><span class="line">                        <span class="number">2</span> <span class="number">3</span></span><br><span class="line">                          <span class="number">4</span>;</span><br><span class="line">    enddata</span><br><span class="line"></span><br><span class="line">    @for(people(i): @sum(links(j, k) | j #eq# i #or# k #eq# i: x(j, k)) = 1);</span><br><span class="line">    @<span class="keyword">for</span>(links: @bin(x));</span><br><span class="line">    min = @sum(links: x*tol);</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+</div></div>
+<hr>
+<h3 id="下料问题">下料问题</h3>
+<p>钢管原材料每根长 19m，现需要 A、B、C、D 四种钢管部件，长度分别为 4m、5m、6m、8m，数量分别为 50、10、20、15 根，不同的下料方式不超过 3 种，安排下料方式使得所需钢管原材料最少。</p>
+<p>一般化问题，假设用到 <span class="math inline">\(k\)</span> 种下料方式，用 <span class="math inline">\(x_i\ (i=1,2,\ldots,k)\)</span> 表示第 <span class="math inline">\(i\)</span> 种下料方式所切割的原料钢管数量，非负整数 <span class="math inline">\(n_{ij}\)</span> 表示第 <span class="math inline">\(i\)</span> 种下料方法得到部件 <span class="math inline">\(j\ (j=1,2,\ldots,m)\)</span> 的数量，<span class="math inline">\(b_j\)</span> 表示第 <span class="math inline">\(j\)</span> 种部件的需求量。<span class="math inline">\(L\)</span> 表示钢管材料的长度，<span class="math inline">\(l_j\)</span> 表示部件长度，则下料方式应满足：1) 切割出的部件总长度不超过 <span class="math inline">\(L\)</span>；2) 余料严格小于 <span class="math inline">\(\min \{l_j\}\)</span>。故建立优化模型：</p>
+<p><span class="math display">\[
+\begin{array}{cl}
+    {\min} &amp; z = \sum\limits_{i=1}^k x_i \\
+    \text{s.t.} &amp; \begin{cases}
+        \sum\limits_{i=1}^k n_{ij}x_i \geqslant b_j, &amp; j=1,2,\ldots,m \\
+        L - \min\{n_{ij}\} &lt; \sum\limits_{j=1}^m n_{ij}l_j \leqslant L, &amp; i=1,2,\ldots,k \\
+        x_{i}, n_{ij} \in \mathbb{N}, &amp; i=1,2,\ldots,k; \ j=1,2,\ldots,m
+    \end{cases}
+\end{array}
+\]</span></p>
+<p>在此问题中 <span class="math inline">\(k=3, m=4\)</span>。</p>
+<div><div class="fold_hider"><div class="close hider_title">下料问题 Lingo 程序</div></div><div class="fold">
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">model:</span><br><span class="line">    sets:</span><br><span class="line">        ! craft(<span class="number">1</span>~k): 工艺, 即切割方式 ;</span><br><span class="line">        ! material(<span class="number">1</span>~m): 不同部件数量 ;</span><br><span class="line">        ! links: 每种切割方式下不同部件数量 ;</span><br><span class="line">        craft/<span class="number">1.</span><span class="number">.3</span>/: x;</span><br><span class="line">        material/<span class="number">1.</span><span class="number">.4</span>/: m, b;</span><br><span class="line">        links(craft, material): n;</span><br><span class="line">    endsets</span><br><span class="line"></span><br><span class="line">    data:</span><br><span class="line">        m = <span class="number">4</span> <span class="number">5</span> <span class="number">6</span> <span class="number">8</span>;</span><br><span class="line">        b = <span class="number">50</span> <span class="number">10</span> <span class="number">20</span> <span class="number">15</span>;</span><br><span class="line">        L = <span class="number">19</span>;</span><br><span class="line">    enddata</span><br><span class="line"></span><br><span class="line">    min = @sum(craft: x);</span><br><span class="line">    @<span class="keyword">for</span>(material(<span class="built_in">j</span>): @sum(craft(<span class="built_in">i</span>): n(<span class="built_in">i</span>, <span class="built_in">j</span>)*x(<span class="built_in">i</span>))&gt;=b(<span class="built_in">j</span>));</span><br><span class="line">    @<span class="keyword">for</span>(craft(<span class="built_in">i</span>): @sum(material(<span class="built_in">j</span>): n(<span class="built_in">i</span>, <span class="built_in">j</span>)*m(<span class="built_in">j</span>))&lt;=L);</span><br><span class="line">    @<span class="keyword">for</span>(craft(<span class="built_in">i</span>): @sum(material(<span class="built_in">j</span>): n(<span class="built_in">i</span>, <span class="built_in">j</span>)*m(<span class="built_in">j</span>))&gt;=<span class="number">16</span>);</span><br><span class="line">    @<span class="keyword">for</span>(craft: @gin(x));</span><br><span class="line">    @<span class="keyword">for</span>(links: @gin(n));</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+</div></div>
+<p>求解结果如下：</p>
+<table>
+<tr>
+<td style="text-align: center;" rowspan="2">
+<strong>下料方式</strong>
+</td>
+<td style="text-align: center;" colspan="4">
+<strong>部件长度<br></strong>
+</td>
+<td style="text-align: center;" rowspan="2">
+<strong>余料长度</strong>
+</td>
+<td style="text-align: center;" rowspan="2">
+<strong>切割根数</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align: center;">
+4m
+</td>
+<td style="text-align: center;">
+5m
+</td>
+<td style="text-align: center;">
+6m
+</td>
+<td style="text-align: center;">
+8m
+</td>
+</tr>
+<tr>
+<td style="text-align: center;">
+<strong>方式一</strong>
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+2
+</td>
+<td style="text-align: center;">
+3
+</td>
+<td style="text-align: center;">
+8
+</td>
+</tr>
+<tr>
+<td style="text-align: center;">
+<strong>方式二</strong>
+</td>
+<td style="text-align: center;">
+2
+</td>
+<td style="text-align: center;">
+1
+</td>
+<td style="text-align: center;">
+1
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align: center;">
+<strong>方式三</strong>
+</td>
+<td style="text-align: center;">
+3
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+1
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+1
+</td>
+<td style="text-align: center;">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align: center;">
+<strong>合计</strong>
+</td>
+<td style="text-align: center;">
+50
+</td>
+<td style="text-align: center;">
+10
+</td>
+<td style="text-align: center;">
+20
+</td>
+<td style="text-align: center;">
+16
+</td>
+<td style="text-align: center;">
+34m
+</td>
+<td style="text-align: center;">
+28
+</td>
+</tr>
+</table>
+<p>注意到上述切割方案余料总长 34m，且多出一根 8m 长的部件。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  
+    <ul class="post-copyright">
+      <li class="post-copyright-author">
+        <strong>本文作者：</strong>
+        Heller
+      </li>
+      <li class="post-copyright-link">
+        <strong>本文链接：</strong>
+        <a href="http://notes.shinemic.cn/learning-lingo-01/" title="Lingo 学习（一）">http://notes.shinemic.cn/learning-lingo-01/</a>
+      </li>
+      <li class="post-copyright-license">
+        <strong>版权声明： </strong>
+        本博客所有文章除特别声明外, 均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议. 转载请注明出处<a href=""><i class="fa fa-link" aria-hidden="true"></i></a>
+      </li>
+    </ul>
+  
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Lingo/" rel="tag"><i class="fa fa-tag"></i> Lingo</a>
+          
+            <a href="/tags/Programming/" rel="tag"><i class="fa fa-tag"></i> Programming</a>
+          
+            <a href="/tags/Linear-Algebra/" rel="tag"><i class="fa fa-tag"></i> Linear Algebra</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/function-interpolation-by-matlab/" rel="next" title="Matlab 数值计算之函数插值">
+                <i class="fa fa-chevron-left"></i> Matlab 数值计算之函数插值
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/setting-up-haskell-stack-development-environment/" rel="prev" title="Windows 下 Haskell-stack 开发环境搭建">
+                Windows 下 Haskell-stack 开发环境搭建 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="comments" id="comments">
+        <div id="vcomments"></div>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/img/avatar.jpg"
+               alt="Heller" />
+          <p class="site-author-name" itemprop="name">Heller</p>
+           
+              <p class="site-description motion-element" itemprop="description">多做正事少折腾</p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">59</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/michaelHL" target="_blank" title="Github" rel="external nofollow">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/he-liang-69-62" target="_blank" title="知乎" rel="external nofollow">
+                  
+                    <i class="fa fa-fw fa-delicious"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://music.163.com/#/user/home?id=43058330" target="_blank" title="网易云" rel="external nofollow">
+                  
+                    <i class="fa fa-fw fa-music"></i>
+                  
+                  网易云
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友链
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/ocean1100" title="木易修" target="_blank"><i class="fa fa-fire"></i> 木易修</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://woyun.ink" title="卧云博客" target="_blank"><i class="fa fa-fire"></i> 卧云博客</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://cuijiahua.com" title="Jack Cui" target="_blank"><i class="fa fa-fire"></i> Jack Cui</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://seisman.info" title="SeisMan" target="_blank"><i class="fa fa-fire"></i> SeisMan</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://docs.lvrui.io" title="极地瑞雪" target="_blank"><i class="fa fa-fire"></i> 极地瑞雪</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.daxiblog.com" title="大席的博客" target="_blank"><i class="fa fa-fire"></i> 大席的博客</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://kaito-kidd.com" title="Kaito" target="_blank"><i class="fa fa-fire"></i> Kaito</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.deeplearn.me" title="算法之道" target="_blank"><i class="fa fa-fire"></i> 算法之道</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://blog.yasking.org" title="东东's Blog" target="_blank"><i class="fa fa-fire"></i> 东东's Blog</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境搭建"><span class="nav-number">1.</span> <span class="nav-text">环境搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lingo-界面速览"><span class="nav-number">2.</span> <span class="nav-text">Lingo 界面速览</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件类型"><span class="nav-number">2.1.</span> <span class="nav-text">文件类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lingo-菜单"><span class="nav-number">2.2.</span> <span class="nav-text">Lingo 菜单</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#求解器状态窗口信息"><span class="nav-number">2.3.</span> <span class="nav-text">求解器状态窗口信息</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lingo-语言速览"><span class="nav-number">3.</span> <span class="nav-text">Lingo 语言速览</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑运算符"><span class="nav-number">3.1.</span> <span class="nav-text">逻辑运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数学函数"><span class="nav-number">3.2.</span> <span class="nav-text">数学函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概率函数"><span class="nav-number">3.3.</span> <span class="nav-text">概率函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量界定函数"><span class="nav-number">3.4.</span> <span class="nav-text">变量界定函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#集合操作函数"><span class="nav-number">3.5.</span> <span class="nav-text">集合操作函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些经典问题"><span class="nav-number">4.</span> <span class="nav-text">一些经典问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#运输问题"><span class="nav-number">4.1.</span> <span class="nav-text">运输问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#值班问题"><span class="nav-number">4.2.</span> <span class="nav-text">值班问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#投资的收益和风险"><span class="nav-number">4.3.</span> <span class="nav-text">投资的收益和风险</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#分段函数处理方法"><span class="nav-number">4.3.1.</span> <span class="nav-text">分段函数处理方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计划排序模型"><span class="nav-number">4.4.</span> <span class="nav-text">计划排序模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配对模型"><span class="nav-number">4.5.</span> <span class="nav-text">配对模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下料问题"><span class="nav-number">4.6.</span> <span class="nav-text">下料问题</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-chevron-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-paper-plane"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Heller</span>
+
+  <div class="theme-info">
+    <div class="powered-by"></div>
+    <span class="post-count">码了&nbsp;&nbsp58.6k&nbsp;&nbsp;个字</span>
+  </div>
+
+  
+</div>
+
+
+<div class="powered-by">
+Hosted by <a href="https://pages.coding.me" rel="external nofollow">Coding Pages</a>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io" rel="external nofollow">Hexo</a> 强力驱动
+</div>
+
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://theme-next.iissnan.com/" rel="external nofollow">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        <!-- 
+ -->
+        
+      </div>
+    </footer>
+
+    <!--  -->
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+<!-- 
+ -->
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("0DK08zbE8Vf43Mb2ckWn379n-gzGzoHsz", "QuwRw2RL89PtuGLFSikuDugr");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        showProcessingMessages: false,
+        messageStyle: "none",
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ['$$', '$$'], ["\\[", "\\]"] ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        },
+        CommonHTML: {
+          scale: 90
+        },
+        "HTML-CSS": {
+          scale: 90
+        },
+        SVG: {
+          scale: 90
+        },
+        TeX: {
+          equationNumbers: {
+            autoNumber: 'AMS'
+          },
+          extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js"]
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <!-- <script type="text/javascript" src="cdn.bootcss.com/mathjax/2.7.6/MathJax.js"></script> -->
+  
+
+
+  
+
+  
+
+</body>
+</html>

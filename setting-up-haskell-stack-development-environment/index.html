@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Merriweather:300,300italic,400,400italic,700,700italic|Philosopher:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Windows,Haskell,Stack," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Heller 的博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="An advanced, purely functional programming language 抛却「Haskell 语言能装逼」这一光环，笔者认为学习 Haskell 的另一主要动机在于尝试体验另一种编程思维，即「做什么」而非「怎么做」，Haskell 写出的程序更像是人脑的思维而不是机器的思维。当然了，装">
+<meta name="keywords" content="Windows,Haskell,Stack">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows 下 Haskell-stack 开发环境搭建">
+<meta property="og:url" content="http://notes.shinemic.cn/setting-up-haskell-stack-development-environment/index.html">
+<meta property="og:site_name" content="Heller 的博客">
+<meta property="og:description" content="An advanced, purely functional programming language 抛却「Haskell 语言能装逼」这一光环，笔者认为学习 Haskell 的另一主要动机在于尝试体验另一种编程思维，即「做什么」而非「怎么做」，Haskell 写出的程序更像是人脑的思维而不是机器的思维。当然了，装 x 也 hin 重要。 目前 Haskell 官方下载页 推荐三种下载方">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://notes.shinemic.cn/img/haskell-logo.svg">
+<meta property="og:updated_time" content="2019-04-22T01:50:40.743Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Windows 下 Haskell-stack 开发环境搭建">
+<meta name="twitter:description" content="An advanced, purely functional programming language 抛却「Haskell 语言能装逼」这一光环，笔者认为学习 Haskell 的另一主要动机在于尝试体验另一种编程思维，即「做什么」而非「怎么做」，Haskell 写出的程序更像是人脑的思维而不是机器的思维。当然了，装 x 也 hin 重要。 目前 Haskell 官方下载页 推荐三种下载方">
+<meta name="twitter:image" content="http://notes.shinemic.cn/img/haskell-logo.svg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://notes.shinemic.cn/setting-up-haskell-stack-development-environment/"/>
+
+
+
+
+
+  <title>Windows 下 Haskell-stack 开发环境搭建 | Heller 的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Heller 的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">世界不是非黑即白</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-series">
+          <a href="/series/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-envelope"></i> <br />
+            
+            系列
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sketch">
+          <a href="/sketch/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-leaf"></i> <br />
+            
+            札记
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://notes.shinemic.cn/setting-up-haskell-stack-development-environment/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Heller">
+      <meta itemprop="description" content="多做正事少折腾">
+      <meta itemprop="image" content="/img/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Heller 的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Windows 下 Haskell-stack 开发环境搭建</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-11T16:59:52+08:00">
+                <!-- 2018-08-11 -->
+                2018-08-11 16:59
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-04-22T09:50:40+08:00">
+                <!-- 2019-04-22 -->
+                2019-04-22 09:50
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Development-and-Deployment/" itemprop="url" rel="index">
+                    <span itemprop="name">Development and Deployment</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/setting-up-haskell-stack-development-environment/" class="leancloud_visitors" data-flag-title="Windows 下 Haskell-stack 开发环境搭建">
+               <span><br></span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  2,343
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  12
+                </span>
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote class="blockquote-center"><img src="/img/haskell-logo.svg" width="45%"> <br>
+An advanced, purely functional programming language</blockquote>
+<p>抛却「Haskell 语言能装逼」这一光环，笔者认为学习 Haskell 的另一主要动机在于尝试体验另一种编程思维，即「做什么」而非「怎么做」，Haskell 写出的程序更像是人脑的思维而不是机器的思维。当然了，装 x 也 hin 重要。</p>
+<p>目前 <a href="https://www.haskell.org/downloads" target="_blank" rel="noopener">Haskell 官方下载页</a> 推荐三种下载方案：</p>
+<ul>
+<li><a href="https://www.haskell.org/downloads#minimal" target="_blank" rel="noopener">最小安装程序</a></li>
+<li><a href="http://docs.haskellstack.org" target="_blank" rel="noopener">stack</a></li>
+<li><a href="https://www.haskell.org/downloads#platform" target="_blank" rel="noopener">Haskell 平台</a></li>
+</ul>
+<p>总体而言，Haskell 在 *nix / OS X 操作系统下的生态优于 Windows 环境，但对于熟悉 Windows 操作、醉心于各类工具流的笔者而言，必须要在 Windows 系统下完成环境搭建。为方便后续各类包的安装更新等操作，这里采用 <a href="https://www.haskell.org/cabal" target="_blank" rel="noopener">Cabal</a> 的替代品 – stack。以下诸多关键操作均参考 <a href="https://blog.ramdoot.in" target="_blank" rel="noopener">Arvind Devarajan 的博客</a>。</p>
+<a id="more"></a>
+<h3 id="预热">预热</h3>
+<p>在 Windows 操作系统环境中，如果没有设定环境变量 <code>STACK_ROOT</code>，则通过 stack 下载的程序文件以及包快照会被存放在 <code>%LOCALAPPDATA%\Programs\stack</code> 以及 <code>%APPDATA%\stack</code> 目录下。经常变动的包安放在系统盘总会令人不安，也不便于管理。所以在首次使用 stack 之前，应设定环境变量 <code>STACK_ROOT</code>，这里笔者将其设为 <code>F:\HaskellStack</code>。另外推荐设定编译器 GHC 的下载安装目录，见后文 <code>config.yaml</code> 文件的配置。（<a href="https://docs.haskellstack.org/en/stable/faq/#can-i-change-stacks-default-temporary-directory" target="_blank" rel="noopener">stack 帮助文档关于此问题的说明</a>）</p>
+<h3 id="配置">配置</h3>
+<p>这里有几点关于我个人在开发过程中的习惯配置。</p>
+<ul>
+<li>提前安装好 <a href="https://www.msys2.org" target="_blank" rel="noopener">MSYS2</a> 作为 C/C++ 等工具的开发环境，并添加至环境变量 <code>PATH</code>。详细配置过程见 <a href="/daily-operations-of-msys2">MSYS2 的日常操作</a></li>
+<li>将一个包含常用可执行文件的目录加入环境变量 <code>PATH</code>，如 <code>F:\WorkingDirectory\Bin</code></li>
+</ul>
+<p>stack 默认使用的软件源在国外，这里换上国内的清华大学开源网站镜像。由于之前已设定了 <code>STACK_ROOT</code> 环境变量，首次运行 stack 会在此目录下生成一些文件，修改 <code>config.yaml</code> 文件：</p>
+<figure class="highlight yaml"><figcaption><span>%STACK_ROOT%\config.yaml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">setup-info:</span> <span class="string">"http://mirrors.tuna.tsinghua.edu.cn/stackage/stack-setup.yaml"</span></span><br><span class="line"></span><br><span class="line"><span class="attr">urls:</span></span><br><span class="line"><span class="attr">  latest-snapshot:</span> <span class="attr">http://mirrors.tuna.tsinghua.edu.cn/stackage/snapshots.json</span></span><br><span class="line"><span class="attr">  lts-build-plans:</span> <span class="attr">http://mirrors.tuna.tsinghua.edu.cn/stackage/lts-haskell/</span></span><br><span class="line"><span class="attr">  nightly-build-plans:</span> <span class="attr">http://mirrors.tuna.tsinghua.edu.cn/stackage/stackage-nightly/</span></span><br><span class="line"></span><br><span class="line"><span class="attr">package-indices:</span></span><br><span class="line"><span class="attr">  - name:</span> <span class="string">Tsinghua</span></span><br><span class="line"><span class="attr">    download-prefix:</span> <span class="attr">http://mirrors.tuna.tsinghua.edu.cn/hackage/package/</span></span><br><span class="line"><span class="attr">    http:</span> <span class="attr">http://mirrors.tuna.tsinghua.edu.cn/hackage/00-index.tar.gz</span></span><br><span class="line"></span><br><span class="line"><span class="attr">skip-msys:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">local-programs-path:</span> <span class="attr">F:\HaskellStack\programs</span></span><br><span class="line"><span class="attr">local-bin-path:</span> <span class="attr">F:\WorkingDirectory\Bin</span></span><br></pre></td></tr></table></figure>
+<p>以上参考 <a href="https://mirrors.tuna.tsinghua.edu.cn/help/stackage" target="_blank" rel="noopener">stackage 镜像使用帮助</a> 以及 <a href="https://mirrors.tuna.tsinghua.edu.cn/help/hackage" target="_blank" rel="noopener">hackage 镜像使用帮助</a>。另作几点说明：</p>
+<ul>
+<li>Windows 下的 stack 会自动安装 MSYS2，由于之前已在机器中安装过，故在配置中跳过 MSYS 的安装</li>
+<li>通过 <code>stack install</code> 生成的可执行文件默认在 <code>%APPDATA%</code> 目录下，这里统一放置于之前提到的可执行文件合集目录中</li>
+</ul>
+<p>执行 <code>stack setup</code> 下载最新版的 GHC，目前版本为 8.4.3。</p>
+<p>如一切顺利，<code>stack path</code> 输出如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">stack-root: F:\HaskellStack</span><br><span class="line">project-root: F:\HaskellStack\global-project</span><br><span class="line">config-location: F:\HaskellStack\global-project\stack.yaml</span><br><span class="line">bin-path: .;F:\HaskellStack\snapshots\55eb7f36\bin;F:\HaskellStack\compiler-tools\x86_64-windows\ghc-8.4.3\bin;F:\HaskellStack\programs\x86_64-windows\ghc-8.4.3\bin;F:\HaskellStack\programs\x86_64-windows\ghc-8.4.3\mingw\bin;C:\Windows\system32;...</span><br><span class="line">programs: F:\HaskellStack\programs\x86_64-windows</span><br><span class="line">compiler-exe: F:\HaskellStack\programs\x86_64-windows\ghc-8.4.3\bin\ghc.EXE</span><br><span class="line">compiler-bin: F:\HaskellStack\programs\x86_64-windows\ghc-8.4.3\bin</span><br><span class="line">compiler-tools-bin: F:\HaskellStack\compiler-tools\x86_64-windows\ghc-8.4.3\bin</span><br><span class="line">local-bin: F:\WorkingDirectory\Bin</span><br><span class="line">extra-include-dirs:</span><br><span class="line">extra-library-dirs:</span><br><span class="line">snapshot-pkg-db: F:\HaskellStack\snapshots\55eb7f36\pkgdb</span><br><span class="line">local-pkg-db: F:\HaskellStack\global-project\.stack-work\install\620260b6\pkgdb</span><br><span class="line">global-pkg-db: F:\HaskellStack\programs\x86_64-windows\ghc-8.4.3\lib\package.conf.d</span><br><span class="line">ghc-package-path: F:\HaskellStack\global-project\.stack-work\install\620260b6\pkgdb;F:\HaskellStack\snapshots\55eb7f36\pkgdb;F:\HaskellStack\programs\x86_64-windows\ghc-8.4.3\lib\package.conf.d</span><br><span class="line">snapshot-install-root: F:\HaskellStack\snapshots\55eb7f36</span><br><span class="line">local-install-root: F:\HaskellStack\global-project\.stack-work\install\620260b6</span><br><span class="line">snapshot-doc-root: F:\HaskellStack\snapshots\55eb7f36\doc</span><br><span class="line">local-doc-root: F:\HaskellStack\global-project\.stack-work\install\620260b6\doc</span><br><span class="line">dist-dir: .stack-work\dist\7d103d30</span><br><span class="line">local-hpc-root: F:\HaskellStack\global-project\.stack-work\install\620260b6\hpc</span><br><span class="line">local-bin-path: F:\WorkingDirectory\Bin</span><br><span class="line">ghc-paths: F:\HaskellStack\programs\x86_64-windows</span><br></pre></td></tr></table></figure>
+<p>最后，如要修改 GHCi 的命令行提示符或在启动时加载某些包，可通过添加 / 修改 <code>%APPDATA%\ghc\ghci.conf</code> 文件为以下内容：</p>
+<figure class="highlight plain"><figcaption><span>ghci.conf</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import Text.Show.Pretty (ppShow, pPrint)</span><br><span class="line"></span><br><span class="line">:set -interactive-print pPrint</span><br><span class="line">:set prompt &quot;|&gt; &quot;</span><br></pre></td></tr></table></figure>
+<h3 id="编辑器">编辑器</h3>
+<p>考虑编辑效率和插件生态，推荐使用 VSCode 作为主力编辑器。安装插件：</p>
+<ul>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=justusadam.language-haskell" target="_blank" rel="noopener">Haskell Syntax Highlight</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=UCL.haskelly" target="_blank" rel="noopener">Haskelly</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=monofon.hindent-format" target="_blank" rel="noopener">hindent-format</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=MaxGabriel.brittany" target="_blank" rel="noopener">brittany</a></li>
+</ul>
+<p>后两者为代码格式化插件，任选一即可。</p>
+<p><code>hindent-format</code> 貌似不能正确读取配置文件，故手动修改之（当前版本 0.0.8）</p>
+<div><div class="fold_hider"><div class="close hider_title">hindent-format 插件修改后代码</div></div><div class="fold">
+<figure class="highlight javascript"><figcaption><span>extension.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(exports, <span class="string">"__esModule"</span>, &#123; <span class="attr">value</span>: <span class="literal">true</span> &#125;);</span><br><span class="line"><span class="keyword">const</span> vscode = <span class="built_in">require</span>(<span class="string">"vscode"</span>);</span><br><span class="line"><span class="keyword">const</span> child_process = <span class="built_in">require</span>(<span class="string">"child_process"</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HindentFormatEditsProvider</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>() &#123;</span><br><span class="line">        <span class="keyword">this</span>.hindentAvailable = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">this</span>.enable = <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">this</span>.command = <span class="string">"hindent"</span>;</span><br><span class="line">        <span class="keyword">this</span>.arguments = [];</span><br><span class="line">        <span class="keyword">this</span>.configure();</span><br><span class="line">    &#125;</span><br><span class="line">    configure() &#123;</span><br><span class="line">        <span class="keyword">const</span> config = vscode.workspace.getConfiguration(<span class="string">'hindent-format'</span>);</span><br><span class="line">        <span class="keyword">this</span>.enable = config.get(<span class="string">'enable'</span>, <span class="literal">true</span>);</span><br><span class="line">        <span class="keyword">this</span>.command = config.get(<span class="string">'command'</span>, <span class="string">'hindent'</span>);</span><br><span class="line">        <span class="keyword">this</span>.arguments = [</span><br><span class="line">            <span class="string">"--indent-size"</span>, <span class="string">"4"</span>,</span><br><span class="line">            <span class="string">"--line-length"</span>, <span class="number">100</span></span><br><span class="line">        ];</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.enable) &#123;</span><br><span class="line">            <span class="keyword">let</span> result = child_process.spawnSync(<span class="keyword">this</span>.command, [<span class="string">'--version'</span>]);</span><br><span class="line">            <span class="keyword">if</span> (!result.status) &#123;</span><br><span class="line">                <span class="keyword">this</span>.hindentAvailable = <span class="literal">true</span>;</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="string">"hindent-format: using executable: "</span> + <span class="keyword">this</span>.command);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">this</span>.hindentAvailable = <span class="literal">false</span>;</span><br><span class="line">                vscode.window.showWarningMessage(<span class="string">"hindent-format: cannot execute hindent command: "</span> + <span class="keyword">this</span>.command);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    formatHindent(text) &#123;</span><br><span class="line">        <span class="keyword">let</span> cwd = <span class="string">'.'</span>;</span><br><span class="line">        <span class="comment">// May this helps hindent pick up the .hindent.yaml file</span></span><br><span class="line">        <span class="keyword">if</span> (vscode.window.activeTextEditor) &#123;</span><br><span class="line">            <span class="keyword">let</span> documentPath = vscode.window.activeTextEditor.document.uri.fsPath;</span><br><span class="line">            cwd = path.dirname(documentPath);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">let</span> result = child_process.spawnSync(<span class="keyword">this</span>.command, <span class="keyword">this</span>.arguments, &#123;</span><br><span class="line">            <span class="string">'cwd'</span>: cwd,</span><br><span class="line">            <span class="string">'input'</span>: text</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">if</span> (!result.status) &#123;</span><br><span class="line">            <span class="keyword">return</span> result.stdout.toString();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            vscode.window.showWarningMessage(result.stderr.toString().split(<span class="string">'\n'</span>)[<span class="number">0</span>]);</span><br><span class="line">            <span class="keyword">return</span> <span class="string">''</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    provideDocumentFormattingEdits(<span class="built_in">document</span>, options, token) &#123;</span><br><span class="line">        <span class="keyword">let</span> formatted = <span class="keyword">this</span>.formatHindent(<span class="built_in">document</span>.getText());</span><br><span class="line">        <span class="keyword">if</span> (formatted !== <span class="string">''</span>) &#123;</span><br><span class="line">            <span class="keyword">let</span> range = <span class="built_in">document</span>.validateRange(<span class="keyword">new</span> vscode.Range(<span class="number">0</span>, <span class="number">0</span>, <span class="built_in">Number</span>.MAX_VALUE, <span class="built_in">Number</span>.MAX_VALUE));</span><br><span class="line">            <span class="keyword">return</span> [vscode.TextEdit.replace(range, formatted)];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> [];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    provideDocumentRangeFormattingEdits(<span class="built_in">document</span>, range, options, token) &#123;</span><br><span class="line">        <span class="keyword">let</span> formatted = <span class="keyword">this</span>.formatHindent(<span class="built_in">document</span>.getText(range));</span><br><span class="line">        <span class="keyword">if</span> (formatted !== <span class="string">''</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> [vscode.TextEdit.replace(range, formatted)];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> [];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">activate</span>(<span class="params">context</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"hindent-format: active!"</span>);</span><br><span class="line">    <span class="keyword">let</span> hindentFormatProvider = <span class="keyword">new</span> HindentFormatEditsProvider();</span><br><span class="line">    <span class="keyword">if</span> (hindentFormatProvider.hindentAvailable) &#123;</span><br><span class="line">        vscode.languages.registerDocumentFormattingEditProvider(<span class="string">'haskell'</span>, hindentFormatProvider);</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"hindent-format: registered document formatting provider"</span>);</span><br><span class="line">        vscode.languages.registerDocumentRangeFormattingEditProvider(<span class="string">'haskell'</span>, hindentFormatProvider);</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"hindent-format: registered selection formatting provider"</span>);</span><br><span class="line">        vscode.commands.registerTextEditorCommand(<span class="string">'hindent-format.format'</span>, (textEditor, edit, args) =&gt; &#123;</span><br><span class="line">            <span class="keyword">let</span> range = textEditor.selection.with();</span><br><span class="line">            <span class="keyword">if</span> (range.isEmpty) &#123;</span><br><span class="line">                range = textEditor.document.validateRange(<span class="keyword">new</span> vscode.Range(<span class="number">0</span>, <span class="number">0</span>, <span class="built_in">Number</span>.MAX_VALUE, <span class="built_in">Number</span>.MAX_VALUE));</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">let</span> formatted = hindentFormatProvider.formatHindent(textEditor.document.getText(range));</span><br><span class="line">            <span class="keyword">if</span> (formatted !== <span class="string">''</span>) &#123;</span><br><span class="line">                edit.replace(range, formatted);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"hindent-format: registered palette command"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">exports.activate = activate;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deactivate</span>(<span class="params"></span>) </span>&#123; &#125;</span><br><span class="line">exports.deactivate = deactivate;</span><br><span class="line"><span class="comment">//# sourceMappingURL=extension.js.map</span></span><br></pre></td></tr></table></figure>
+
+</div></div>
+<p>个人更青睐 <code>brittany</code> 格式化的效果。 但目前 VSCode 插件 <code>brittany</code> 对未保存文档不能正确执行格式化，同样需要修改插件源代码（当前版本 0.0.1）</p>
+<div><div class="fold_hider"><div class="close hider_title">brittany 插件修改后代码</div></div><div class="fold">
+<figure class="highlight javascript"><figcaption><span>extension.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(exports, <span class="string">"__esModule"</span>, &#123; <span class="attr">value</span>: <span class="literal">true</span> &#125;);</span><br><span class="line"><span class="keyword">const</span> vscode = <span class="built_in">require</span>(<span class="string">"vscode"</span>);</span><br><span class="line"><span class="keyword">const</span> proc = <span class="built_in">require</span>(<span class="string">"child_process"</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);</span><br><span class="line"><span class="keyword">const</span> tmp = <span class="built_in">require</span>(<span class="string">"tmp"</span>);</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">activate</span>(<span class="params">context</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// Use the console to output diagnostic information (console.log) and errors (console.error)</span></span><br><span class="line">    <span class="comment">// This line of code will only be executed once when your extension is activated</span></span><br><span class="line">    <span class="keyword">if</span> (isEnabled() === <span class="literal">false</span>) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"brittany extension disabled; not registering it."</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"Registering brittany extension"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    context.subscriptions.push(vscode.languages.registerDocumentRangeFormattingEditProvider(<span class="string">'haskell'</span>, &#123;</span><br><span class="line">        provideDocumentRangeFormattingEdits(<span class="built_in">document</span>, range) &#123;</span><br><span class="line">            <span class="keyword">if</span> (isEnabled() === <span class="literal">false</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">                    <span class="keyword">return</span> reject([]);</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'brittany asked to format'</span>);</span><br><span class="line">            <span class="comment">// If we're formatting the whole document</span></span><br><span class="line">            <span class="comment">// Brittany operates on files only, so we need to </span></span><br><span class="line">            <span class="comment">// Improvement <span class="doctag">TODO:</span> Instead of making a tmp file, pass the source code into STDIN.</span></span><br><span class="line">            <span class="comment">// Could also potentially unify this approach with the full-file approach.</span></span><br><span class="line">            <span class="keyword">let</span> substring = <span class="built_in">document</span>.getText(range);</span><br><span class="line">            <span class="keyword">let</span> tmpobj = tmp.fileSync();</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'brittany: Temporary file: '</span>, tmpobj.name);</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">                fs.write(tmpobj.fd, substring, (err, written, str) =&gt; &#123;</span><br><span class="line">                    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">                        <span class="keyword">return</span> reject(err);</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="keyword">return</span> resolve(runBrittany(<span class="built_in">document</span>, range, tmpobj.name, tmpobj));</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;));</span><br><span class="line">&#125;</span><br><span class="line">exports.activate = activate;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">runBrittany</span>(<span class="params">document, range, inputFilename, tmpobj</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> file = <span class="built_in">document</span>.uri.fsPath;</span><br><span class="line">        <span class="keyword">var</span> cmd = brittanyCmd() + <span class="string">" \""</span> + inputFilename + <span class="string">"\""</span></span><br><span class="line">        +<span class="string">" "</span> + additionalFlags();</span><br><span class="line">        <span class="keyword">var</span> maybeWorkspaceFolder = vscode.workspace.getWorkspaceFolder(<span class="built_in">document</span>.uri);</span><br><span class="line">        <span class="keyword">var</span> dir = maybeWorkspaceFolder !== <span class="literal">undefined</span> ? maybeWorkspaceFolder.uri.fsPath : path.dirname(<span class="built_in">document</span>.uri.fsPath);</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"brittany command is: "</span> + cmd);</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"brittany folder is: "</span> + dir);</span><br><span class="line">        <span class="keyword">var</span> options = &#123;</span><br><span class="line">            encoding: <span class="string">'utf8'</span>,</span><br><span class="line">            <span class="comment">// timeout: 0,</span></span><br><span class="line">            <span class="comment">// maxBuffer: 200 * 1024, // ?</span></span><br><span class="line">            <span class="comment">// killSignal: 'SIGTERM',</span></span><br><span class="line">            cwd: dir,</span><br><span class="line">        &#125;;</span><br><span class="line">        proc.exec(cmd, options, (error, stdout, stderr) =&gt; &#123;</span><br><span class="line">            <span class="keyword">if</span> (error) &#123;</span><br><span class="line">                <span class="keyword">if</span> (tmpobj) &#123;</span><br><span class="line">                    tmpobj.removeCallback();</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="built_in">console</span>.error(<span class="string">"Error running brittany:"</span>);</span><br><span class="line">                <span class="built_in">console</span>.error(error);</span><br><span class="line">                <span class="built_in">console</span>.error(stdout);</span><br><span class="line">                <span class="built_in">console</span>.error(stderr);</span><br><span class="line">                vscode.window.showErrorMessage(<span class="string">"Failed to run brittany; see the developer tools console for details. "</span> + error);</span><br><span class="line">                <span class="keyword">return</span> reject([]);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (tmpobj) &#123;</span><br><span class="line">                    tmpobj.removeCallback();</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> resolve([vscode.TextEdit.replace(range, stdout)]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// this method is called when your extension is deactivated</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deactivate</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">&#125;</span><br><span class="line">exports.deactivate = deactivate;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">brittanyCmd</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> vscode.workspace.getConfiguration(<span class="string">"brittany"</span>)[<span class="string">"path"</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">additionalFlags</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> vscode.workspace.getConfiguration(<span class="string">"brittany"</span>)[<span class="string">"additional-flags"</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isEnabled</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> vscode.workspace.getConfiguration(<span class="string">"brittany"</span>)[<span class="string">"enable"</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fullDocumentRange</span>(<span class="params">document</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> lastLineId = <span class="built_in">document</span>.lineCount - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> vscode.Range(<span class="number">0</span>, <span class="number">0</span>, lastLineId, <span class="built_in">document</span>.lineAt(lastLineId).text.length);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//# sourceMappingURL=extension.js.map</span></span><br></pre></td></tr></table></figure>
+
+</div></div>
+<p>另外，建议利用 <code>config.yaml</code> 文件搭配 <code>brittany</code> 进行深度配置。在控制台执行一次 <code>brittany</code> 命令，生成的配置文件位置为 <code>%APPDATA%\brittany\config.yaml</code>，示例配置如下。</p>
+<div><div class="fold_hider"><div class="close hider_title">brittany 配置文件</div></div><div class="fold">
+<figure class="highlight yaml"><figcaption><span>%APPDATA%\brittany\config.yaml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">conf_debug:</span></span><br><span class="line"><span class="attr">  dconf_roundtrip_exactprint_only:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  dconf_dump_bridoc_simpl_par:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  dconf_dump_ast_unknown:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  dconf_dump_bridoc_simpl_floating:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  dconf_dump_config:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  dconf_dump_bridoc_raw:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  dconf_dump_bridoc_final:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  dconf_dump_bridoc_simpl_alt:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  dconf_dump_bridoc_simpl_indent:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  dconf_dump_annotations:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  dconf_dump_bridoc_simpl_columns:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  dconf_dump_ast_full:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">conf_forward:</span></span><br><span class="line"><span class="attr">  options_ghc:</span></span><br><span class="line"><span class="bullet">    -</span> <span class="bullet">-XLambdaCase</span></span><br><span class="line"><span class="bullet">    -</span> <span class="bullet">-XMultiWayIf</span></span><br><span class="line"><span class="bullet">    -</span> <span class="bullet">-XGADTs</span></span><br><span class="line"><span class="bullet">    -</span> <span class="bullet">-XPatternGuards</span></span><br><span class="line"><span class="bullet">    -</span> <span class="bullet">-XViewPatterns</span></span><br><span class="line"><span class="bullet">    -</span> <span class="bullet">-XRecursiveDo</span></span><br><span class="line"><span class="bullet">    -</span> <span class="bullet">-XTupleSections</span></span><br><span class="line"><span class="bullet">    -</span> <span class="bullet">-XExplicitForAll</span></span><br><span class="line"><span class="bullet">    -</span> <span class="bullet">-XImplicitParams</span></span><br><span class="line"><span class="bullet">    -</span> <span class="bullet">-XQuasiQuotes</span></span><br><span class="line"><span class="bullet">    -</span> <span class="bullet">-XTemplateHaskell</span></span><br><span class="line"><span class="bullet">    -</span> <span class="bullet">-XBangPatterns</span></span><br><span class="line"><span class="attr">conf_errorHandling:</span></span><br><span class="line"><span class="attr">  econf_ExactPrintFallback:</span> <span class="string">ExactPrintFallbackModeInline</span></span><br><span class="line"><span class="attr">  econf_Werror:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  econf_omit_output_valid_check:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  econf_produceOutputOnErrors:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">conf_preprocessor:</span></span><br><span class="line"><span class="attr">  ppconf_CPPMode:</span> <span class="string">CPPModeAbort</span></span><br><span class="line"><span class="attr">  ppconf_hackAroundIncludes:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">conf_obfuscate:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">conf_roundtrip_exactprint_only:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">conf_version:</span> <span class="number">1</span></span><br><span class="line"><span class="attr">conf_layout:</span></span><br><span class="line"><span class="attr">  lconfig_reformatModulePreamble:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  lconfig_altChooser:</span></span><br><span class="line"><span class="attr">    tag:</span> <span class="string">AltChooserBoundedSearch</span></span><br><span class="line"><span class="attr">    contents:</span> <span class="number">3</span></span><br><span class="line"><span class="attr">  lconfig_allowSingleLineExportList:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  lconfig_importColumn:</span> <span class="number">50</span></span><br><span class="line"><span class="attr">  lconfig_hangingTypeSignature:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  lconfig_importAsColumn:</span> <span class="number">50</span></span><br><span class="line"><span class="attr">  lconfig_alignmentLimit:</span> <span class="number">30</span></span><br><span class="line"><span class="attr">  lconfig_indentListSpecial:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  lconfig_indentAmount:</span> <span class="number">4</span></span><br><span class="line"><span class="attr">  lconfig_alignmentBreakOnMultiline:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  lconfig_cols:</span> <span class="number">80</span></span><br><span class="line"><span class="attr">  lconfig_indentPolicy:</span> <span class="string">IndentPolicyFree</span></span><br><span class="line"><span class="attr">  lconfig_indentWhereSpecial:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  lconfig_columnAlignMode:</span></span><br><span class="line"><span class="attr">    tag:</span> <span class="string">ColumnAlignModeMajority</span></span><br><span class="line"><span class="attr">    contents:</span> <span class="number">0.7</span></span><br></pre></td></tr></table></figure>
+
+</div></div>
+<h3 id="参考">参考</h3>
+<ul>
+<li><a href="https://blog.ramdoot.in/installing-haskell-stack-in-windows-7c8fd2c79f" target="_blank" rel="noopener">Installing Haskell stack (in Windows)</a></li>
+<li><a href="https://www.zybuluo.com/delight/note/503796" target="_blank" rel="noopener">重拾Haskell</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  
+    <ul class="post-copyright">
+      <li class="post-copyright-author">
+        <strong>本文作者：</strong>
+        Heller
+      </li>
+      <li class="post-copyright-link">
+        <strong>本文链接：</strong>
+        <a href="http://notes.shinemic.cn/setting-up-haskell-stack-development-environment/" title="Windows 下 Haskell-stack 开发环境搭建">http://notes.shinemic.cn/setting-up-haskell-stack-development-environment/</a>
+      </li>
+      <li class="post-copyright-license">
+        <strong>版权声明： </strong>
+        本博客所有文章除特别声明外, 均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议. 转载请注明出处<a href=""><i class="fa fa-link" aria-hidden="true"></i></a>
+      </li>
+    </ul>
+  
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Windows/" rel="tag"><i class="fa fa-tag"></i> Windows</a>
+          
+            <a href="/tags/Haskell/" rel="tag"><i class="fa fa-tag"></i> Haskell</a>
+          
+            <a href="/tags/Stack/" rel="tag"><i class="fa fa-tag"></i> Stack</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/learning-lingo-01/" rel="next" title="Lingo 学习（一）">
+                <i class="fa fa-chevron-left"></i> Lingo 学习（一）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/homebrew-installation-on-macos/" rel="prev" title="MacOS 安装 Homebrew">
+                MacOS 安装 Homebrew <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="comments" id="comments">
+        <div id="vcomments"></div>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/img/avatar.jpg"
+               alt="Heller" />
+          <p class="site-author-name" itemprop="name">Heller</p>
+           
+              <p class="site-description motion-element" itemprop="description">多做正事少折腾</p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">59</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/michaelHL" target="_blank" title="Github" rel="external nofollow">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/he-liang-69-62" target="_blank" title="知乎" rel="external nofollow">
+                  
+                    <i class="fa fa-fw fa-delicious"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://music.163.com/#/user/home?id=43058330" target="_blank" title="网易云" rel="external nofollow">
+                  
+                    <i class="fa fa-fw fa-music"></i>
+                  
+                  网易云
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友链
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/ocean1100" title="木易修" target="_blank"><i class="fa fa-fire"></i> 木易修</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://woyun.ink" title="卧云博客" target="_blank"><i class="fa fa-fire"></i> 卧云博客</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://cuijiahua.com" title="Jack Cui" target="_blank"><i class="fa fa-fire"></i> Jack Cui</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://seisman.info" title="SeisMan" target="_blank"><i class="fa fa-fire"></i> SeisMan</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://docs.lvrui.io" title="极地瑞雪" target="_blank"><i class="fa fa-fire"></i> 极地瑞雪</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.daxiblog.com" title="大席的博客" target="_blank"><i class="fa fa-fire"></i> 大席的博客</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://kaito-kidd.com" title="Kaito" target="_blank"><i class="fa fa-fire"></i> Kaito</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.deeplearn.me" title="算法之道" target="_blank"><i class="fa fa-fire"></i> 算法之道</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://blog.yasking.org" title="东东's Blog" target="_blank"><i class="fa fa-fire"></i> 东东's Blog</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#预热"><span class="nav-number">1.</span> <span class="nav-text">预热</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置"><span class="nav-number">2.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编辑器"><span class="nav-number">3.</span> <span class="nav-text">编辑器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-chevron-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-paper-plane"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Heller</span>
+
+  <div class="theme-info">
+    <div class="powered-by"></div>
+    <span class="post-count">码了&nbsp;&nbsp58.6k&nbsp;&nbsp;个字</span>
+  </div>
+
+  
+</div>
+
+
+<div class="powered-by">
+Hosted by <a href="https://pages.coding.me" rel="external nofollow">Coding Pages</a>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io" rel="external nofollow">Hexo</a> 强力驱动
+</div>
+
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://theme-next.iissnan.com/" rel="external nofollow">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        <!-- 
+ -->
+        
+      </div>
+    </footer>
+
+    <!--  -->
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+<!-- 
+ -->
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("0DK08zbE8Vf43Mb2ckWn379n-gzGzoHsz", "QuwRw2RL89PtuGLFSikuDugr");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

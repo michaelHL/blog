@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Merriweather:300,300italic,400,400italic,700,700italic|Philosopher:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Linux,MSYS2,Windows,ConEmu," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Heller 的博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="在自己的 Windows 10 系统上使用 MSYS2 已经有段时间了，Windows 上的类 *nix 工作环境简直不要太完美，办事效率杠杠的（如果没事少折腾的话）。为啥不用 Cygwin？因为很卡很慢，连 DUANG 的特效也拯救不了它，而且它的 POSIX 权限问题会把文件系统弄的一团糟。下面开始记录从刚开始的小">
+<meta name="keywords" content="Linux,MSYS2,Windows,ConEmu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MSYS2 的日常操作">
+<meta property="og:url" content="http://notes.shinemic.cn/daily-operations-of-msys2/index.html">
+<meta property="og:site_name" content="Heller 的博客">
+<meta property="og:description" content="在自己的 Windows 10 系统上使用 MSYS2 已经有段时间了，Windows 上的类 *nix 工作环境简直不要太完美，办事效率杠杠的（如果没事少折腾的话）。为啥不用 Cygwin？因为很卡很慢，连 DUANG 的特效也拯救不了它，而且它的 POSIX 权限问题会把文件系统弄的一团糟。下面开始记录从刚开始的小白逐渐成为现在熟练使用的 大牛 大白的辛酸历程…">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-10-25T05:43:02.397Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MSYS2 的日常操作">
+<meta name="twitter:description" content="在自己的 Windows 10 系统上使用 MSYS2 已经有段时间了，Windows 上的类 *nix 工作环境简直不要太完美，办事效率杠杠的（如果没事少折腾的话）。为啥不用 Cygwin？因为很卡很慢，连 DUANG 的特效也拯救不了它，而且它的 POSIX 权限问题会把文件系统弄的一团糟。下面开始记录从刚开始的小白逐渐成为现在熟练使用的 大牛 大白的辛酸历程…">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://notes.shinemic.cn/daily-operations-of-msys2/"/>
+
+
+
+
+
+  <title>MSYS2 的日常操作 | Heller 的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Heller 的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">世界不是非黑即白</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-series">
+          <a href="/series/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-envelope"></i> <br />
+            
+            系列
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sketch">
+          <a href="/sketch/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-leaf"></i> <br />
+            
+            札记
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://notes.shinemic.cn/daily-operations-of-msys2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Heller">
+      <meta itemprop="description" content="多做正事少折腾">
+      <meta itemprop="image" content="/img/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Heller 的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">MSYS2 的日常操作</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-07T18:48:36+08:00">
+                <!-- 2017-11-07 -->
+                2017-11-07 18:48
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-10-25T13:43:02+08:00">
+                <!-- 2019-10-25 -->
+                2019-10-25 13:43
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Handy-Utilities/" itemprop="url" rel="index">
+                    <span itemprop="name">Handy Utilities</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/daily-operations-of-msys2/" class="leancloud_visitors" data-flag-title="MSYS2 的日常操作">
+               <span><br></span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  3,506
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  20
+                </span>
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在自己的 Windows 10 系统上使用 <a href="http://www.msys2.org" target="_blank" rel="noopener">MSYS2</a> 已经有段时间了，Windows 上的类 *nix 工作环境简直不要太完美，办事效率杠杠的（如果没事少折腾的话）。为啥不用 Cygwin？因为很卡很慢，连 DUANG 的特效也拯救不了它，而且它的 POSIX 权限问题会把文件系统弄的一团糟。下面开始记录从刚开始的小白逐渐成为现在熟练使用的 <del>大牛</del> 大白的辛酸历程…</p>
+<a id="more"></a>
+<h2 id="msys2-安装与配置">MSYS2 安装与配置</h2>
+<p>这里主要参考 <a href="http://blog.csdn.net/callinglove/article/details/48601775" target="_blank" rel="noopener">MSYS2开发环境搭建</a>。</p>
+<ol type="1">
+<li>下载 MSYS2 installer，建议安装路径不要包含空格（个人装在了 <code>D:\MSYS2</code> 下）</li>
+<li>安装完毕后，开始菜单中生成的三个快捷方式为： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">MSYS2 MinGW 32-bit - D:\MSYS2\msys2_shell.cmd -mingw32</span><br><span class="line">MSYS2 MinGW 64-bit - D:\MSYS2\msys2_shell.cmd -mingw64</span><br><span class="line">MSYS2 MSYS         - D:\MSYS2\msys2_shell.cmd -msys</span><br></pre></td></tr></table></figure></li>
+<li>修改软件源，修改 <code>/etc/pacman.d/</code> 目录下的三个文件，换上清华的 repo，<code>.msys</code>，<code>.mingw32</code>，<code>.mingw64</code> 分别对应 MSYS2 里的三套系统，分别在三个文件最上方填写（注意对应）： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Server = https://mirrors.tuna.tsinghua.edu.cn/msys2/msys/<span class="variable">$arch</span></span><br><span class="line">Server = https://mirrors.tuna.tsinghua.edu.cn/msys2/mingw/i686</span><br><span class="line">Server = https://mirrors.tuna.tsinghua.edu.cn/msys2/mingw/x86_64</span><br></pre></td></tr></table></figure></li>
+<li>任选一个（<code>mingw32.exe</code>，<code>mingw64.exe</code>，<code>msys2.exe</code>）进入 MSYS2 的终端，更新系统： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -Syu</span><br></pre></td></tr></table></figure> 提示需退出后更新, 强行关闭后重进, 再重复上述命令即可。 更新其他包: <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -Su</span><br></pre></td></tr></table></figure></li>
+<li>安装开发工具链： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pacman -S base-devel</span><br><span class="line">pacman -S gcc</span><br><span class="line">pacman -S mingw-w64-x86_64-toolchain</span><br><span class="line">pacman -S mingw-w64-i686-toolchain</span><br><span class="line">pacman -S mingw64/mingw-w64-x86_64-clang</span><br><span class="line">pacman -S mingw32/mingw-w64-i686-clang</span><br></pre></td></tr></table></figure></li>
+<li>添加环境变量 <code>PATH</code>。由于个人 <code>PATH</code> 中存有 <code>Perl</code> 的开发工具路径，所以考虑将 MSYS2 的路径置于其后： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">\Strawberry\perl\bin</span><br><span class="line">\Strawberry\perl\site\bin</span><br><span class="line">\MSYS2\usr\bin</span><br><span class="line">\MSYS2\mingw64\bin</span><br><span class="line">\Strawberry\c\bin</span><br><span class="line">...</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="个性化设置">个性化设置</h2>
+<h3 id="自动挂载文件">自动挂载文件</h3>
+<figure class="highlight plain"><figcaption><span>/etc/fstab</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># For a description of the file format, see the Users Guide</span><br><span class="line"># http://cygwin.com/cygwin-ug-net/using.html#mount-table</span><br><span class="line"># DO NOT REMOVE NEXT LINE. It remove cygdrive prefix from path</span><br><span class="line">none / cygdrive binary,posix=0,noacl,user 0 0</span><br><span class="line">C:\Users\xxx\Desktop /desktop</span><br><span class="line">D:\MSYS2\home\xxx\Notes /notes</span><br><span class="line">F:\WorkingDirectory\Work\__current /current</span><br></pre></td></tr></table></figure>
+<h3 id="配置文件">配置文件</h3>
+<p>于个人 <code>home</code> 目录中，个性化各种配置：</p>
+<ul>
+<li>比如与 <code>mintty</code> 相关的配置： <div><div class="fold_hider"><div class="close hider_title">.minttyrc</div></div><div class="fold">
+<figure class="highlight ini"><figcaption><span>.minttyrc</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">BoldAsFont</span>=<span class="literal">no</span></span><br><span class="line"><span class="attr">BoldAsColour</span>=<span class="literal">yes</span></span><br><span class="line"><span class="attr">BoldColour</span>=<span class="number">255</span>,<span class="number">255</span>,<span class="number">128</span></span><br><span class="line"><span class="attr">Font</span>=SauceCodePro NF</span><br><span class="line"><span class="attr">FontIsBold</span>=<span class="literal">no</span></span><br><span class="line"><span class="attr">FontHeight</span>=<span class="number">10</span></span><br><span class="line"><span class="attr">RowSpacing</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">ShowHiddenFonts</span>=<span class="literal">yes</span></span><br><span class="line"><span class="attr">CursorColour</span>=<span class="number">255</span>,<span class="number">255</span>,<span class="number">0</span></span><br><span class="line"><span class="attr">Transparency</span>=high</span><br><span class="line"><span class="attr">Locale</span>=en_US</span><br><span class="line"><span class="attr">Charset</span>=UTF-<span class="number">8</span></span><br><span class="line"><span class="attr">BellType</span>=<span class="number">0</span></span><br><span class="line"><span class="attr">CursorType</span>=block</span><br><span class="line"><span class="attr">CursorBlinks</span>=<span class="literal">no</span></span><br><span class="line"><span class="attr">Term</span>=xterm</span><br><span class="line"><span class="attr">Columns</span>=<span class="number">135</span></span><br><span class="line"><span class="attr">Rows</span>=<span class="number">35</span></span><br><span class="line"><span class="attr">CtrlShiftShortcuts</span>=<span class="literal">no</span></span><br><span class="line"><span class="attr">Scrollbar</span>=none</span><br><span class="line"><span class="attr">ClicksTargetApp</span>=<span class="literal">yes</span></span><br><span class="line"><span class="attr">ForegroundColour</span>=<span class="number">223</span>,<span class="number">223</span>,<span class="number">223</span></span><br></pre></td></tr></table></figure>
+</div></div></li>
+<li>比如常用的 <a href="/src/bashrc"><code>.bashrc</code></a>： <div><div class="fold_hider"><div class="close hider_title">.bashrc</div></div><div class="fold">
+<figure class="highlight bash"><figcaption><span>.bashrc</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># To the extent possible under law, the author(s) have dedicated all</span></span><br><span class="line"><span class="comment"># copyright and related and neighboring rights to this software to the</span></span><br><span class="line"><span class="comment"># public domain worldwide. This software is distributed without any warranty.</span></span><br><span class="line"><span class="comment"># You should have received a copy of the CC0 Public Domain Dedication along</span></span><br><span class="line"><span class="comment"># with this software.</span></span><br><span class="line"><span class="comment"># If not, see &lt;http://creativecommons.org/publicdomain/zero/1.0/&gt;.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ~/.bashrc: executed by bash(1) for interactive shells.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># The copy in your home directory (~/.bashrc) is yours, please</span></span><br><span class="line"><span class="comment"># feel free to customise it to create a shell</span></span><br><span class="line"><span class="comment"># environment to your liking.  If you feel a change</span></span><br><span class="line"><span class="comment"># would be benifitial to all, please feel free to send</span></span><br><span class="line"><span class="comment"># a patch to the msys2 mailing list.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># User dependent .bashrc file</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># If not running interactively, don't do anything</span></span><br><span class="line">[[ <span class="string">"$-"</span> != *i* ]] &amp;&amp; <span class="built_in">return</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Shell Options</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># See man bash for more options...</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Don't wait for job termination notification</span></span><br><span class="line"><span class="comment"># set -o notify</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Don't use ^D to exit</span></span><br><span class="line"><span class="comment"># set -o ignoreeof</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Use case-insensitive filename globbing</span></span><br><span class="line"><span class="comment"># shopt -s nocaseglob</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Make bash append rather than overwrite the history on disk</span></span><br><span class="line"><span class="comment"># shopt -s histappend</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># When changing directory small typos can be ignored by bash</span></span><br><span class="line"><span class="comment"># for example, cd /vr/lgo/apaache would find /var/log/apache</span></span><br><span class="line"><span class="comment"># shopt -s cdspell</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Completion options</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># These completion tuning parameters change the default behavior of bash_completion:</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Define to access remotely checked-out files over passwordless ssh for CVS</span></span><br><span class="line"><span class="comment"># COMP_CVS_REMOTE=1</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Define to avoid stripping description in --option=description of './configure --help'</span></span><br><span class="line"><span class="comment"># COMP_CONFIGURE_HINTS=1</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Define to avoid flattening internal contents of tar files</span></span><br><span class="line"><span class="comment"># COMP_TAR_INTERNAL_PATHS=1</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Uncomment to turn on programmable completion enhancements.</span></span><br><span class="line"><span class="comment"># Any completions you add in ~/.bash_completion are sourced last.</span></span><br><span class="line"><span class="comment"># [[ -f /etc/bash_completion ]] &amp;&amp; . /etc/bash_completion</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># History Options</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Don't put duplicate lines in the history.</span></span><br><span class="line"><span class="comment"># export HISTCONTROL=$HISTCONTROL$&#123;HISTCONTROL+,&#125;ignoredups</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Ignore some controlling instructions</span></span><br><span class="line"><span class="comment"># HISTIGNORE is a colon-delimited list of patterns which should be excluded.</span></span><br><span class="line"><span class="comment"># The '&amp;' is a special pattern which suppresses duplicate entries.</span></span><br><span class="line"><span class="comment"># export HISTIGNORE=$'[ \t]*:&amp;:[fb]g:exit'</span></span><br><span class="line"><span class="comment"># export HISTIGNORE=$'[ \t]*:&amp;:[fb]g:exit:ls' # Ignore the ls command as well</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Whenever displaying the prompt, write the previous line to disk</span></span><br><span class="line"><span class="comment"># export PROMPT_COMMAND="history -a"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Aliases</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Some people use a different file for aliases</span></span><br><span class="line"><span class="comment"># if [ -f "$&#123;HOME&#125;/.bash_aliases" ]; then</span></span><br><span class="line"><span class="comment">#   source "$&#123;HOME&#125;/.bash_aliases"</span></span><br><span class="line"><span class="comment"># fi</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Some example alias instructions</span></span><br><span class="line"><span class="comment"># If these are enabled they will be used instead of any instructions</span></span><br><span class="line"><span class="comment"># they may mask.  For example, alias rm='rm -i' will mask the rm</span></span><br><span class="line"><span class="comment"># application.  To override the alias instruction use a \ before, ie</span></span><br><span class="line"><span class="comment"># \rm will call the real rm not the alias.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Interactive operation...</span></span><br><span class="line"><span class="comment"># alias rm='rm -i'</span></span><br><span class="line"><span class="comment"># alias cp='cp -i'</span></span><br><span class="line"><span class="comment"># alias mv='mv -i'</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Default to human readable figures</span></span><br><span class="line"><span class="built_in">alias</span> df=<span class="string">'df -h'</span></span><br><span class="line"><span class="built_in">alias</span> du=<span class="string">'du -h'</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Misc :)</span></span><br><span class="line"><span class="built_in">alias</span> less=<span class="string">'less -r'</span>                          <span class="comment"># raw control characters</span></span><br><span class="line"><span class="built_in">alias</span> <span class="built_in">whence</span>=<span class="string">'type -a'</span>                        <span class="comment"># where, of a sort</span></span><br><span class="line"><span class="built_in">alias</span> grep=<span class="string">'grep --color'</span>                     <span class="comment"># show differences in colour</span></span><br><span class="line"><span class="built_in">alias</span> egrep=<span class="string">'egrep --color=auto'</span>              <span class="comment"># show differences in colour</span></span><br><span class="line"><span class="built_in">alias</span> fgrep=<span class="string">'fgrep --color=auto'</span>              <span class="comment"># show differences in colour</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Some shortcuts for different directory listings</span></span><br><span class="line"><span class="built_in">alias</span> ls=<span class="string">'ls -hF --color=tty'</span>                 <span class="comment"># classify files in colour</span></span><br><span class="line"><span class="built_in">alias</span> dir=<span class="string">'ls --color=auto --format=vertical'</span></span><br><span class="line"><span class="built_in">alias</span> vdir=<span class="string">'ls --color=auto --format=long'</span></span><br><span class="line"><span class="built_in">alias</span> ll=<span class="string">'ls -l'</span>                              <span class="comment"># long list</span></span><br><span class="line"><span class="built_in">alias</span> la=<span class="string">'ls -A'</span>                              <span class="comment"># all but . and ..</span></span><br><span class="line"><span class="built_in">alias</span> l=<span class="string">'ls -CF'</span>                              <span class="comment">#</span></span><br><span class="line"><span class="built_in">alias</span> hexopull=<span class="string">'cd ~/Hexo &amp;&amp; git fetch --all &amp;&amp; git reset --hard origin/master &amp;&amp; git pull'</span></span><br><span class="line"><span class="built_in">alias</span> hexopush=<span class="string">'cd ~/Hexo &amp;&amp; hexo clean &amp;&amp; hexo g -d &amp;&amp; git add -A &amp;&amp; git commit -m "update" &amp;&amp; git push origin master'</span></span><br><span class="line"><span class="built_in">alias</span> algpull=<span class="string">'cd ~/alg &amp;&amp; git fetch --all &amp;&amp; git reset --hard origin/master &amp;&amp; git pull'</span></span><br><span class="line"><span class="built_in">alias</span> algpush=<span class="string">'cd ~/alg &amp;&amp; hexo clean &amp;&amp; hexo g -d &amp;&amp; git add -A &amp;&amp; git commit -m "update" &amp;&amp; git push origin master'</span></span><br><span class="line"><span class="built_in">alias</span> hexodebug=<span class="string">'hexo clean &amp;&amp; hexo g &amp;&amp; hexo s --debug'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Umask</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># /etc/profile sets 022, removing write perms to group + others.</span></span><br><span class="line"><span class="comment"># Set a more restrictive umask: i.e. no exec perms for others:</span></span><br><span class="line"><span class="comment"># umask 027</span></span><br><span class="line"><span class="comment"># Paranoid: neither group nor others have any perms:</span></span><br><span class="line"><span class="comment"># umask 077</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Functions</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Some people use a different file for functions</span></span><br><span class="line"><span class="comment"># if [ -f "$&#123;HOME&#125;/.bash_functions" ]; then</span></span><br><span class="line"><span class="comment">#   source "$&#123;HOME&#125;/.bash_functions"</span></span><br><span class="line"><span class="comment"># fi</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Some example functions:</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># a) function settitle</span></span><br><span class="line"><span class="comment"># settitle ()</span></span><br><span class="line"><span class="comment"># &#123;</span></span><br><span class="line"><span class="comment">#   echo -ne "\e]2;$@\a\e]1;$@\a";</span></span><br><span class="line"><span class="comment"># &#125;</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># b) function cd_func</span></span><br><span class="line"><span class="comment"># This function defines a 'cd' replacement function capable of keeping,</span></span><br><span class="line"><span class="comment"># displaying and accessing history of visited directories, up to 10 entries.</span></span><br><span class="line"><span class="comment"># To use it, uncomment it, source this file and try 'cd --'.</span></span><br><span class="line"><span class="comment"># acd_func 1.0.5, 10-nov-2004</span></span><br><span class="line"><span class="comment"># Petar Marinov, http:/geocities.com/h2428, this is public domain</span></span><br><span class="line"><span class="comment"># cd_func ()</span></span><br><span class="line"><span class="comment"># &#123;</span></span><br><span class="line"><span class="comment">#   local x2 the_new_dir adir index</span></span><br><span class="line"><span class="comment">#   local -i cnt</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#   if [[ $1 ==  "--" ]]; then</span></span><br><span class="line"><span class="comment">#     dirs -v</span></span><br><span class="line"><span class="comment">#     return 0</span></span><br><span class="line"><span class="comment">#   fi</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#   the_new_dir=$1</span></span><br><span class="line"><span class="comment">#   [[ -z $1 ]] &amp;&amp; the_new_dir=$HOME</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#   if [[ $&#123;the_new_dir:0:1&#125; == '-' ]]; then</span></span><br><span class="line"><span class="comment">#     #</span></span><br><span class="line"><span class="comment">#     # Extract dir N from dirs</span></span><br><span class="line"><span class="comment">#     index=$&#123;the_new_dir:1&#125;</span></span><br><span class="line"><span class="comment">#     [[ -z $index ]] &amp;&amp; index=1</span></span><br><span class="line"><span class="comment">#     adir=$(dirs +$index)</span></span><br><span class="line"><span class="comment">#     [[ -z $adir ]] &amp;&amp; return 1</span></span><br><span class="line"><span class="comment">#     the_new_dir=$adir</span></span><br><span class="line"><span class="comment">#   fi</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#   #</span></span><br><span class="line"><span class="comment">#   # '~' has to be substituted by $&#123;HOME&#125;</span></span><br><span class="line"><span class="comment">#   [[ $&#123;the_new_dir:0:1&#125; == '~' ]] &amp;&amp; the_new_dir="$&#123;HOME&#125;$&#123;the_new_dir:1&#125;"</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#   #</span></span><br><span class="line"><span class="comment">#   # Now change to the new dir and add to the top of the stack</span></span><br><span class="line"><span class="comment">#   pushd "$&#123;the_new_dir&#125;" &gt; /dev/null</span></span><br><span class="line"><span class="comment">#   [[ $? -ne 0 ]] &amp;&amp; return 1</span></span><br><span class="line"><span class="comment">#   the_new_dir=$(pwd)</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#   #</span></span><br><span class="line"><span class="comment">#   # Trim down everything beyond 11th entry</span></span><br><span class="line"><span class="comment">#   popd -n +11 2&gt;/dev/null 1&gt;/dev/null</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#   #</span></span><br><span class="line"><span class="comment">#   # Remove any other occurence of this dir, skipping the top of the stack</span></span><br><span class="line"><span class="comment">#   for ((cnt=1; cnt &lt;= 10; cnt++)); do</span></span><br><span class="line"><span class="comment">#     x2=$(dirs +$&#123;cnt&#125; 2&gt;/dev/null)</span></span><br><span class="line"><span class="comment">#     [[ $? -ne 0 ]] &amp;&amp; return 0</span></span><br><span class="line"><span class="comment">#     [[ $&#123;x2:0:1&#125; == '~' ]] &amp;&amp; x2="$&#123;HOME&#125;$&#123;x2:1&#125;"</span></span><br><span class="line"><span class="comment">#     if [[ "$&#123;x2&#125;" == "$&#123;the_new_dir&#125;" ]]; then</span></span><br><span class="line"><span class="comment">#       popd -n +$cnt 2&gt;/dev/null 1&gt;/dev/null</span></span><br><span class="line"><span class="comment">#       cnt=cnt-1</span></span><br><span class="line"><span class="comment">#     fi</span></span><br><span class="line"><span class="comment">#   done</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#   return 0</span></span><br><span class="line"><span class="comment"># &#125;</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># alias cd=cd_func</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">alias</span> grep=<span class="string">'grep --color=auto --exclude-dir=&#123;.bzr,CVS,.git,.hg,.svn&#125;'</span></span><br><span class="line"><span class="built_in">alias</span> e=explorer</span><br><span class="line"><span class="built_in">alias</span> giturl=<span class="string">'curl -i https://git.io -F'</span></span><br><span class="line"><span class="built_in">alias</span> poweroff=<span class="string">'(shutdown -s -t 0 &amp;); (net stop autossh_5679 &amp;);'</span></span><br><span class="line"><span class="built_in">alias</span> reboot=<span class="string">'(shutdown -r -t 0 &amp;); (net stop autossh_5679 &amp;);'</span></span><br><span class="line"><span class="comment"># alias uptime='net stats server | grep -P -o "[\d/]+.*M$" --color=never'</span></span><br><span class="line"><span class="built_in">alias</span> lcd=<span class="string">'/e/UtilityPrograms/_exe/TurnOffLCD.exe'</span></span><br><span class="line"><span class="comment"># alias pb='~/App/pastebinit/pastebinit -b http://paste.ubuntu.com'</span></span><br><span class="line"><span class="comment"># alias pb='~/App/pastebinit/pastebinit -b http://paste.ubuntu.org.cn'</span></span><br><span class="line"><span class="built_in">alias</span> wolfram=<span class="string">'winpty /e/Mathematica/11.1/wolfram'</span></span><br><span class="line"><span class="built_in">alias</span> loginpc=<span class="string">'cygrunsrv -S autossh_5679'</span></span><br><span class="line"><span class="built_in">alias</span> viz=<span class="string">'vim `which z`'</span></span><br><span class="line"><span class="built_in">alias</span> memopull=<span class="string">'cd ~/memos &amp;&amp; git fetch --all &amp;&amp; git reset --hard origin/master &amp;&amp; git pull'</span></span><br><span class="line"><span class="built_in">alias</span> memopush=<span class="string">'cd ~/memos &amp;&amp; hexo clean &amp;&amp; hexo g -d &amp;&amp; git add -A &amp;&amp; git commit -m "update" &amp;&amp; git push origin master'</span></span><br><span class="line"></span><br><span class="line">HISTTIMEFORMAT=<span class="string">'%F %T '</span></span><br><span class="line">HISTCONTROL=erasedups</span><br><span class="line">HISTIGNORE=<span class="string">"ls:pwd:cd:clear:vim:fg:bg:jobs:top:htop"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> LESS_TERMCAP_mb=$(<span class="built_in">printf</span> <span class="string">'\e[01;31m'</span>) <span class="comment"># enter blinking mode - red</span></span><br><span class="line"><span class="built_in">export</span> LESS_TERMCAP_md=$(<span class="built_in">printf</span> <span class="string">'\e[01;35m'</span>) <span class="comment"># enter double-bright mode - bold, magenta</span></span><br><span class="line"><span class="built_in">export</span> LESS_TERMCAP_me=$(<span class="built_in">printf</span> <span class="string">'\e[0m'</span>) <span class="comment"># turn off all appearance modes (mb, md, so, us)</span></span><br><span class="line"><span class="built_in">export</span> LESS_TERMCAP_se=$(<span class="built_in">printf</span> <span class="string">'\e[0m'</span>) <span class="comment"># leave standout mode</span></span><br><span class="line"><span class="built_in">export</span> LESS_TERMCAP_so=$(<span class="built_in">printf</span> <span class="string">'\e[01;33m'</span>) <span class="comment"># enter standout mode - yellow</span></span><br><span class="line"><span class="built_in">export</span> LESS_TERMCAP_ue=$(<span class="built_in">printf</span> <span class="string">'\e[0m'</span>) <span class="comment"># leave underline mode</span></span><br><span class="line"><span class="built_in">export</span> LESS_TERMCAP_us=$(<span class="built_in">printf</span> <span class="string">'\e[04;36m'</span>) <span class="comment"># enter underline mode - cyan</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># export http_proxy="http://192.168.1.102:1888/"</span></span><br><span class="line"><span class="comment"># export https_proxy="https://192.168.1.102:1888/"</span></span><br><span class="line"><span class="comment"># export ftp_proxy="ftp://192.168.1.102:1888/"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># export PS1="[\[\e[01;33m\]foo\[\e[37;40m\]@\[\e[34;40m\]PHANTOM \[\e[37;40m\]\t \[\e[34;40m\]\W\[\e[0m\]]$ "</span></span><br><span class="line"><span class="built_in">export</span> PS1=<span class="string">"[ \[\e[37;40m\]\t \[\e[34;40m\]\W\[\e[0m\] ]$ "</span></span><br><span class="line"><span class="built_in">export</span> GTAGSLIBPATH=<span class="variable">$GTAGSLIBPATH</span>:/usr/include/</span><br><span class="line"><span class="built_in">export</span> HISTFILESIZE=50000</span><br><span class="line"><span class="built_in">export</span> HISTSIZE=50000</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:~/App/bin</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/e/Nodejs</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/c/Users/Liang/AppData/Roaming/npm</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/e/MySQL/bin</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/d/Java/jdk-10/bin</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/f/WorkingDirectory/Bin</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/e/TexLive/2018/bin/win32</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/e/R/bin/x64</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/f/WorkingDirectory/Bin</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/c/Users/Liang/AppData/Roaming/<span class="built_in">local</span>/bin</span><br><span class="line"></span><br><span class="line"><span class="comment"># STACK_ROOT=/f/HaskellStack</span></span><br></pre></td></tr></table></figure>
+</div></div></li>
+<li>比如 Git 需要代理: <div><div class="fold_hider"><div class="close hider_title">.gitconfig</div></div><div class="fold">
+<figure class="highlight"><figcaption><span>.gitconfig</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[user]</span></span><br><span class="line">    name = michaelHL</span><br><span class="line">    email = lbgnmic@gmail.com</span><br><span class="line"><span class="section">[github]</span></span><br><span class="line">    user = michaelHL</span><br><span class="line"><span class="section">[http]</span></span><br><span class="line">    proxy = socks5://127.0.0.1:1888</span><br></pre></td></tr></table></figure>
+</div></div></li>
+<li>比如忽略大小写的 <code>.inputrc</code>： <div><div class="fold_hider"><div class="close hider_title">.inputrc</div></div><div class="fold">
+<figure class="highlight bash"><figcaption><span>.inputrc</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># To the extent possible under law, the author(s) have dedicated all </span></span><br><span class="line"><span class="comment"># copyright and related and neighboring rights to this software to the </span></span><br><span class="line"><span class="comment"># public domain worldwide. This software is distributed without any warranty. </span></span><br><span class="line"><span class="comment"># You should have received a copy of the CC0 Public Domain Dedication along </span></span><br><span class="line"><span class="comment"># with this software. </span></span><br><span class="line"><span class="comment"># If not, see &lt;http://creativecommons.org/publicdomain/zero/1.0/&gt;. </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ~/.inputrc: readline initialization file.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># The copy in your home directory (~/.inputrc) is yours, please</span></span><br><span class="line"><span class="comment"># feel free to customise it to create a shell</span></span><br><span class="line"><span class="comment"># environment to your liking.  If you feel a change</span></span><br><span class="line"><span class="comment"># would be benifitial to all, please feel free to send</span></span><br><span class="line"><span class="comment"># a patch to the msys2 mailing list.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># the following line is actually</span></span><br><span class="line"><span class="comment"># equivalent to "\C-?": delete-char</span></span><br><span class="line"><span class="comment"># "\e[3~": delete-char</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># VT</span></span><br><span class="line"><span class="comment"># "\e[1~": beginning-of-line</span></span><br><span class="line"><span class="comment"># "\e[4~": end-of-line</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># kvt</span></span><br><span class="line"><span class="comment"># "\e[H": beginning-of-line</span></span><br><span class="line"><span class="comment"># "\e[F": end-of-line</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># rxvt and konsole (i.e. the KDE-app...)</span></span><br><span class="line"><span class="comment"># "\e[7~": beginning-of-line</span></span><br><span class="line"><span class="comment"># "\e[8~": end-of-line</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># VT220</span></span><br><span class="line"><span class="comment"># "\eOH": beginning-of-line</span></span><br><span class="line"><span class="comment"># "\eOF": end-of-line</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Allow 8-bit input/output</span></span><br><span class="line"><span class="comment"># set meta-flag on</span></span><br><span class="line"><span class="comment"># set convert-meta off</span></span><br><span class="line"><span class="comment"># set input-meta on</span></span><br><span class="line"><span class="comment"># set output-meta on</span></span><br><span class="line"><span class="comment">#$if Bash</span></span><br><span class="line">  <span class="comment"># Don't ring bell on completion</span></span><br><span class="line">  <span class="built_in">set</span> bell-style none</span><br><span class="line"></span><br><span class="line">  <span class="comment"># or, don't beep at me - show me</span></span><br><span class="line">  <span class="comment">#set bell-style visible</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Show all instead of beeping first</span></span><br><span class="line">  <span class="built_in">set</span> show-all-if-ambiguous off</span><br><span class="line"></span><br><span class="line">  <span class="comment"># Filename completion/expansion</span></span><br><span class="line">  <span class="built_in">set</span> completion-ignore-case on</span><br><span class="line">  <span class="comment">#set show-all-if-ambiguous on</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Expand homedir name</span></span><br><span class="line">  <span class="comment">#set expand-tilde on</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Append "/" to all dirnames</span></span><br><span class="line">  <span class="comment">#set mark-directories on</span></span><br><span class="line">  <span class="comment">#set mark-symlinked-directories on</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># visible-stats</span></span><br><span class="line">  <span class="comment"># Append a mark according to the file type in a listing</span></span><br><span class="line">  <span class="built_in">set</span> visible-stats off</span><br><span class="line">  <span class="built_in">set</span> mark-directories on</span><br><span class="line"></span><br><span class="line">  <span class="comment"># Match all files</span></span><br><span class="line">  <span class="comment">#set match-hidden-files on</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># 'Magic Space'</span></span><br><span class="line">  <span class="comment"># Insert a space character then performs</span></span><br><span class="line">  <span class="comment"># a history expansion in the line</span></span><br><span class="line">  <span class="comment">#Space: magic-space</span></span><br><span class="line"><span class="comment">#$endif</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># MSYSTEM is emacs based</span></span><br><span class="line"><span class="variable">$if</span> mode=emacs</span><br><span class="line">  <span class="comment"># Common to Console &amp; RXVT</span></span><br><span class="line">  <span class="string">"\C-?"</span>: backward-kill-line         <span class="comment"># Ctrl-BackSpace</span></span><br><span class="line">  <span class="string">"\e[2~"</span>: paste-from-clipboard      <span class="comment"># "Ins. Key"</span></span><br><span class="line">  <span class="string">"\e[5~"</span>: beginning-of-history      <span class="comment"># Page up</span></span><br><span class="line">  <span class="string">"\e[6~"</span>: end-of-history            <span class="comment"># Page down</span></span><br><span class="line"></span><br><span class="line">  <span class="variable">$if</span> term=msys <span class="comment"># RXVT</span></span><br><span class="line">    <span class="string">"\e[7~"</span>: beginning-of-line      <span class="comment"># Home Key</span></span><br><span class="line">    <span class="string">"\e[8~"</span>: end-of-line            <span class="comment"># End Key</span></span><br><span class="line">    <span class="string">"\e[11~"</span>: display-shell-version <span class="comment"># F1</span></span><br><span class="line">    <span class="string">"\e[15~"</span>: re-read-init-file     <span class="comment"># F5</span></span><br><span class="line">    <span class="string">"\e[12~"</span>: <span class="string">"Function Key 2"</span></span><br><span class="line">    <span class="string">"\e[13~"</span>: <span class="string">"Function Key 3"</span></span><br><span class="line">    <span class="string">"\e[14~"</span>: <span class="string">"Function Key 4"</span></span><br><span class="line">    <span class="string">"\e[17~"</span>: <span class="string">"Function Key 6"</span></span><br><span class="line">    <span class="string">"\e[18~"</span>: <span class="string">"Function Key 7"</span></span><br><span class="line">    <span class="string">"\e[19~"</span>: <span class="string">"Function Key 8"</span></span><br><span class="line">    <span class="string">"\e[20~"</span>: <span class="string">"Function Key 9"</span></span><br><span class="line">    <span class="string">"\e[21~"</span>: <span class="string">"Function Key 10"</span></span><br><span class="line">  <span class="variable">$else</span></span><br><span class="line">  <span class="comment"># Eh, normal Console is not really cygwin anymore, is it? Using 'else' instead. -mstormo</span></span><br><span class="line">  <span class="comment"># $if term=cygwin # Console</span></span><br><span class="line">    <span class="string">"\e[1~"</span>: beginning-of-line      <span class="comment"># Home Key</span></span><br><span class="line">    <span class="string">"\e[4~"</span>: end-of-line            <span class="comment"># End Key</span></span><br><span class="line">    <span class="string">"\e[3~"</span>: delete-char      <span class="comment"># Delete Key</span></span><br><span class="line">    <span class="string">"\e\e[C"</span>: forward-word      <span class="comment"># Alt-Right</span></span><br><span class="line">    <span class="string">"\e\e[D"</span>: backward-word      <span class="comment"># Alt-Left</span></span><br><span class="line">    <span class="string">"\e[1;5C"</span>: forward-word   <span class="comment"># ctrl + right</span></span><br><span class="line">    <span class="string">"\e[1;5D"</span>: backward-word  <span class="comment"># ctrl + left </span></span><br><span class="line">    <span class="string">"\e[17~"</span>: <span class="string">"Function Key 6"</span></span><br><span class="line">    <span class="string">"\e[18~"</span>: <span class="string">"Function Key 7"</span></span><br><span class="line">    <span class="string">"\e[19~"</span>: <span class="string">"Function Key 8"</span></span><br><span class="line">    <span class="string">"\e[20~"</span>: <span class="string">"Function Key 9"</span></span><br><span class="line">    <span class="string">"\e[21~"</span>: <span class="string">"Function Key 10"</span></span><br><span class="line">    <span class="string">"\e[23~"</span>: <span class="string">"Function Key 11"</span></span><br><span class="line">  <span class="variable">$endif</span></span><br><span class="line"><span class="variable">$endif</span></span><br></pre></td></tr></table></figure>
+</div></div></li>
+<li>比如 Vim 配置文件 <a href="/src/vimrc"><code>.vimrc</code></a></li>
+</ul>
+<h3 id="编译-vim">编译 Vim</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">pacman -S ncurses-devel libcrypt-devel</span><br><span class="line">./configure --with-features=huge \</span><br><span class="line">            --<span class="built_in">enable</span>-luainterp=yes \</span><br><span class="line">            --<span class="built_in">enable</span>-perlinterp=yes \</span><br><span class="line">            --<span class="built_in">enable</span>-pythoninterp=yes \</span><br><span class="line">            --<span class="built_in">enable</span>-python3interp=yes \</span><br><span class="line">            --with-lua-prefix=/usr/<span class="built_in">local</span> \</span><br><span class="line">            --<span class="built_in">enable</span>-fontset=yes \</span><br><span class="line">            --<span class="built_in">enable</span>-cscope=yes \</span><br><span class="line">            --<span class="built_in">enable</span>-multibyte \</span><br><span class="line">            --<span class="built_in">disable</span>-gui \</span><br><span class="line">            --<span class="built_in">enable</span>-fail-if-missing \</span><br><span class="line">            --prefix=/usr/<span class="built_in">local</span> \</span><br><span class="line">            --with-compiledby=<span class="string">'Professional operations'</span></span><br></pre></td></tr></table></figure>
+<p>这里提醒自己下，折腾有度，比如尝试在 MSYS2 中编译 <a href="https://github.com/Valloric/YouCompleteMe" target="_blank" rel="noopener">ycm</a> 十几次未遂这种行为是不可取的。</p>
+<h3 id="替换默认终端">替换默认终端</h3>
+<p>将自带的 <a href="https://mintty.github.io" target="_blank" rel="noopener">Mintty</a> 换成 Windows 下很棒的终端模拟器：<a href="https://conemu.github.io" target="_blank" rel="noopener">ConEmu</a>。</p>
+<ol type="1">
+<li>设置为默认的系统终端程序，替换掉残废的 cmd：<code>Settings</code> - <code>Integration</code> - <code>Default term - Force ConEmu as default terminal for console applications</code></li>
+<li>如果希望「劫持」某些程序调试时使用的终端程序（比如 VS 在调试时会唤起系统默认的 cmd），在下面的输入框中填入 <code>explorer.exe|devenv.exe</code></li>
+<li>对于 MSYS2 的集成：
+<ol type="1">
+<li>新建 Task：<code>set MSYSTEM=MINGW64 &amp; "/path/to/MSYS-connector -cur_console:n"</code></li>
+<li>Connector 网址：<a href="https://github.com/Maximus5/cygwin-connector" target="_blank" rel="noopener">cygwin-connector</a>，不同版本的设置如下：
+<ul>
+<li>Cygwin：<code>conemu-cyg-32.exe</code> and <code>conemu-cyg-64.exe</code></li>
+<li>MSYS 1.0：<code>conemu-msys-32.exe</code></li>
+<li>MSYS 2.0：<code>conemu-msys2-32.exe</code> and <code>conemu-msys2-64.exe</code></li>
+</ul>
+复制到 <code>sh.exe</code> 同目录下即可</li>
+</ol></li>
+<li>启动时的相关设定（<code>Settings</code> - <code>Startup</code> - <code>Environment）</code>： <figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> <span class="built_in">PATH</span>=<span class="variable">%ConEmuBaseDir%</span>\Scripts;<span class="variable">%PATH%</span></span><br><span class="line"><span class="built_in">chcp</span> utf-<span class="number">8</span></span><br><span class="line"><span class="built_in">set</span> LANG=en_US.utf-<span class="number">8</span></span><br></pre></td></tr></table></figure></li>
+<li>当前的配置文件 <a href="/src/conemu.xml">conemu.xml</a></li>
+</ol>
+<p><i class="fa fa-warning fa-fw"></i>新版本的 ConEmu 已经自带了适配各种系统下的 <code>connector</code>，所以在 Task 里面关于 <code>connector</code> 的路径直接填写其程序名即可。（见 <a href="https://conemu.github.io/en/CygwinMsysConnector.html#cygwinmsys-terminal-connector" target="_blank" rel="noopener">cygwin/msys terminal connector</a>）</p>
+<h4 id="题外话---sublime-text-调用-conemu">题外话 - Sublime Text 调用 ConEmu</h4>
+<p>对于一般程序，在设置中的 <code>Integration</code> - <code>Default term</code> - <code>List of ...</code> 中添加程序，ConEmu 将被自动唤起以替代 cmd，但添加 Sublime Text 的 <code>sublime_text.exe</code> 并没有反应，只能曲线救国，比如 C 类型文件的编译配置文件 <code>C.sublime-build</code>：</p>
+<figure class="highlight"><figcaption><span>C.sublime-build</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    // "shell_cmd": "gcc -std=c11 -Wall -s \"$&#123;file&#125;\" -o \"$&#123;file_path&#125;/$&#123;file_base_name&#125;\" &amp;&amp; \"$&#123;file_path&#125;/$&#123;file_base_name&#125;\"",</span><br><span class="line">    "shell_cmd": "/path/to/conemu /single -run cmd /c -cur_console:n \"gcc -std=c11 -Wall -s $&#123;file&#125; -o $&#123;file_path&#125;/$&#123;file_base_name&#125; &amp;&amp; $&#123;file_path&#125;/$&#123;file_base_name&#125; &amp; pause \"",</span><br><span class="line">    "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",</span><br><span class="line">    "working_dir": "$&#123;file_path&#125;",</span><br><span class="line">    "selector": "source.c"</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="问题">问题</h2>
+<ul>
+<li>如果发现程序的输出被缓冲：可尝试利用工具 <code>winpty</code></li>
+<li><code>git clone</code> 时出现字符相关的奇怪问题：使用 <strong>MSYS</strong> 而不是 MinGW64 或者 MinGW32</li>
+<li>2018-02-09 <i class="fa fa-warning fa-fw"></i> ncurses 版本升级为 <code>ncurses-6.1.20180127-1-x86_64</code> 后 ConEmu 终端会出现各种光标问题，可通过回退版本至 <a href="https://mirrors.tuna.tsinghua.edu.cn/msys2/msys/x86_64/ncurses-6.0.20170708-2-x86_64.pkg.tar.xz" target="_blank" rel="noopener"><code>ncurses-6.0.20170708-2-x86_64</code></a> 来解决： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pacman -R ncurses-devel</span><br><span class="line">pacman -U ncurses-6.0.20170708-2-x86_64.pkg.tar.xz --force</span><br></pre></td></tr></table></figure></li>
+<li>2018-02-10 <i class="fa fa-warning fa-fw"></i> 如果集成在 VSCode 中的 MSYS2 也出现上述情况, 可考虑直接使用 <code>connector</code>： <figure class="highlight json"><figcaption><span>settings.json</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"terminal.integrated.shell.windows"</span>: <span class="string">"E:/UtilityPrograms/ConEmu/ConEmu/conemu-msys2-64.exe"</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> 或者如果仅需为清屏设置快捷键： <figure class="highlight json"><figcaption><span>keybindings.json</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"key"</span>: <span class="string">"ctrl+l"</span>,</span><br><span class="line">    <span class="attr">"command"</span>: <span class="string">"workbench.action.terminal.clear"</span>,</span><br><span class="line">    <span class="attr">"when"</span>: <span class="string">"terminalFocus"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  
+    <ul class="post-copyright">
+      <li class="post-copyright-author">
+        <strong>本文作者：</strong>
+        Heller
+      </li>
+      <li class="post-copyright-link">
+        <strong>本文链接：</strong>
+        <a href="http://notes.shinemic.cn/daily-operations-of-msys2/" title="MSYS2 的日常操作">http://notes.shinemic.cn/daily-operations-of-msys2/</a>
+      </li>
+      <li class="post-copyright-license">
+        <strong>版权声明： </strong>
+        本博客所有文章除特别声明外, 均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议. 转载请注明出处<a href=""><i class="fa fa-link" aria-hidden="true"></i></a>
+      </li>
+    </ul>
+  
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
+          
+            <a href="/tags/MSYS2/" rel="tag"><i class="fa fa-tag"></i> MSYS2</a>
+          
+            <a href="/tags/Windows/" rel="tag"><i class="fa fa-tag"></i> Windows</a>
+          
+            <a href="/tags/ConEmu/" rel="tag"><i class="fa fa-tag"></i> ConEmu</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/ssh-reverse-tunnel/" rel="next" title="ssh / autossh / Xshell 端口转发及内网穿透">
+                <i class="fa fa-chevron-left"></i> ssh / autossh / Xshell 端口转发及内网穿透
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/reading-list-of-perl/" rel="prev" title="「转」Perl 语言学习书籍">
+                「转」Perl 语言学习书籍 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="comments" id="comments">
+        <div id="vcomments"></div>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/img/avatar.jpg"
+               alt="Heller" />
+          <p class="site-author-name" itemprop="name">Heller</p>
+           
+              <p class="site-description motion-element" itemprop="description">多做正事少折腾</p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">59</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/michaelHL" target="_blank" title="Github" rel="external nofollow">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/he-liang-69-62" target="_blank" title="知乎" rel="external nofollow">
+                  
+                    <i class="fa fa-fw fa-delicious"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://music.163.com/#/user/home?id=43058330" target="_blank" title="网易云" rel="external nofollow">
+                  
+                    <i class="fa fa-fw fa-music"></i>
+                  
+                  网易云
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友链
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/ocean1100" title="木易修" target="_blank"><i class="fa fa-fire"></i> 木易修</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://woyun.ink" title="卧云博客" target="_blank"><i class="fa fa-fire"></i> 卧云博客</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://cuijiahua.com" title="Jack Cui" target="_blank"><i class="fa fa-fire"></i> Jack Cui</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://seisman.info" title="SeisMan" target="_blank"><i class="fa fa-fire"></i> SeisMan</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://docs.lvrui.io" title="极地瑞雪" target="_blank"><i class="fa fa-fire"></i> 极地瑞雪</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.daxiblog.com" title="大席的博客" target="_blank"><i class="fa fa-fire"></i> 大席的博客</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://kaito-kidd.com" title="Kaito" target="_blank"><i class="fa fa-fire"></i> Kaito</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.deeplearn.me" title="算法之道" target="_blank"><i class="fa fa-fire"></i> 算法之道</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://blog.yasking.org" title="东东's Blog" target="_blank"><i class="fa fa-fire"></i> 东东's Blog</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#msys2-安装与配置"><span class="nav-number">1.</span> <span class="nav-text">MSYS2 安装与配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#个性化设置"><span class="nav-number">2.</span> <span class="nav-text">个性化设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自动挂载文件"><span class="nav-number">2.1.</span> <span class="nav-text">自动挂载文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置文件"><span class="nav-number">2.2.</span> <span class="nav-text">配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译-vim"><span class="nav-number">2.3.</span> <span class="nav-text">编译 Vim</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#替换默认终端"><span class="nav-number">2.4.</span> <span class="nav-text">替换默认终端</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#题外话---sublime-text-调用-conemu"><span class="nav-number">2.4.1.</span> <span class="nav-text">题外话 - Sublime Text 调用 ConEmu</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">3.</span> <span class="nav-text">问题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-chevron-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-paper-plane"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Heller</span>
+
+  <div class="theme-info">
+    <div class="powered-by"></div>
+    <span class="post-count">码了&nbsp;&nbsp58.6k&nbsp;&nbsp;个字</span>
+  </div>
+
+  
+</div>
+
+
+<div class="powered-by">
+Hosted by <a href="https://pages.coding.me" rel="external nofollow">Coding Pages</a>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io" rel="external nofollow">Hexo</a> 强力驱动
+</div>
+
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://theme-next.iissnan.com/" rel="external nofollow">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        <!-- 
+ -->
+        
+      </div>
+    </footer>
+
+    <!--  -->
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+<!-- 
+ -->
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("0DK08zbE8Vf43Mb2ckWn379n-gzGzoHsz", "QuwRw2RL89PtuGLFSikuDugr");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

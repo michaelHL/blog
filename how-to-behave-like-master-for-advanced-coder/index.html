@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Merriweather:300,300italic,400,400italic,700,700italic|Philosopher:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Programmer," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Heller 的博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="作者: rollenholt 链接: 高级程序员装逼指南, 是高级哦！ 来源: 云栖社区  前言 最近网上出了一个「程序员装逼指南」，觉得这个东西其实图样图森破，然后在下跟微博上的一些程序大牛讨论了一下如何装逼，深有感触。程序员嘛，外行人看起来已经是不可理解的奇怪生物了，自然也没必要跟他们…">
+<meta name="keywords" content="Programmer">
+<meta property="og:type" content="article">
+<meta property="og:title" content="「转」高级程序员装逼指南">
+<meta property="og:url" content="http://notes.shinemic.cn/how-to-behave-like-master-for-advanced-coder/index.html">
+<meta property="og:site_name" content="Heller 的博客">
+<meta property="og:description" content="作者: rollenholt 链接: 高级程序员装逼指南, 是高级哦！ 来源: 云栖社区  前言 最近网上出了一个「程序员装逼指南」，觉得这个东西其实图样图森破，然后在下跟微博上的一些程序大牛讨论了一下如何装逼，深有感触。程序员嘛，外行人看起来已经是不可理解的奇怪生物了，自然也没必要跟他们…">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-11-13T03:01:52.248Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="「转」高级程序员装逼指南">
+<meta name="twitter:description" content="作者: rollenholt 链接: 高级程序员装逼指南, 是高级哦！ 来源: 云栖社区  前言 最近网上出了一个「程序员装逼指南」，觉得这个东西其实图样图森破，然后在下跟微博上的一些程序大牛讨论了一下如何装逼，深有感触。程序员嘛，外行人看起来已经是不可理解的奇怪生物了，自然也没必要跟他们…">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://notes.shinemic.cn/how-to-behave-like-master-for-advanced-coder/"/>
+
+
+
+
+
+  <title>「转」高级程序员装逼指南 | Heller 的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Heller 的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">世界不是非黑即白</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-series">
+          <a href="/series/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-envelope"></i> <br />
+            
+            系列
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sketch">
+          <a href="/sketch/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-leaf"></i> <br />
+            
+            札记
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://notes.shinemic.cn/how-to-behave-like-master-for-advanced-coder/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Heller">
+      <meta itemprop="description" content="多做正事少折腾">
+      <meta itemprop="image" content="/img/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Heller 的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">「转」高级程序员装逼指南</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-15T10:55:10+08:00">
+                <!-- 2018-01-15 -->
+                2018-01-15 10:55
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-11-13T11:01:52+08:00">
+                <!-- 2019-11-13 -->
+                2019-11-13 11:01
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Memos/" itemprop="url" rel="index">
+                    <span itemprop="name">Memos</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/how-to-behave-like-master-for-advanced-coder/" class="leancloud_visitors" data-flag-title="「转」高级程序员装逼指南">
+               <span><br></span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  3,438
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  12
+                </span>
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>作者: <a href="https://yq.aliyun.com/users/1161940728112158" target="_blank" rel="noopener">rollenholt</a><br>
+链接: <a href="https://yq.aliyun.com/articles/38694" target="_blank" rel="noopener">高级程序员装逼指南, 是高级哦！</a><br>
+来源: <a href="https://yq.aliyun.com" target="_blank" rel="noopener">云栖社区</a></p>
+</blockquote>
+<h3 id="前言">前言</h3>
+<p>最近网上出了一个「程序员装逼指南」，觉得这个东西其实图样图森破，然后在下跟微博上的一些程序大牛讨论了一下如何装逼，深有感触。程序员嘛，外行人看起来已经是不可理解的奇怪生物了，自然也没必要跟他们…</p>
+<a id="more"></a>
+<h3 id="编程语言">编程语言</h3>
+<p>千万千万千万千万不要说自己是 Java/C#/C++ 程序员，尽量学一些奇怪的语言，python 已经有烂大街的趋势了，写写还是可以，装逼是用不上了。Lisp 和 Erlang 都是装逼的好语言。当然你要是号称会 Haskell 就更牛逼了，实在不会也没关系，发发跟 Haskell 有关的状态别人也很装了。没事儿还可以在论坛里喷喷 Java/C++ 有哪些缺点，可是，如果对方先发制人说他出了一种奇怪的语言名字怎么办？你可以微笑地说，你可知道天下语言皆出自 Lisp 和 Smalltalk？保准对方愣住 3 秒钟。</p>
+<h3 id="操作系统">操作系统</h3>
+<p>首先，妥妥儿的不能用 Win，麻瓜才用 Win 呢。Linux 嘛，ubuntu 也差了点儿，现在不少人已经用 Arch 了，懂行儿的人都知道，gentoo 和 LFS 才是真正的装逼利器啊。自己编译神马的，这逼还真不是人人都能装的。再深入的话，你要是用 Lisp Machine 工作，就近乎神了。</p>
+<h3 id="编辑器">编辑器</h3>
+<p>作为一个 IDE 去死团成员，我承认很大程度上我只是在装逼，纯文本编辑器才是你最终的归宿。Vim是标配，但是只有 Emacs 才能称得上是神器，「伪装成操作系统的编辑器」并非浪得虚名。当然，想要装逼装得好的话，你还需要学习它的配置语言 Emacs Lisp。</p>
+<h3 id="博客">博客</h3>
+<p>在 CSDN/ITeye/cnblogs 这种地方写技术博客确实比在人人上写技术博客好多了，但是你要知道，大牛们都是有自己的个人网站的，而且，一个共同点是，他们的网站都是自己写的 html（没有 css）并且界面十分难看。整个网站散发着一种「我这的文章都很牛所以界面什么的都不重要」的气质。例如这个: <a href="http://xahlee.org/index.html" target="_blank" rel="noopener">http://xahlee.org/index.html</a>。</p>
+<h3 id="其它">其它</h3>
+<p>我习惯称不会写代码的人为「麻瓜」，你也可以有你自己的称呼。不要写 Linux/Unix，正确而专业的写法是 *nix。手边不要放技术书籍，即使要摆一两本书也要那种自己打印的全英文的手册，或者用铅笔在纸上写代码也是个不错的选择。还可以养成某种奇特的习惯，例如号称自己是 Lisper 然后各种（括号）。</p>
+<h3 id="装逼进阶">装逼进阶</h3>
+<p>老是装逼也不成，所以我一直在寻找一种秒杀一切程序员的装逼之法。说实话，程序员的世界里有三种人。大部分是不会写代码的麻瓜，然后是程序员这个群体本身，他们认为唯一比程序员牛逼的，就是搞数学的人了。所以嘛，你要真想装个牛逼，就去学好傅立叶变换吧。另，发明 Lisp 和 Python 的人都是数学家，高得纳大神也是数学教授。</p>
+<hr>
+<ul>
+<li>大家都出来各自上车了这叫切断电源</li>
+<li>你们这桌交错敬酒，敬我一杯，敬你一杯，叫全相连。</li>
+<li>你们这桌有人提议咱们男士敬女士们一杯，叫组相连。</li>
+<li>BOSS 自己提了一瓶过来说兄弟们再把这个解决了这叫 alpha 测试。</li>
+<li>BOSS 让服务生端了二瓶过来，隔着桌子喊，你们这桌再把这个解决了，这叫 beta 测试。</li>
+<li>经理过来要敬大家，你们都说不行了，经理指着酒量最大的人说 ××× 你代表大家把这杯干了，这叫白盒测试。</li>
+<li>经理过来要敬大家，你们都说不行了，经理说我不管，出个人把这杯干了，这叫黑盒测试。</li>
+<li>又有人醉醺醺地过来要敬大家，一看不认识不是你们公司的这叫地址错误。</li>
+<li>你拍拍这人肩膀说兄弟你是对面厅的吧这叫重定向。</li>
+<li>你一人自斟自饮喝闷酒这叫 PC</li>
+<li>你们这桌相互敬酒这叫 LAN</li>
+<li>你们和别桌流动敬酒这叫 WAN</li>
+<li>你们一哥们醉了上二楼别的公司的庆祝宴上去敬酒这叫 INTERNET</li>
+<li>你一人到领导那桌说张总我敬你一个王总我敬你一个。….这叫 PPP</li>
+<li>你们一群人到领导那桌说张总我们敬你一个王总我们敬你一个……这叫 ADSL</li>
+<li>BOSS 举起一杯说我代表公司向你们项目组的成功表示祝贺这叫 B2B</li>
+<li>项目经理举起一杯说我代表项目组向张工的付出表示感谢这叫 B2C</li>
+<li>你也举杯说张哥我对你的景仰如指令流水滔滔不绝这叫 C2C</li>
+<li>你一哥们不行了喝点水也吐这叫插入异常</li>
+<li>你也觉得不行了上洗手间想解决一下可怎么也吐不出来这叫删除异常</li>
+<li>你们这桌子萧是头儿他一喝大家跟着喝这叫 Primary Key</li>
+<li>你们这桌坐了俩头儿，别桌的都过来敬酒这叫 Foreign Key</li>
+<li>叶子菊说不行我不喝酒的，经理说不行今天都得喝点这叫 NOT NULL</li>
+<li>经理从别桌转回来了问小李喝了吗喝了多少，这叫 Check</li>
+<li>Boss 说在座的各位今儿个都得尽兴这叫 Assertion全局约束</li>
+<li>乔大饼是海量偏不多喝这叫资源闲置</li>
+<li>阿甘不行了还要喝这叫超频</li>
+<li>小牛过来跟你碰杯这叫过程</li>
+<li>小吴过来跟你碰杯完了还要谈感受这叫函数</li>
+<li>你们这桌喝没了，这叫缺页中断</li>
+<li>让小姐拿两瓶过来这叫请求分页</li>
+<li>让她把酒放下把空瓶收拾收拾这叫页面置换</li>
+<li>一群人来给你敬酒你说等一下慢慢来这叫 P 操作</li>
+<li>你喝得豪气冲天放下杯说下一个我喝谁的这叫 V 操作</li>
+<li>你正在喝着有人来跟你碰杯你说等一下这叫阻塞</li>
+<li>那人看你放下杯给你满上这叫就绪</li>
+<li>稍歇了一下那人说该咱俩喝了这叫运行</li>
+<li>你刚喝了半口手机响了这叫中断</li>
+<li>你说不好意思哥们等一下这叫挂起</li>
+<li>你接完电话挂机了那人说咱俩继续这叫激活</li>
+<li>你来这杯终于喝完了那人回他们桌子上去了这叫终止</li>
+<li>又一哥们过来说你喝我就喝这叫同步</li>
+<li>一激动他把自个儿杯子打了这成了互斥</li>
+<li>你把这杯推给他说你先喝他又推回来说你先喝这叫死锁</li>
+<li>你说那咱们都不喝了这叫撤销</li>
+<li>贝贝喝了 1.44ml 就醉了退出来了这叫软盘</li>
+<li>达兰木坐那儿不动光猛喝这叫硬盘</li>
+<li>曹无名光看不喝这叫光盘</li>
+<li>anetople 上这桌喝又上那桌喝这叫 U 盘</li>
+<li>大家你一杯我一杯地喝这叫聊天室</li>
+<li>一个人猛喝其他人跟着喝这叫论坛</li>
+<li>你站起来猛灌别人都看你喝这叫博客</li>
+<li>曹无名暗恋何有名拉她上沙发那边喝这叫 QQ</li>
+<li>要敬你的人太多了他们一人一杯都放在你面前这叫 SPOOLING</li>
+<li>你实在不行了钻桌子底下去了这叫作业中止</li>
+<li>来不及上洗手间就吐了这叫 ERROR</li>
+<li>脸色煞白起不来了这叫 FATE ERROR</li>
+<li>经理紧张了说你没事吧这叫询问</li>
+<li>你说不出话了这叫丢失应答</li>
+<li>一哥们开始拨 120 了这叫紧急修复</li>
+<li>Boss 也急了说你们先撤大家也都散了吧这叫解除</li>
+<li>120 来了这叫 GAME OVER</li>
+<li>120 先走了这叫关机</li>
+</ul>
+<hr>
+<h3 id="这个是原版">这个是原版</h3>
+<h4 id="一.-准备工作">一. 准备工作</h4>
+<blockquote>
+<p>工欲善其事必先利其器。</p>
+</blockquote>
+<ol type="1">
+<li>电脑不一定要配置高，但是双屏是必须的，越大越好，能一个横屏一个竖屏更好。 一个用来查资料，一个用来写代码。总之要显得信息量很大，效率很高。</li>
+<li>椅子不一定要舒服，但是一定要可以半躺着。</li>
+<li>大量的便签，各种的颜色的，用来记录每天要完成的事务，多多益善。 沿着电脑屏幕的边框，尽量贴满，显出有很多事情的样子。</li>
+<li>工具书，orelly 的，机械工业，电子工业什么的都可以，能英文就英文， 不行影印版的也可以，反正越厚越好，而且千万不要放在书架上，一定要堆在桌上，半打开状。</li>
+</ol>
+<h4 id="二.-从进门开始">二. 从进门开始</h4>
+<ol type="1">
+<li>着装！着装！不管你是去实验室，或者去公司的大楼，在或者是小公司的民宅，或是自己创业的黑作坊；无论是春夏秋冬白天晚上刮风下雨电闪雷鸣台风龙卷风，一个装 B 的程序员都要十分在意自己着装！ 这里只提出参考建议。<br>
+初级装：衬衣+牛仔裤+休闲鞋。<br>
+中级装：T 恤+宽松短裤+拖鞋。<br>
+高级装：背心+宽松大花裤衩+人字拖。</li>
+<li>得体的举止。在走廊以及任何形式的过道里，一定要双手插兜，走得像个痞子， 至少要看起来有点反社会，如若不行，可走文弱天才型 geek 路线。</li>
+<li>如果有女性在你背后指指点点，小声嘀咕说这一定是一个技术男的时候，应该先低头， 然后保持低头状态，缓缓回头，坏坏地蔑笑但是不要出声，然后快步前行。</li>
+<li>进门后，一定不要跟任何人打招呼，笔直走向自己的位置，最多路过打一杯咖啡，千万不要有多余的动作，显示出自己的专注与心无旁骛。</li>
+</ol>
+<h4 id="三.-坐下就不要再动了">三. 坐下就不要再动了</h4>
+<ol type="1">
+<li>坐下以后。姿势需要略微后仰。能翘着二郎腿最好了。然后在后仰的情况下低着头。 以便看到屏幕。然后千万就不要再动了。</li>
+<li>粗暴地把电脑前的大堆书推开一个口。然后摘下电脑上的一个便签。看一眼。不过3秒。可以开始 coding 了。</li>
+<li>能不用 IDE 就不要用。实在装不了。无论 IDE 是什么。一定要调成 DOS 那种黑色背景的。</li>
+<li>如果写前台界面。就不停地调试后台代码；如果写 java。就在里面混编 C；如果写 C。 就在里面混编汇编。不光要 coding。还要时不时的翻出一本什么英文的书翻一翻。看不懂就看看插图。然后扔到面前假装懂了继续 coding。</li>
+<li>什么看起来高端就用什么。不要管实用不实用。例如对 C++：<code>switch</code> 统统重构成多态；如果有指针。统统改成智能的；C++ 一定要自己写 template；数字是全部要替换成宏的名字能起多长就起多长；struct就不要出现了。如果出现。也一定要用 <code>__attriburte__</code>修饰一下；运算都是位操作的；操作符都是重载的；网络都是并发缓冲线程池的；<code>int</code> 只用 <code>int32_t</code> 声明的；继承不用普通的。什么多继承虚继承啊；helloworld 也要写捕获异常的； 后人一看代码。中间一堆关键字 <code>extern</code>，<code>asm</code>，<code>auto</code>，<code>XXXXX_cast</code>，<code>volatile</code>，<code>explicit</code>，<code>register</code>，<code>template</code>。让一般总在敲 <code>int</code>，<code>if</code>，<code>else</code>，<code>for</code> 的小程序员顿时心生崇拜。</li>
+<li>注释？算了吧。只有两个路线可以选： 一. 变量名起得巨长无比。看代码就和读英文文章一样顺畅，根本不需要加注释。<br>
+二. 代码无比晦涩，加不加注释根本无影响。</li>
+<li>千万不要用 IM 工具交流。千万不要问同事问题。显得自己没有水平。都是自己上网或者查书。</li>
+<li>无论是同事间开玩笑或者发生任何群体性时间。不要抬头。更不要东张西望。 即使地震火灾。也一定要先提交代码再行离开。</li>
+</ol>
+<h4 id="四.-潇洒地离开">四. 潇洒地离开</h4>
+<ol type="1">
+<li>人走，主机是千万千万不能关的，至少要跑个 <code>daily build</code>，实在不行正在 svn 提交也勉强算过关。</li>
+<li>书应该已经又堆到屏幕前了，千万不要整理，明天再来推开。</li>
+<li>不强求最后一个走，但一定要所有的非程序员，什么市场啊前台啊 <code>pm</code> 啊都走光了，才可以走。</li>
+<li>走得时候一定要率性，千万不要收拾任何东西，站起来，出门，好的，就这样。</li>
+<li>如果今天一定要说句话的话，找到那个最苦逼的程序员，跟他说，你进度太慢了啊，不要老让我等你。</li>
+</ol>
+<blockquote>
+<p>在那山的这边海的那边有一群程序员，他们老实又胹腆，他们聪明又没钱。他们一天到晚坐在那里熬夜写软件，饿了就咬一口方便面 ~~ 哦苦命的程序员，哦苦逼的程序员，只要一改需求他们就要重新搞一遍，但是期限只剩下两天。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Programmer/" rel="tag"><i class="fa fa-tag"></i> Programmer</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/notes-on-perl-5/" rel="next" title="Perl 5 拾零">
+                <i class="fa fa-chevron-left"></i> Perl 5 拾零
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/the-top-10-tricks-of-perl-one-liners/" rel="prev" title="「转」The top 10 tricks of Perl one-liners">
+                「转」The top 10 tricks of Perl one-liners <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="comments" id="comments">
+        <div id="vcomments"></div>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/img/avatar.jpg"
+               alt="Heller" />
+          <p class="site-author-name" itemprop="name">Heller</p>
+           
+              <p class="site-description motion-element" itemprop="description">多做正事少折腾</p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">59</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/michaelHL" target="_blank" title="Github" rel="external nofollow">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/he-liang-69-62" target="_blank" title="知乎" rel="external nofollow">
+                  
+                    <i class="fa fa-fw fa-delicious"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://music.163.com/#/user/home?id=43058330" target="_blank" title="网易云" rel="external nofollow">
+                  
+                    <i class="fa fa-fw fa-music"></i>
+                  
+                  网易云
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友链
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/ocean1100" title="木易修" target="_blank"><i class="fa fa-fire"></i> 木易修</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://woyun.ink" title="卧云博客" target="_blank"><i class="fa fa-fire"></i> 卧云博客</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://cuijiahua.com" title="Jack Cui" target="_blank"><i class="fa fa-fire"></i> Jack Cui</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://seisman.info" title="SeisMan" target="_blank"><i class="fa fa-fire"></i> SeisMan</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://docs.lvrui.io" title="极地瑞雪" target="_blank"><i class="fa fa-fire"></i> 极地瑞雪</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.daxiblog.com" title="大席的博客" target="_blank"><i class="fa fa-fire"></i> 大席的博客</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://kaito-kidd.com" title="Kaito" target="_blank"><i class="fa fa-fire"></i> Kaito</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.deeplearn.me" title="算法之道" target="_blank"><i class="fa fa-fire"></i> 算法之道</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://blog.yasking.org" title="东东's Blog" target="_blank"><i class="fa fa-fire"></i> 东东's Blog</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编程语言"><span class="nav-number">2.</span> <span class="nav-text">编程语言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作系统"><span class="nav-number">3.</span> <span class="nav-text">操作系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编辑器"><span class="nav-number">4.</span> <span class="nav-text">编辑器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#博客"><span class="nav-number">5.</span> <span class="nav-text">博客</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其它"><span class="nav-number">6.</span> <span class="nav-text">其它</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#装逼进阶"><span class="nav-number">7.</span> <span class="nav-text">装逼进阶</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#这个是原版"><span class="nav-number">8.</span> <span class="nav-text">这个是原版</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一.-准备工作"><span class="nav-number">8.1.</span> <span class="nav-text">一. 准备工作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二.-从进门开始"><span class="nav-number">8.2.</span> <span class="nav-text">二. 从进门开始</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三.-坐下就不要再动了"><span class="nav-number">8.3.</span> <span class="nav-text">三. 坐下就不要再动了</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四.-潇洒地离开"><span class="nav-number">8.4.</span> <span class="nav-text">四. 潇洒地离开</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-chevron-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-paper-plane"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Heller</span>
+
+  <div class="theme-info">
+    <div class="powered-by"></div>
+    <span class="post-count">码了&nbsp;&nbsp58.6k&nbsp;&nbsp;个字</span>
+  </div>
+
+  
+</div>
+
+
+<div class="powered-by">
+Hosted by <a href="https://pages.coding.me" rel="external nofollow">Coding Pages</a>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io" rel="external nofollow">Hexo</a> 强力驱动
+</div>
+
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://theme-next.iissnan.com/" rel="external nofollow">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        <!-- 
+ -->
+        
+      </div>
+    </footer>
+
+    <!--  -->
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+<!-- 
+ -->
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("0DK08zbE8Vf43Mb2ckWn379n-gzGzoHsz", "QuwRw2RL89PtuGLFSikuDugr");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

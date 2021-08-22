@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Merriweather:300,300italic,400,400italic,700,700italic|Philosopher:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Windows," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Heller 的博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="记录 Windows  下遇到的问题、技巧与备忘。">
+<meta name="keywords" content="Windows">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows 问题与技巧">
+<meta property="og:url" content="http://notes.shinemic.cn/problems-tricks-and-memo-on-windows/index.html">
+<meta property="og:site_name" content="Heller 的博客">
+<meta property="og:description" content="记录 Windows  下遇到的问题、技巧与备忘。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-08-22T10:05:10.588Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Windows 问题与技巧">
+<meta name="twitter:description" content="记录 Windows  下遇到的问题、技巧与备忘。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://notes.shinemic.cn/problems-tricks-and-memo-on-windows/"/>
+
+
+
+
+
+  <title>Windows 问题与技巧 | Heller 的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Heller 的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">世界不是非黑即白</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-series">
+          <a href="/series/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-envelope"></i> <br />
+            
+            系列
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sketch">
+          <a href="/sketch/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-leaf"></i> <br />
+            
+            札记
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://notes.shinemic.cn/problems-tricks-and-memo-on-windows/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Heller">
+      <meta itemprop="description" content="多做正事少折腾">
+      <meta itemprop="image" content="/img/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Heller 的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Windows 问题与技巧</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-24T20:39:34+08:00">
+                <!-- 2018-01-24 -->
+                2018-01-24 20:39
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2021-08-22T18:05:10+08:00">
+                <!-- 2021-08-22 -->
+                2021-08-22 18:05
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tips-and-Tricks/" itemprop="url" rel="index">
+                    <span itemprop="name">Tips and Tricks</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/problems-tricks-and-memo-on-windows/" class="leancloud_visitors" data-flag-title="Windows 问题与技巧">
+               <span><br></span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  2,473
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  11
+                </span>
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>记录 Windows <i class="fa fa-windows fa-fw"></i> 下遇到的问题、技巧与备忘。</p>
+<a id="more"></a>
+<ol type="1">
+<li><p>JetBrains 的 Vim 插件配置文件放在 <code>~/.ideavimrc</code></p></li>
+<li><p>MS Access 自动切换输入法修复方法： Options -&gt; Client Settings -&gt; Datasheet IME control</p></li>
+<li><p>关闭恼人的 <code>Connected User Experiences and Telemetry</code> 服务：</p>
+<ol type="1">
+<li>打开计划任务程序，定位到 Microsoft - Windows - Application Experience，禁用 Microsoft Compatibility Appraiser</li>
+<li>打开服务，禁用 Connected User Experiences and Telemetry</li>
+<li>打开组策略，依次定位 Computer Configuration - Administrative Templates - Windows Components - Data Collection and Preview Builds - Allow Telemetry，设为 Disabled</li>
+</ol></li>
+<li><p>卸载 OneDrive：</p>
+<ol type="1">
+<li>不让 OneDrive 弹出： <code>Win-X-A</code> - <code>taskkill /f /im OneDrive.exe</code></li>
+<li><code>%SystemRoot%\SysWOW64\OneDriveSetup.exe /uninstall</code>（注意系统位）</li>
+</ol></li>
+<li><p>Mobaxterm 中设置 Cygwin 的源：</p>
+<ul>
+<li><code>apt-cyg -m http://mirrors.neusoft.edu.cn/cygwin/ install/remove. ...</code></li>
+<li><code>apt-cyg -m http://mirrors.ustc.edu.cn/cygwin/ install/remove ...</code></li>
+<li><code>apt-cyg -m http://mirrors.aliyun.com/cygwin/ install/remove ...</code></li>
+<li><code>apt-cyg -m http://mirrors.163.com/cygwin/ install/remove ...</code></li>
+</ul></li>
+<li><p>MobaXterm 中的 Cygwin 如有命令出错，有可能是版本过低</p></li>
+<li><p>MobaXterm 中如果无法安装包（一般出现校验值错误的情况），可手动下载 <code>setup.ini</code>，注意版本为 <code>x86</code></p></li>
+<li><p>Sublime Text 插件 SFTP 注册码：（在 <code>Settings-User</code> 中加入） <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"email"</span>:<span class="string">"Rimke@163.com"</span>,</span><br><span class="line">    <span class="attr">"product_key"</span>:<span class="string">"e83eda-38644b-43c828-e3669b-cd8a85"</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>Sublime Text 插件 AStyleFormatter 报错：安装 Microsoft Visual C++ 2010 SP1 Redistributable Package (x64)</p></li>
+<li><p>Sublime Text 主题插件 Boxy 深度定制：</p>
+<ul>
+<li><code>Boxy</code> 侧边栏背景色：<code>Sidebar Tree Defaults - "sidebar_tree"</code></li>
+<li><code>Boxy</code> 侧边栏分隔：<code>"class": sidebar_container"，"layer0.tint"</code></li>
+</ul></li>
+<li><p>Potplayer 遇到「单声道」的情况，将声音 - 环绕置 0 即可</p></li>
+<li><p>任务栏透明: <a href="http://www.zdfans.com/5573.html" target="_blank" rel="noopener">StartIsBack</a></p></li>
+<li><p>win 7 下一些控件、动态链接库无法注册问题的终极解决办法（<strong>不推荐</strong>）: 激活并登陆 <code>Administrator</code> 账户（一定必须为该名称， 即使为管理员账户也不能行使此账户的一些职权）</p></li>
+<li><p>清除各种显卡右键菜单：</p>
+<ul>
+<li>Nvidia：
+<ul>
+<li>清除：<code>regsvr32 /u nvcpl.dll</code></li>
+<li>显示：<code>regsvr32 nvcpl.dll</code></li>
+</ul></li>
+<li>Intel：
+<ul>
+<li>清除：<code>regsvr32 /u igfxsrvc.dll</code></li>
+<li>显示：<code>regsvr32 igfxsrvc.dll</code></li>
+</ul></li>
+<li>Ati：
+<ul>
+<li>清除：<code>regsvr32 /u atiacmxx.dll</code></li>
+<li>显示：<code>regsvr32 atiacmxx.dll</code></li>
+</ul></li>
+<li>Intel集成：
+<ul>
+<li>清除：<code>regsvr32 /u igfxpph.dll</code></li>
+<li>显示：<code>regsvr32 igfxpph.dll</code></li>
+</ul></li>
+</ul></li>
+<li><p>修复 vbs 默认打开方式：<code>cmd /c cscript/h:wscript</code></p></li>
+<li><p>无法附着到任务栏： <figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cmd</span> /k reg add "HKEY_CLASSES_ROOT\lnkfile" /v IsShortcut /f</span><br><span class="line"><span class="built_in">cmd</span> /k reg add "HKEY_CLASSES_ROOT\piffile" /v IsShortcut /f</span><br><span class="line"><span class="built_in">cmd</span> /k <span class="built_in">taskkill</span> /f /im explorer.exe &amp; explorer.exe</span><br></pre></td></tr></table></figure></p></li>
+<li><p>启动项文件夹：<code>shell:Startup</code></p></li>
+<li><p>Cygwin 中 Mintty 快捷方式：<code>mintty.exe -i /Cygwin-Terminal.ico -</code></p></li>
+<li><p>npm 路径：<code>C:\Users\xxx\AppData\Roaming\npm</code></p></li>
+<li><p>tlmgr 更换 repository： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tlmgr option repository http://mirrors.aliyun.com/CTAN/systems/texlive/tlnet</span><br><span class="line">tlmgr option repository http://mirrors.ustc.edu.cn/CTAN/systems/texlive/tlnet</span><br></pre></td></tr></table></figure> CLI 下更新： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tlmgr update --self --repository http://mirrors.aliyun.com/CTAN/systems/texlive/tlnet/</span><br><span class="line">tlmgr update --all --repository http://mirrors.aliyun.com/CTAN/systems/texlive/tlnet/</span><br></pre></td></tr></table></figure></p></li>
+<li><p>Sublime Text 插件 SublimeREPL 出现 <code>OSError: [WinError 6] The handle is invalid</code> 解决方案： <figure class="highlight python"><figcaption><span>Data/Packages/SublimeREPL/repls/subprocess_repl.py</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_alive</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">True</span></span><br></pre></td></tr></table></figure></p></li>
+<li><p>Sublime Text 开启 Debug 模式：<code>sublime.log_commands(True)</code></p></li>
+<li><p>华丽的提示符：添加环境变量 <code>PROMPT</code>，比如 <code>[ $e[35;40mNasty-Newbie$e[0m $b $e[1;33;40m$d $t$e[0m $b $e[1;31m$p$e[0m ]$_$e[1;33mλ$e[0m</code>，显示成： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[ Nasty-Newbie | Sun 09/09/2018 21:52:58.55 | C:\Users\Heller ]</span><br><span class="line">λ </span><br></pre></td></tr></table></figure></p></li>
+<li><p><code>MSYS2</code> 中自动挂载文件：<code>/etc/fstab</code>，比如： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># For a description of the file format, see the Users Guide</span><br><span class="line"># http://cygwin.com/cygwin-ug-net/using.html#mount-table</span><br><span class="line"></span><br><span class="line"># DO NOT REMOVE NEXT LINE. It remove cygdrive prefix from path</span><br><span class="line">none / cygdrive binary,posix=0,noacl,user 0 0</span><br><span class="line">C:\Users\Michael\Desktop /desktop</span><br><span class="line">D:\MSYS2\home\Michael\Notes /notes</span><br><span class="line">F:\WorkingDirectory\Work\__current /current</span><br></pre></td></tr></table></figure></p></li>
+<li><p>Chrome 浏览器在高分屏幕下的快捷方式： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;\chrome.exe&quot; /high-dpi-support=1 /force-device-scale-factor=1</span><br></pre></td></tr></table></figure></p></li>
+<li><p>为 <a href="https://sourceforge.net" target="_blank" rel="noopener">SourceForge</a> 加速： <a href="http://sourceforge.mirrorservice.org" target="_blank" rel="noopener">http://sourceforge.mirrorservice.org</a></p></li>
+<li><p>Sublime Text 插件 LaTeXTools 关于 PDF 阅读器 SumaptraPDF 反向搜索的设置： <figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sumatrapdf.exe -inverse-search "\"C:\Program Files\Sublime Text <span class="number">3</span>\sublime_text.exe\" \"<span class="variable">%f:%</span>l\""</span><br></pre></td></tr></table></figure> 关于公式不能预览的问题：手动从 <a href="https://ghostscript.com" target="_blank" rel="noopener">Ghostscript 官网</a> 安装，并将环境路径添加至 <code>TexLive</code> 路径前面; 添加 ImageMagick 的环境路径</p></li>
+<li><p>Mathtype 的官方安装包名为 <code>InstallMTW6.9b.exe</code></p></li>
+<li><p>Avast 杀毒软件的安装需要取消勾选 <code>Real Site</code>（中文名可能为 <code>DNS</code> 相关），否则网速奇慢！顺便，防火墙也别装了，简直神坑！</p></li>
+<li><p>Avast 添加排除目录（添加信任）：<code>Settings</code> - <code>Components</code> - <code>File Shield</code> &amp;&amp; <code>Behavior Shield</code> - <code>Customize</code> - <code>Exclusions</code>，否则某些程序会无端卡死（比如赖以生存的 <code>ConEmu</code>）</p></li>
+<li><p>用 UltraISO 刻录的 Windows 10 系统 U 盘无法创建分区（提示为 MBR / GPT 分区）解决方案：删除 U 盘中文件夹 <code>efi/</code> 以及文件 <code>bootmgr.efi</code></p></li>
+<li><p>TeamViewer(TV) 提示</p>
+<blockquote>
+<p>The screen cannot be captured at the moment. This is probably due to fast user switching or a disconnected/minimized Remote Desktop session.</p>
+</blockquote>
+<p>且场景为：被连接的机器为笔记本，盒上盖子，已打开 tv 服务。 解决方案：</p>
+<ul>
+<li>打开笔记本盖子</li>
+<li>或将一根 HDMI 线连接至显示器</li>
+</ul></li>
+<li><p>Sublime Text 插件 Anaconda 显示类似如下错误且伴有切换至 <code>python</code> 文件卡顿： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;Anaconda.anaconda_lib.workers.local_worker.LocalWorker object at 0x000001EA4B464FD0&gt; initial check failed because:</span><br><span class="line">connection to localhost:51568 timed out after 0.2s. tried to connect 7 times during 2 seconds</span><br><span class="line">check that there is Python process executing the anaconda jsonserver.py script running in your system. If there is, check that you can connect to your localhost writing the following script in your Sublime Text 3 console:</span><br><span class="line">import socket; socket.socket(socket.AF_INET, socket.SOCK_STREAM).connect((&quot;localhost&quot;, 51568))</span><br></pre></td></tr></table></figure> 场景：MSYS2 环境变量 <code>/usr/bin</code>，<code>/mingw64/bin</code>；Anaconda 没有加入环境变量。 解决方案：将 <code>"python_interpreter": "/path/to/python_exe"</code> 加入<strong>用户配置文件</strong> <code>Preferences.sublime-settings</code></p></li>
+<li><p>Xshell 5 中 <code>Shift-Tab</code> 效果却为切换标签处理办法：设置一次针对 <code>Shift-Tab</code> 的快捷键，再取消设置这个快捷键</p></li>
+<li><p>Word 里面用 Mathtype 编辑的公式用默认的方法导出 PDF 文件时出现各类显示问题：改用 <a href="http://www.dopdf.com" target="_blank" rel="noopener">doPDF</a></p></li>
+<li><p>Sublime Text 插件 Clang Format 令其对全文件格式化： <a href="https://github.com/rosshemsley/SublimeClangFormat/pull/10/commits/ea22686f40009104935a0378b7c4fd387121c8a1" target="_blank" rel="noopener">Format whole file if nothing selected</a></p></li>
+<li><p>Sublime Text 插件 LaTeXTools 中公式渲染/预览不全解决方案： 配置文件中为 <code>preview_math_template_preamble</code> 添加 <code>\usepackage[margin=2cm]{geometry}</code></p></li>
+<li><p>Windows 批处理在后台运行程序：<code>start /b xxx</code>，输出会在当前窗口（当然可以通过 <code>&gt;nul 2&gt;&amp;1</code> 抑制输出），但是可以进行其他操作（有点类似于 *nix 中的 <code>&amp;</code>）。或者 <code>start /min "" program params</code>，会在最小化的新窗口中运行程序，同时控制权交给当前终端</p></li>
+<li><p>Potplayer 关闭左上角的进度显示：基本 -&gt; 消息 -&gt; 取消勾选「在屏幕上显示播放信息」</p></li>
+<li><p>自动锁屏可在屏幕保护程序中进行设置，即便是空的锁屏样式</p></li>
+<li><p>MSYS2 中安装 <code>watch</code>：<code>pacman -S procps-ng</code></p></li>
+<li><p>GNU 工具源码镜像：<a href="http://mirrors.ustc.edu.cn/gnu" target="_blank" rel="noopener">http://mirrors.ustc.edu.cn/gnu</a></p></li>
+<li><p>Ghost 系统桌面出现顽固图标注册表： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Desktop\NameSpace</span><br></pre></td></tr></table></figure></p></li>
+<li><p>列出所有 Windows 服务状态: <code>sc queryex type= service state= all | find /i "NATION"</code></p></li>
+<li><p>删除 Outlook 所有账户。Outlook 删除到最后一个账户不给删除了，解决方案如下：</p>
+<ol type="1">
+<li>Close Outlook.</li>
+<li>Run Windows Control Panel.</li>
+<li>Open the “Mail（Microsoft Outlook 2016）” applet and click the “Show Profiles…” button.</li>
+<li>Remove the existing “Outlook” profile.</li>
+<li>Add a new profile, name it “Outlook” and create a new account as needed.</li>
+</ol></li>
+<li><p>Clion 中遇到输入时结果显现两次处理方案：<code>C-S-a</code>，输入 <code>registry</code>，取消勾选 <code>run.processes.with.pty</code> （参考 <a href="https://youtrack.jetbrains.com/issue/CPP-2580" target="_blank" rel="noopener">User input appears twice in output window in CLion under MinGW</a>）</p></li>
+<li><p>Windows 10 彻底禁用自动更新方案：</p>
+<ol type="1">
+<li><code>services.msc</code> 中设置 <code>Windows Update</code> 服务为禁用，并在 <code>Recovery</code> 中设置为不恢复</li>
+<li><code>gpedit.msc</code> 中: <code>Computer Configuration</code> - <code>Administrative Templates</code> - <code>Windows Components</code> - <code>Windows Update</code> - <code>Specify intranet ...</code>，启用此策略，并将 3 个服务器地址设为 <code>127.0.0.1</code></li>
+</ol></li>
+<li><p>解决 Microsoft Word 打开时自动切换输入法问题: 选项 - 高级 - 编辑选项 - 取消勾选「输入法控制处于活动状态」</p></li>
+<li><p>Word 2016 中设置正文分栏而脚注不分栏：脚注区右键菜单 - 便笺选项 - 列 - 1 列。 <strong>注：</strong> Word 2003 及之前版本如此设置无效</p></li>
+<li><p>安装完 Mathtype 后 PowerPoint 2016 打开报错「无法加载 …ppam 加载项」，所以干脆不用，在 Windows 10 (1709) 注册表中的位置为<br>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Computer\HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Office\16.0\PowerPoint\AddIns\MathType AddIn (PowerPoint 2016)</span><br></pre></td></tr></table></figure> 删除即可</p></li>
+<li><p>右键打开方式中程序列表所在注册表路径： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts</span><br></pre></td></tr></table></figure></p></li>
+<li><p>Microsoft Word 中设置边框时要记得重新应用边框，否则应用无效</p></li>
+<li><p>往 Microsoft Word 里面插入矢量图时建议使用 <code>.wmf</code> 类型文件，<code>.emf</code> 文件在另存为 PDF 文件时可能导致图片严重失真</p></li>
+<li><p>Windows 下给快捷方式指派的快捷键有明显延迟解决方案：<a href="https://superuser.com/questions/426947/slow-windows-desktop-keyboard-shortcuts" target="_blank" rel="noopener">slow windows desktop keyboard shortcuts</a></p></li>
+<li><p>修改 Windows 用户名：</p>
+<ol type="1">
+<li><p>以其它管理员用户 B 身份登录系统，并注销需要改名的用户 A（如果这个用户已经登录的话）。如仅有一个用户，可考虑新建管理员账户，或开启默认被禁止的 Administrator 账户（计算机管理 - 系统工具 - 本地用户和组 - 用户 - Administrator - 取消勾选账户已禁用）</p></li>
+<li><p>直接修改用户 A 的用户目录名（「运行」输入 <code>..</code>，将文件夹 A 改名为 C）</p></li>
+<li><p>找到注册表项 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList\&lt;User SID&gt;\</span><br></pre></td></tr></table></figure></p>
+<p>并将其改为 <code>C:\Users\C</code>。<br>
+「注」如何定位到 <code>&lt;User SID&gt;</code>：每个 <code>&lt;User SID&gt;</code> 的子键 <code>ProfileImagePath</code> 即为此用户的 <code>Profile</code> 目录，找到用户目录为 A 的键即可</p></li>
+<li><p>「运行」中键入 <code>netplwiz</code>，双击用户 A 将用户名修改为 C，重启</p></li>
+</ol></li>
+<li><p>NVIDIA 显卡搭载部分显示器屏幕发白 / 虚，可通过自定义 NVIDIA 色彩设定：</p>
+<ul>
+<li>Desktop Color Depth: <code>Highest (32-bit)</code></li>
+<li>Output Color Depth: <code>8 bpc</code></li>
+<li>Output Color format: <code>YCbCr444</code></li>
+<li>Output dynamic range: <code>Limited</code></li>
+</ul></li>
+<li><p>更改右键菜单相对于鼠标点击处的位置：运行中键入 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell:::&#123;80F3F1D5-FECA-45F3-BC32-752C152E456E&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在弹出对话框 <code>Tablet PC Settings</code> 中切换用手习惯 <code>Handedness</code></p></li>
+<li><p>Chrome 浏览器默认支持 Flash 需更改注册表项： <figure class="highlight plain"><figcaption><span>chrome_flash.reg</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line">[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome]</span><br><span class="line">&quot;AllowOutdatedPlugins&quot;=dword:00000001</span><br><span class="line">&quot;RunAllFlashInAllowMode&quot;=dword:00000001</span><br><span class="line">&quot;DefaultPluginsSetting&quot;=dword:00000001</span><br><span class="line">&quot;HardwareAccelerationModeEnabled&quot;=dword:00000001</span><br><span class="line">[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\PluginsAllowedForUrls]</span><br><span class="line">&quot;1&quot;=&quot;https://*&quot;</span><br><span class="line">&quot;2&quot;=&quot;http://*&quot;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>把浏览器变成编辑器（可视化编辑 DOM 树）。在开发者控制台中键入：<code>document.body.contentEditable=true</code></p></li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  
+    <ul class="post-copyright">
+      <li class="post-copyright-author">
+        <strong>本文作者：</strong>
+        Heller
+      </li>
+      <li class="post-copyright-link">
+        <strong>本文链接：</strong>
+        <a href="http://notes.shinemic.cn/problems-tricks-and-memo-on-windows/" title="Windows 问题与技巧">http://notes.shinemic.cn/problems-tricks-and-memo-on-windows/</a>
+      </li>
+      <li class="post-copyright-license">
+        <strong>版权声明： </strong>
+        本博客所有文章除特别声明外, 均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议. 转载请注明出处<a href=""><i class="fa fa-link" aria-hidden="true"></i></a>
+      </li>
+    </ul>
+  
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Windows/" rel="tag"><i class="fa fa-tag"></i> Windows</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/notes-on-python-3/" rel="next" title="Python 3 拾零">
+                <i class="fa fa-chevron-left"></i> Python 3 拾零
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/compilation-of-you-complete-me/" rel="prev" title="编译 YouCompleteMe">
+                编译 YouCompleteMe <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="comments" id="comments">
+        <div id="vcomments"></div>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/img/avatar.jpg"
+               alt="Heller" />
+          <p class="site-author-name" itemprop="name">Heller</p>
+           
+              <p class="site-description motion-element" itemprop="description">多做正事少折腾</p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">59</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/michaelHL" target="_blank" title="Github" rel="external nofollow">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/he-liang-69-62" target="_blank" title="知乎" rel="external nofollow">
+                  
+                    <i class="fa fa-fw fa-delicious"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://music.163.com/#/user/home?id=43058330" target="_blank" title="网易云" rel="external nofollow">
+                  
+                    <i class="fa fa-fw fa-music"></i>
+                  
+                  网易云
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友链
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/ocean1100" title="木易修" target="_blank"><i class="fa fa-fire"></i> 木易修</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://woyun.ink" title="卧云博客" target="_blank"><i class="fa fa-fire"></i> 卧云博客</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://cuijiahua.com" title="Jack Cui" target="_blank"><i class="fa fa-fire"></i> Jack Cui</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://seisman.info" title="SeisMan" target="_blank"><i class="fa fa-fire"></i> SeisMan</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://docs.lvrui.io" title="极地瑞雪" target="_blank"><i class="fa fa-fire"></i> 极地瑞雪</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.daxiblog.com" title="大席的博客" target="_blank"><i class="fa fa-fire"></i> 大席的博客</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://kaito-kidd.com" title="Kaito" target="_blank"><i class="fa fa-fire"></i> Kaito</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.deeplearn.me" title="算法之道" target="_blank"><i class="fa fa-fire"></i> 算法之道</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://blog.yasking.org" title="东东's Blog" target="_blank"><i class="fa fa-fire"></i> 东东's Blog</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-chevron-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-paper-plane"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Heller</span>
+
+  <div class="theme-info">
+    <div class="powered-by"></div>
+    <span class="post-count">码了&nbsp;&nbsp58.6k&nbsp;&nbsp;个字</span>
+  </div>
+
+  
+</div>
+
+
+<div class="powered-by">
+Hosted by <a href="https://pages.coding.me" rel="external nofollow">Coding Pages</a>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io" rel="external nofollow">Hexo</a> 强力驱动
+</div>
+
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://theme-next.iissnan.com/" rel="external nofollow">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        <!-- 
+ -->
+        
+      </div>
+    </footer>
+
+    <!--  -->
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+<!-- 
+ -->
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("0DK08zbE8Vf43Mb2ckWn379n-gzGzoHsz", "QuwRw2RL89PtuGLFSikuDugr");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

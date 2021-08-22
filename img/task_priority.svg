@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 434.98334 203.83333"
+   height="203.83333"
+   width="434.98334"
+   version="1.1"
+   id="svg451"
+   sodipodi:docname="task_priority.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata455">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1106"
+     inkscape:window-height="649"
+     id="namedview453"
+     showgrid="false"
+     fit-margin-top="12"
+     fit-margin-left="20"
+     fit-margin-right="20"
+     fit-margin-bottom="12"
+     inkscape:zoom="0.65264527"
+     inkscape:cx="14.305909"
+     inkscape:cy="224.55544"
+     inkscape:window-x="367"
+     inkscape:window-y="176"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg451" />
+  <style
+     type="text/css"
+     id="style308"><![CDATA[
+.st1 {fill:#000000;font-family:Comic Sans MS;font-size:10pt}
+]]></style>
+  <defs
+     id="defs310" />
+  <g
+     transform="translate(-19.683335,-27.833335)"
+     id="g449">
+    <g
+       transform="translate(40.35,64)"
+       id="shape1">
+      <path
+         d="M 0,16.3 C 0,7.3 7.3,0 16.3,0 c 9,0 16.3,7.3 16.3,16.3 0,9 -7.3,16.3 -16.3,16.3 C 7.3,32.6 0,25.3 0,16.3 Z"
+         id="path312"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-width:1.33333004" />
+      <text
+         class="st1"
+         id="text316"
+         style="font-size:13.33333302px;font-family:'Comic Sans MS';fill:#000000">
+        <tspan
+           y="21.1"
+           x="11.5"
+           id="tspan314">A</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(73,80.32)"
+       id="shape2">
+      <path
+         d="M 0,0 C 17.3,0 18.8,0.1 31,0.2"
+         id="path319"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 31,-1.8 4,2 -4,2 v -4"
+         id="path321"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(108,64)"
+       id="shape3">
+      <path
+         d="M 0,16.5 C 0,7.4 7.4,0 16.5,0 25.6,0 33,7.4 33,16.5 33,25.6 25.6,33 16.5,33 7.4,33 0,25.6 0,16.5 Z"
+         id="path324"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-width:1.33333004" />
+      <text
+         class="st1"
+         id="text328"
+         style="font-size:13.33333302px;font-family:'Comic Sans MS';fill:#000000">
+        <tspan
+           y="21.299999"
+           x="12"
+           id="tspan326">B</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(176,63.75)"
+       id="shape4">
+      <path
+         d="M 0,16.5 C 0,7.4 7.4,0 16.5,0 25.6,0 33,7.4 33,16.5 33,25.6 25.6,33 16.5,33 7.4,33 0,25.6 0,16.5 Z"
+         id="path331"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-width:1.33333004" />
+      <text
+         class="st1"
+         id="text335"
+         style="font-size:13.33333302px;font-family:'Comic Sans MS';fill:#000000">
+        <tspan
+           y="21.299999"
+           x="12.8"
+           id="tspan333">C</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(141,80.5)"
+       id="shape5">
+      <path
+         d="M 0,0 C 17.3,0 18.8,-0.2 31,-0.2"
+         id="path338"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 31,-2.2 4,1.9 -4,2.1 v -4"
+         id="path340"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(158.18,159)"
+       id="shape6">
+      <path
+         d="M 0,16.5 C 0,7.4 7.4,0 16.5,0 25.6,0 33,7.4 33,16.5 33,25.6 25.6,33 16.5,33 7.4,33 0,25.6 0,16.5 Z"
+         id="path343"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-width:1.33333004" />
+      <text
+         class="st1"
+         id="text347"
+         style="font-size:13.33333302px;font-family:'Comic Sans MS';fill:#000000">
+        <tspan
+           y="21.299999"
+           x="12"
+           id="tspan345">E</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(82.35,159)"
+       id="shape7">
+      <path
+         d="M 0,16.5 C 0,7.4 7.4,0 16.5,0 25.6,0 33,7.4 33,16.5 33,25.6 25.6,33 16.5,33 7.4,33 0,25.6 0,16.5 Z"
+         id="path350"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-width:1.33333004" />
+      <text
+         class="st1"
+         id="text354"
+         style="font-size:13.33333302px;font-family:'Comic Sans MS';fill:#000000">
+        <tspan
+           y="21.299999"
+           x="12"
+           id="tspan352">D</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(115.35,175.5)"
+       id="shape8">
+      <path
+         d="M 0,0 H 38.8"
+         id="path357"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 38.8,-2 4,2 -4,2 v -4"
+         id="path359"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(256,40.5)"
+       id="shape9">
+      <path
+         d="M 0,16.5 C 0,7.4 7.4,0 16.5,0 25.6,0 33,7.4 33,16.5 33,25.6 25.6,33 16.5,33 7.4,33 0,25.6 0,16.5 Z"
+         id="path362"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-width:1.33333004" />
+      <text
+         class="st1"
+         id="text366"
+         style="font-size:13.33333302px;font-family:'Comic Sans MS';fill:#000000">
+        <tspan
+           y="21.299999"
+           x="12.8"
+           id="tspan364">F</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(256,87)"
+       id="shape10">
+      <path
+         d="M 0,16.5 C 0,7.4 7.4,0 16.5,0 25.6,0 33,7.4 33,16.5 33,25.6 25.6,33 16.5,33 7.4,33 0,25.6 0,16.5 Z"
+         id="path369"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-width:1.33333004" />
+      <text
+         class="st1"
+         id="text373"
+         style="font-size:13.33333302px;font-family:'Comic Sans MS';fill:#000000">
+        <tspan
+           y="21.299999"
+           x="12"
+           id="tspan371">G</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(256,133)"
+       id="shape11">
+      <path
+         d="M 0,16.5 C 0,7.4 7.4,0 16.5,0 25.6,0 33,7.4 33,16.5 33,25.6 25.6,33 16.5,33 7.4,33 0,25.6 0,16.5 Z"
+         id="path376"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-width:1.33333004" />
+      <text
+         class="st1"
+         id="text380"
+         style="font-size:13.33333302px;font-family:'Comic Sans MS';fill:#000000">
+        <tspan
+           y="21.299999"
+           x="11.2"
+           id="tspan378">H</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(256,186)"
+       id="shape12">
+      <path
+         d="M 0,16.5 C 0,7.4 7.4,0 16.5,0 25.6,0 33,7.4 33,16.5 33,25.6 25.6,33 16.5,33 7.4,33 0,25.6 0,16.5 Z"
+         id="path383"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-width:1.33333004" />
+      <text
+         class="st1"
+         id="text387"
+         style="font-size:13.33333302px;font-family:'Comic Sans MS';fill:#000000">
+        <tspan
+           y="21.299999"
+           x="12.8"
+           id="tspan385">I</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(191.18,175.5)"
+       id="shape13">
+      <path
+         d="M 0,0 C 31.2,0 32.7,-23.5 60.2,-25.8"
+         id="path390"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 60.7,-27.8 4.1,1.8 -3.9,2.2 -0.2,-4"
+         id="path392"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(191.18,175.5)"
+       id="shape14">
+      <path
+         d="M 0,0 C 31.4,0 32.8,24.7 60.8,26.8"
+         id="path395"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 60.9,24.9 3.9,2.1 -4,1.8 0.1,-3.9"
+         id="path397"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(209,80.25)"
+       id="shape15">
+      <path
+         d="M 0,0 C 14.3,0 15,-21.1 42.6,-23.1"
+         id="path400"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 42.9,-25.1 4.1,1.8 -3.9,2.2 -0.2,-4"
+         id="path402"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(209,80.25)"
+       id="shape16">
+      <path
+         d="M 0,0 C 15.9,-0.2 23.9,22.5 42.9,23.4"
+         id="path405"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 42.9,21.4 4.1,1.9 -3.9,2.1 -0.2,-4"
+         id="path407"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(343,112.5)"
+       id="shape17">
+      <path
+         d="M 0,16.5 C 0,7.4 7.4,0 16.5,0 25.6,0 33,7.4 33,16.5 33,25.6 25.6,33 16.5,33 7.4,33 0,25.6 0,16.5 Z"
+         id="path410"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-width:1.33333004" />
+      <text
+         class="st1"
+         id="text414"
+         style="font-size:13.33333302px;font-family:'Comic Sans MS';fill:#000000">
+        <tspan
+           y="21.299999"
+           x="12"
+           id="tspan412">J</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(289,57)"
+       id="shape18">
+      <path
+         d="M 0,0 C 21,0 22,65.3 49.6,71.5"
+         id="path417"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 50.2,69.6 3.8,2.4 -4.2,1.6 0.4,-4"
+         id="path419"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(289,103.5)"
+       id="shape19">
+      <path
+         d="M 0,0 C 20.9,0 21.9,23 49.4,25.3"
+         id="path422"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 50.1,23.3 3.9,2.2 -4.1,1.8 0.2,-4"
+         id="path424"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(289,202.5)"
+       id="shape20">
+      <path
+         d="M 0,0 C 20.9,0 21.9,-66.3 49.4,-73"
+         id="path427"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 49.8,-75 4.2,1.5 -3.7,2.5 -0.5,-4"
+         id="path429"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(289,149.5)"
+       id="shape21">
+      <path
+         d="M 0,0 C 21,0 22,-18.7 49.9,-20.4"
+         id="path432"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 49.9,-22.4 4.1,1.9 -3.9,2.1 -0.2,-4"
+         id="path434"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(401,112.5)"
+       id="shape22">
+      <path
+         d="M 0,16.5 C 0,7.4 7.4,0 16.5,0 25.6,0 33,7.4 33,16.5 33,25.6 25.6,33 16.5,33 7.4,33 0,25.6 0,16.5 Z"
+         id="path437"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-width:1.33333004" />
+      <text
+         class="st1"
+         id="text441"
+         style="font-size:13.33333302px;font-family:'Comic Sans MS';fill:#000000">
+        <tspan
+           y="21.299999"
+           x="12.8"
+           id="tspan439">K</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(376,129)"
+       id="shape23">
+      <path
+         d="M 0,0 H 21"
+         id="path444"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 21,-2 4,2 -4,2 v -4"
+         id="path446"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+  </g>
+</svg>

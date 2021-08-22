@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://notes.shinemic.cn/problems-tricks-and-memo-on-windows/</loc>
+    
+    <lastmod>2021-08-22T10:05:10.588Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/install-mysql-on-windows-and-centos/</loc>
+    
+    <lastmod>2021-07-29T13:44:35.526Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/setting-up-your-own-netdisk-by-zfile-on-windows-and-linux/</loc>
+    
+    <lastmod>2021-02-28T10:52:28.615Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/tips-on-linux/</loc>
+    
+    <lastmod>2021-02-28T04:49:48.367Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/essentials-of-matlab-foundation-of-programming/</loc>
+    
+    <lastmod>2021-02-28T03:15:24.256Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/homebrew-installation-on-macos/</loc>
+    
+    <lastmod>2020-10-13T07:08:37.572Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/settings-of-multi-nic-and-routing-table-on-windows/</loc>
+    
+    <lastmod>2020-10-11T02:56:07.080Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/notes-on-python-3/</loc>
+    
+    <lastmod>2020-06-08T10:14:08.380Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/compilation-of-you-complete-me/</loc>
+    
+    <lastmod>2020-06-06T02:51:50.860Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/sketch/index.html</loc>
+    
+    <lastmod>2020-06-02T12:04:04.780Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/setting-up-local-jupyter-notebook-server-environment/</loc>
+    
+    <lastmod>2020-03-18T08:07:13.494Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/hexo-deployment-on-server/</loc>
+    
+    <lastmod>2019-11-13T03:02:09.959Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/how-to-behave-like-master-for-advanced-coder/</loc>
+    
+    <lastmod>2019-11-13T03:01:52.248Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/linux-date-format/</loc>
+    
+    <lastmod>2019-11-13T03:01:02.075Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/notes-on-conda/</loc>
+    
+    <lastmod>2019-11-13T03:00:54.780Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/notes-on-perl-5/</loc>
+    
+    <lastmod>2019-11-13T03:00:50.734Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/password-manager-on-linux/</loc>
+    
+    <lastmod>2019-11-13T03:00:09.490Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/ssr-on-server/</loc>
+    
+    <lastmod>2019-11-13T02:58:31.071Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/user-defined-zip-and-map/</loc>
+    
+    <lastmod>2019-11-13T02:56:57.703Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/zsh-installation/</loc>
+    
+    <lastmod>2019-11-13T02:56:47.222Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/compile-python-on-centos/</loc>
+    
+    <lastmod>2019-11-13T02:56:13.424Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/about/index.html</loc>
+    
+    <lastmod>2019-11-13T02:55:24.609Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/daily-operations-of-msys2/</loc>
+    
+    <lastmod>2019-10-25T05:43:02.397Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/building-vim-from-source/</loc>
+    
+    <lastmod>2019-10-25T05:42:03.365Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/tags/index.html</loc>
+    
+    <lastmod>2019-04-22T01:50:40.809Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/series/index.html</loc>
+    
+    <lastmod>2019-04-22T01:50:40.794Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/categories/index.html</loc>
+    
+    <lastmod>2019-04-22T01:50:40.755Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/the-top-10-tricks-of-perl-one-liners/</loc>
+    
+    <lastmod>2019-04-22T01:50:40.749Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/ssh-reverse-tunnel/</loc>
+    
+    <lastmod>2019-04-22T01:50:40.748Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/simple-example-of-stack-in-java/</loc>
+    
+    <lastmod>2019-04-22T01:50:40.747Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/shortcuts-of-anaconda-on-windows/</loc>
+    
+    <lastmod>2019-04-22T01:50:40.746Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/shell-colors-colorizing-shell-scripts/</loc>
+    
+    <lastmod>2019-04-22T01:50:40.745Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/setting-up-haskell-stack-development-environment/</loc>
+    
+    <lastmod>2019-04-22T01:50:40.743Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/reading-list-of-perl/</loc>
+    
+    <lastmod>2019-04-22T01:50:40.742Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/nth-user/</loc>
+    
+    <lastmod>2019-04-22T01:50:40.740Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/notes-on-statistical-learning-methods-01/</loc>
+    
+    <lastmod>2019-04-22T01:50:40.739Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/notes-on-learning-mathematical-modeling-based-on-variation/</loc>
+    
+    <lastmod>2019-04-22T01:50:40.736Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/mouting-linux-file-systems-on-windows/</loc>
+    
+    <lastmod>2019-04-22T01:50:40.735Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/learning-lingo-01/</loc>
+    
+    <lastmod>2019-04-22T01:50:40.732Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/interactive-and-login-shells/</loc>
+    
+    <lastmod>2019-04-22T01:50:40.731Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/installing-latest-clang-on-ubuntu/</loc>
+    
+    <lastmod>2019-04-22T01:50:40.730Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/how-to-install-llvm-and-clang-on-centos-6/</loc>
+    
+    <lastmod>2019-04-22T01:50:40.728Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/how-to-install-gcc-on-centos-6/</loc>
+    
+    <lastmod>2019-04-22T01:50:40.726Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/function-interpolation-by-matlab/</loc>
+    
+    <lastmod>2019-04-22T01:50:40.723Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/essentials-of-matlab-skills/</loc>
+    
+    <lastmod>2019-04-22T01:50:40.722Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/essentials-of-matlab-plotting/</loc>
+    
+    <lastmod>2019-04-22T01:50:40.721Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/essentials-of-matlab-examples/</loc>
+    
+    <lastmod>2019-04-22T01:50:40.720Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/deployment-of-sshd-on-windows-via-msys/</loc>
+    
+    <lastmod>2019-04-22T01:50:40.719Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/deployment-of-rstudio-server/</loc>
+    
+    <lastmod>2019-04-22T01:50:40.718Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/configuration-of-cygwin-in-mobaxterm-and-issues-of-ssh-proxy/</loc>
+    
+    <lastmod>2019-04-22T01:50:40.716Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://notes.shinemic.cn/built-in-environment-variables-on-windows/</loc>
+    
+    <lastmod>2019-04-22T01:50:40.713Z</lastmod>
+    
+  </url>
+  
+</urlset>
