@@ -309,7 +309,7 @@ font:
 mathjax:
   enable: true
   per_page: true
-  cdn: cdn.bootcss.com/mathjax/2.7.6/MathJax.js
+  cdn: cdn.bootcdn.net/ajax/libs/mathjax/2.7.6/MathJax.js
 
 # Han Support docs: https://hanzi.pro/
 han: false
@@ -612,7 +612,7 @@ vendors:
 
   # Internal version: 4.6.2
   # See: http://fontawesome.io/
-  fontawesome: //cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css
+  fontawesome: //cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.css
 
   # Internal version: 1
   # https://www.algolia.com
@@ -622,8 +622,8 @@ vendors:
   # Internal version: 1.0.2
   # See: https://github.com/HubSpot/pace
   # Or use direct links below:
-  # pace: //cdn.bootcss.com/pace/1.0.2/pace.min.js
-  # pace_css: //cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css
+  # pace: //cdn.bootcdn.net/ajax/libs/pace/1.0.2/pace.min.js
+  # pace_css: //cdn.bootcdn.net/ajax/libs/pace/1.0.2/themes/blue/pace-theme-flash.min.css
   pace:
   pace_css:
 
