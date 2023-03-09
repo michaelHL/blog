@@ -5,7 +5,7 @@ tags:
     - R
     - RStudio
     - Server
-categories: Development and Deployment
+categories: Development
 ---
 
 在 Ubuntu 16.04.3 下部署 RStudio Server {% fa registered fw %}。

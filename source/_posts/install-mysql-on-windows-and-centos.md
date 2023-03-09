@@ -4,7 +4,7 @@ date: 2018-01-21 11:22:03
 tags:
     - SQL
     - MySQL
-categories: Development and Deployment
+categories: Development
 ---
 
 在不同系统下安装配置 MySQL 的过程中遇到不少问题，特此记录。

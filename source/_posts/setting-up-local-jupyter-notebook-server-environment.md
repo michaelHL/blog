@@ -7,7 +7,7 @@ tags:
     - Python
     - Jupyter
     - TensorFlow
-categories: Development and Deployment
+categories: Development
 ---
 
 被朋友强烈安利入坑 [TensorFlow][tensorflow]，于是着手搭建 Python 的工作环境。之前在 Windows 下使用过 [Anaconda][anaconda]，不仅能愉快地切换 Python 2.x 与 3.x 环境，还能像应用容器一样安装其他软件（RStudio，Spyder）等。但如此一来自身体积逐渐增大，于是考虑在装载 CentOS 7.3 系统的老爷机上搭建 Anaconda 环境，并部署 Jupyter Notebook 服务器。本文搭建的环境仅允许单用户访问，如需要多用户，需使用 [JupyterHub][jupyterhub]。这里的初始参考来源是 Jupyter Notebook

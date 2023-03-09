@@ -4,7 +4,7 @@ date: 2017-12-14 11:31:47
 tags:
     - Python
     - Iterator
-categories: Development and Deployment
+categories: Development
 nocopyright: true
 ---
 

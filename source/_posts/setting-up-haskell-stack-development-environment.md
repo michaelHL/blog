@@ -5,7 +5,7 @@ tags:
     - Haskell
     - Stack
     - Windows
-categories: Development and Deployment
+categories: Development
 ---
 
 {% centerquote %}

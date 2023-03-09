@@ -6,7 +6,7 @@ tags:
     - Nginx
     - Server
     - Webhook
-categories: Development and Deployment
+categories: Development
 mathjax: true
 ---
 

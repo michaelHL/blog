@@ -7,7 +7,7 @@ tags:
     - Server
     - SSH
     - Autossh
-categories: Development and Deployment
+categories: Development
 ---
 
 若能在远程中非图形界面下访问到自己的 Windows 服务器，比如像 Linux 那样通过 SSH 连接便能进行日常操作，那确实是很方便的。然而 Windows 鸡肋的 cmd 足以毁坏每天的心情，所以 Windows 下装配一个 \*nix 系统也是必要的。下面记录 Windows 中利用 MSYS2 **清真** 搭建 sshd 服务的全过程。

@@ -1,7 +1,7 @@
 ---
 title: Matlab 程序设计示例
 date: 2018-07-07 14:38:59
-categories: Development and Deployment
+categories: Development
 tags:
     - Matlab
 mathjax: true
