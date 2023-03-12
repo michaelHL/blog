@@ -38,10 +38,6 @@
 
 {% if theme.copyright %}
 <div class="powered-by">
-Hosted by <a href="https://pages.coding.me" rel="external nofollow">Coding Pages</a>
-</div>
-
-<div class="powered-by">
   {{ __('footer.powered', '<a class="theme-link" href="https://hexo.io" rel="external nofollow">Hexo</a>') }}
 </div>
 {% endif %}
