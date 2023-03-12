@@ -4,6 +4,7 @@ date: 2022-03-30 00:20:04
 tags:
     - Gawk
     - Source Code
+categories: Research
 ---
 
 `gawk5.1.1` 源码的 `awk.h` 文件定义了 `redirect` 这个「重定向」结构体，里面有个 `redirect_flags` 标记枚举，有这几个值：
