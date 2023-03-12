@@ -208,3 +208,8 @@ categories: Tips and Tricks
    "1"="https://*"
    "2"="http://*"
    {% endcodeblock %}
+1. Windows 10 蓝牙耳机 / 音箱连接后无法通过系统音量调节解决方案：将注册表项
+   ```
+   HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Bluetooth\Audio\AVRCP\CT
+   ```
+   中的 `DisableAbsoluteVolume` 值（DWORD32）改为 `1`
