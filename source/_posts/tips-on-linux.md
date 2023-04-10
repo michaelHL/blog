@@ -180,3 +180,9 @@ categories: Tips and Tricks
    {% endcodeblock %}
    其中，为避免叹号 `!`（Exclamation Mark）引用历史命令使用 `set +H`
 1. yum 安装包时不清楚程序所在程序包名如何查询：`yum provides */<program>`
+1. 从暂停中的虚拟机恢复后，docker 容器无法连接（数据库、网页应用）：以 Rocky Linux 8.7 为例，在文件 `/etc/NetworkManager/conf.d/10-unmanage-docker-interfaces.conf` 中键入：
+   {% codeblock lang:ini %}
+   [keyfile]
+   unmanaged-devices=interface-name:docker*;interface-name:veth*;interface-name:br-*;interface-name:vmnet*;interface-name:vboxnet*
+   {% endcodeblock %}
+   参考：[Can't connect to docker after resuming VM](https://stackoverflow.com/questions/57874055/cant-connect-to-docker-after-resuming-vm)
