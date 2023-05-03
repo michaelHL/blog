@@ -442,7 +442,7 @@ rating:
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
-  enable: true
+  enable: false
   app_id: 0DK08zbE8Vf43Mb2ckWn379n-gzGzoHsz
   app_key: QuwRw2RL89PtuGLFSikuDugr
 
@@ -612,7 +612,7 @@ vendors:
 
   # Internal version: 4.6.2
   # See: http://fontawesome.io/
-  fontawesome: //cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.css
+  # fontawesome: //cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.css
 
   # Internal version: 1
   # https://www.algolia.com
