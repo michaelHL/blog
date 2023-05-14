@@ -213,3 +213,10 @@ categories: Tips and Tricks
    HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Bluetooth\Audio\AVRCP\CT
    ```
    中的 `DisableAbsoluteVolume` 值（DWORD32）改为 `1`
+1. Microsoft Edge 浏览器修改用户数据存储位置注册表：
+   ```
+   Windows Registry Editor Version 5.00
+
+   [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge]
+   "UserDataDir"="X:\Path\to\User Data"
+   ```
